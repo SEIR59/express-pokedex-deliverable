@@ -19,3 +19,11 @@ app.get('/', (request, response) => {
         }
     )
 })
+
+// show route
+// viewing more details about the pokemon
+app.get('/:id', (request, response) => {
+    response.render('pokemon', {
+        pokemon: PokemonList[request.params.id]
+    })
+})
