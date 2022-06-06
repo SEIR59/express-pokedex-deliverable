@@ -7,6 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ data[0].name }}</h1>
+    <h1> Pokemon </h1>
+    {% for every in data %}
+    <ul>
+        <li>
+     {{ every.name }} 
+     <img src="{{ every.img }}" alt="">
+        </li>
+    </ul>
+    {% endfor %}
 </body>
 </html>
