@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     console.log("I run on all routes!")
     next()
 })
-app.use(expr.urlencoded({extended: fales})) // allows the use of data from the body of the page
+app.use(expr.urlencoded({extended: false})) // allows the use of data from the body of the page
 app.use(expr.static("public")) // sets the default folder to search when selecting folders.
 app.use(methodOverride("_method")) // set up method for methodOverride
 
