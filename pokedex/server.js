@@ -36,7 +36,7 @@ app.get("/pokemon", (req, res) => {
 app.get("/pokemon/:id", (req, res) => {
     let indPokemon = req.params.id
     res.render("show",{
-        allPokemon: arrPokemon[indPokemon]
+        pokemon: arrPokemon[indPokemon]
     })
 })
 
