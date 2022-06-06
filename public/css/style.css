@@ -1,0 +1,24 @@
+body {
+    background-image: url('../background.jpg');
+    background-size: auto;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    height: 70px;
+    width: 70px;
+    margin: 10px 10px;
+    border-radius: 20%;
+}
+
+h1 {
+    text-align: center;
+}

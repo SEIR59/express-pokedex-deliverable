@@ -2,7 +2,6 @@ const pokemons = require('./pokedex/models/pokemon.js');
 const express = require('express');
 const { redirect } = require('express/lib/response');
 const app = require("liquid-express-views")(express());
-const routesReport = rowdy.begin(app);
 const methodOverride = require('method-override');
 
 // use methodOverride, will add query parameter to our delete form named _method

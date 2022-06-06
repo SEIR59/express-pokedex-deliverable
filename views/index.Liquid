@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>show all pokemons</h1>
+    <h1>Pokemon Manager</h1>
+    <div class="flexBox">
     <ul>
-        {% for fruit in allFruits %}
+        {% for pokemon in allPokemons %}
         <li>
-           <a href="/fruits/{{ forloop.index0 }}">{{ fruit.name }}</a>
-           Ready to eat:
-           {% if fruit.readyToEat == true %}
-                yes
-           {% else %}
-                no
-            {% endif %} 
-            <form action="/fruits/{{ forloop.index0 }}?_method=DELETE" method="POST">
+            <div>
+                <p>{{ pokemon.name }}</p>
+           <a href="/pokemon/{{ forloop.index0 }}"><img src="{{pokemon.img}}" alt=""></a>
+            <form action="/pokemon/{{ forloop.index0 }}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete">
             </form>
-            <a href="/fruits/{{forloop.index0}}/edit">Edit</a>
+            <form action="/pokemon/{{ forloop.index0}}/edit">
+                <input type="submit" value="Edit" />
+            </form>
+        </div>
+           
         </li>
         <br>
         {% endfor %}
     </ul>
+</div>
 </body>
 </html>
