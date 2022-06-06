@@ -10,19 +10,20 @@
     <body>
         
         <h1>Pokemon Index Page</h1>
+        <div class="pIndex">
+            <ul>
+                {% for pokemon in data %}
+                    <li>
+                    <a href="/pokemon/{{ forloop.index0}}">
+                        <img src="{{pokemon.img}}" alt="" >
+                        </a>
+                    
+                    
+                    </li>
+                    {%endfor%}
+            </ul>
 
-        <ul>
-            {% for pokemon in data %}
-                <li>
-                <a href="/pokemon/{{ forloop.index0}}">{{pokemon.img}}</a>
-                
-                
-                </li>
-                {%endfor%}
-        </ul>
-
-
-
+        </div>
 
     </body>
     </html>

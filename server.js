@@ -11,7 +11,7 @@ app.get("/pokemon", (req, res) => {
 //   res.send("testing")
     res.render("index", //index.Liquid
   {
-    data: Pokemon,
+    data: Pokemon, // liquid variable
   });
 });
 
