@@ -8,3 +8,14 @@ let port = 3000
 app.listen(port, () => {
     console.log("Using port: ", port)
 })
+
+// index route
+// showing the list of all the pokemon in the pokedex
+app.get('/', (request, response) => {
+    response.render(
+        'index',
+        {
+            PokemonList: PokemonList
+        }
+    )
+})
