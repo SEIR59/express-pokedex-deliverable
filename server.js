@@ -9,6 +9,10 @@ app.listen(port, () => {
     console.log("Using port: ", port)
 })
 
+// setting up middleware
+app.use(express.urlencoded({extended:false})); // to view request.body
+app.use(express.static('public')); // to use css
+
 // index route
 // showing the list of all the pokemon in the pokedex
 app.get('/', (request, response) => {
