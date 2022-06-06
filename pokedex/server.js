@@ -5,10 +5,12 @@ const app = require('liquid-express-views')(express());
 const routesReport = rowdy.begin(app);
 const methodOverride = require('method-override');
 const Pokemon = require('./models/pokemon');
-const port = 5000;
+const port = 3000;
 
 
-// MIDDLEWARES
+///! * -------------------------------------------------------------------------- */
+///! *                               // MIDDLEWARES                               */
+///! * -------------------------------------------------------------------------- */
 app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
@@ -19,6 +21,14 @@ app.use(
 );
 app.use(express.json());
 
+//? INDEX
+app.get('/pokemon', (req, res) => {
+    try {
+      res.render('index', { Pokemons: Pokemon });
+    } catch (error) {
+      res.status(500).json({ Message: error.message });
+    }
+  });
 
 
 
