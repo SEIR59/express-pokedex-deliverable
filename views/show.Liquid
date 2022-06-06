@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navBar">
+        <h1>Pokemon Manager</h1>
+        <form action="/pokemon">
+            <input type="submit" value="Home" />
+        </form>
+        </div>
+
+    <h1>{{pokemon.name}}</h1>
+    
+    <img src={{pokemon.img}} alt="">
+    <div>
+        <h3>Types</h3>
+        <p>{{pokemon.type}}</p>
+    </div>
+    <div>
+        <h3>Stats</h3>
+        HP: <p>{{pokemon.stats.hp}}</p>
+        Attack: <p>{{pokemon.stats.attack}}</p>
+        Defense: <p>{{pokemon.stats.defense}}</p>
+    </div>
+</body>
+</html>
