@@ -7,7 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>{{ data[0].name }}</h1>
-  
+  <h1>Pokemons</h1>
+  {% for Pokemon in data %}
+  <ul>
+    <li>  
+      {{ Pokemon.name }}
+     <img src="{{ Pokemon.img }}" alt=""> 
+    </li>
+  </ul>
+  {% endfor %}
 </body>
 </html>
