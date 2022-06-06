@@ -11,9 +11,9 @@
     <ul>
         {% for pokemon in data %}
      <li>
-        <a href="/pokedex/0 {{forloop.index0}}">
-           {{pokemon.name|capitalize}}</a>
-           <img src="{{pokemon.img}}">
+        <a href="/pokemon/{{forloop.index0}}">
+          
+           <img src="{{pokemon.img}}"></a>
            </li>
         {% endfor %}
     

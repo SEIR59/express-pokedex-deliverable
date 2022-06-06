@@ -11,7 +11,9 @@ res.render('index', { data: Pokemon });
 
 // SHOW
 app.get('/pokemon/:id', (req, res) => {
-res.render('show', { data: Pokemon[req.params.id] });
+    let id = req.params.id
+res.render('show', { data: Pokemon[id] });
+
 });
 
 app.listen(3000 , () =>{
