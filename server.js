@@ -13,6 +13,20 @@ app.listen(port, () => {
 app.use(express.urlencoded({extended:false})); // to view request.body
 app.use(express.static('public')); // to use css
 
+// new route
+// directing to a page to make the new pokemon
+app.get('/new', (request, response) => {
+    response.render('new')
+})
+
+// show route
+// viewing more details about the pokemon
+app.get('/:id', (request, response) => {
+    response.render('pokemon', {
+        pokemon: PokemonList[request.params.id]
+    })
+})
+
 // index route
 // showing the list of all the pokemon in the pokedex
 app.get('/', (request, response) => {
@@ -24,10 +38,3 @@ app.get('/', (request, response) => {
     )
 })
 
-// show route
-// viewing more details about the pokemon
-app.get('/:id', (request, response) => {
-    response.render('pokemon', {
-        pokemon: PokemonList[request.params.id]
-    })
-})
