@@ -1,18 +1,23 @@
 const express    = require('express');
 const app        = express();
-const Pokemon = require('../models/pokemon.js');
+const Pokemon = require('./pokedex/pokemon.js');
 
 
-// INDEX
 app.get('/', (req, res) => {
-res.render('index.liquid', { data: Pokemon });
-});
+    res.send('testing')
+})
 
 
-// SHOW
-app.get('/:id', (req, res) => {
-res.render('show.liquid', { data: Pokemon[req.params.id] });
-});
+// // INDEX
+// app.get('/', (req, res) => {
+// res.render('index.liquid', { data: Pokemon });
+// });
+
+
+// // SHOW
+// app.get('/:id', (req, res) => {
+// res.render('show.liquid', { data: Pokemon[req.params.id] });
+// });
 
 
 
@@ -23,6 +28,6 @@ res.render('show.liquid', { data: Pokemon[req.params.id] });
 
 
 // PORT
-app.listen(3000, () => {
-    console.log("port 3000 is active")
+app.listen(3002, () => {
+    console.log("port 3002 is active")
 })
