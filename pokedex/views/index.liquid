@@ -8,7 +8,16 @@
     <title>Pokemon Index</title>
 </head>
 <body>
-    <h1></h1>
-    
+    <h1>Pokedex</h1>
+    <ul class="pokedex-entries">
+        {% for pokemon in allPokemon %}
+        <li>
+            <div class="pokedex-entry-index">
+                <a class="pokedex-img-link" href="/pokemon/{{forloop.index0}}"><img class="pokedex-img" src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>

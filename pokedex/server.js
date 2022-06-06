@@ -17,7 +17,7 @@ app.use((req, res, next) => {
 })
 app.use(expr.urlencoded({extended: false})) // allows the use of data from the body of the page
 app.use(expr.static("public")) // sets the default folder to search when selecting folders.
-app.use(express.json()) // get up so we can get json data from body
+app.use(expr.json()) // get up so we can get json data from body
 app.use(methodOverride("_method")) // set up method for methodOverride
 
 /*============================================================
@@ -28,7 +28,7 @@ app.use(methodOverride("_method")) // set up method for methodOverride
 app.get("/pokemon", (req, res) => {
     
     res.render("index",{
-        pokemon: arrPokemon            
+        allPokemon: arrPokemon            
     })
 })
 
@@ -36,7 +36,7 @@ app.get("/pokemon", (req, res) => {
 app.get("/pokemon/:id", (req, res) => {
     let indPokemon = req.params.id
     res.render("show",{
-        pokemon: arrPokemon[indPokemon]
+        allPokemon: arrPokemon[indPokemon]
     })
 })
 
@@ -49,7 +49,7 @@ app.get("/pokemon/new", (req, res) => {
 app.get("/pokemon/:id/edit", (req, res) => {
     let indPokemon = req.params.id
     res.render("edit",{
-        pokemon: arrPokemon[indPokemon]
+        allPokemon: arrPokemon[indPokemon]
     })
 })
 
