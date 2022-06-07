@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css">
     <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 <body>
     <h1>POKEDEX</h1>
     <a href="/pokemon/new/"><button>Add New Pokemon</button></a>
-    
-    <ul>
-        <div class="pIndex"></div>
+     
+    <ul> 
+        
+       
         {% for pokemon in data %}
      <li>
          
+         <h2>{{pokemon.name}}</h2>
+         <div class="pokedexscreen">
         <a href="/pokemon/{{forloop.index0}}">
+           
            <img src="{{pokemon.img}}"></a>
            <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
             <input type="submit" value="Delete">
@@ -25,7 +30,7 @@
           </div>
          </li>
         {% endfor %}
-    
+    </div>
     </ul>
     
 </body>
