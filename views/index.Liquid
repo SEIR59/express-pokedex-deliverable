@@ -10,7 +10,7 @@
 
 <body>
     <h1>Pokedex</h1>
-
+    <a href="/pokemon/new"><button>Add New Pokemon</button></a><br>
     {% for entry in data %}
     {% assign i = entry %}
     <a href="/pokemon/{{ forloop.index0 }}">

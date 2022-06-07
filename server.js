@@ -27,7 +27,7 @@ app.get('/pokemon/:id', (req, res) => {
 })
 
 // Edit
-app.get('pokemon/:id/edit', (req, res) => {
+app.get('/pokemon/:id/edit', (req, res) => {
     res.render('show', { data: Pokemon[req.params.id] })
 })
 
