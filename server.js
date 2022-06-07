@@ -59,7 +59,9 @@ app.get('/pokemon/:id', (req, res) => {
 
 // DELETE
 app.delete('/pokemon/:id', (req, res) => {
-    console.log('I am delete')
+    // console.log('I am delete')
+    Pokemon.splice(req.params.id, 1)
+    res.redirect('/pokemon')
 })
 
 // EDIT
