@@ -15,7 +15,7 @@ app.get('/pokemon', (req, res) => {
 });
 
 //NEW
-app.get('/fruits/new', (req, res) => {
+app.get('/pokemon/new', (req, res) => {
   res.render('new')
 })
 // SHOW

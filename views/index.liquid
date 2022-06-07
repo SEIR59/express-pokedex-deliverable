@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Welcome to the Pokemon Center!</h1>
-    <a href="/new"><button>Create New Pokemon</button></a>
+    <a href="/pokemon/new"><button>Create New Pokemon</button></a>
     {% for poke in data %}
         <li>
             <a href="/pokemon/{{forloop.index0}}">{{ poke.name }}
