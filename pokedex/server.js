@@ -47,6 +47,18 @@ app.get('/pokemon/:id', (req, res) => {
   }
 });
 
+
+//? DELETE
+app.delete('/pokemon/:id', (req, res) => {
+    try {
+      Pokemon.splice(req.params.id, 1);
+      res.redirect('/pokemon');
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ Message: error.message });
+    }
+  });
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   routesReport.print();
