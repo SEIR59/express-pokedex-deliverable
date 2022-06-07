@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/skeleton.css" />
+    <title>Index</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Budget All</h1>
+      <a href="/budgets/new"><button>New Item</button></a>
+      {% for budget in allBudget %}
+      <!-- assign here is to do the math -->
+      {% assign bankAccount = bankAccount | plus: budget.amount%}
+      {% endfor %}
+      {% if bankAccount < 0 %}
+      <h4 style="background-color: red; color: white;">Bank account ${{bankAccount}}</h4>
+      {% elsif bankAccount > 1000 %}
+      <h4 style="background-color: greenyellow;">Bank account ${{bankAccount}}</h4>
+      {% else %}
+      <h4>Bank account ${{bankAccount}}</h4>
+      {% endif %}
+      
+      <table>
+        {% for budget in allBudget %}
+        <tr>
+          <td>
+            {{ budget.date }}
+          </td>
+          <td>
+            <a href="/budgets/{{ forloop.index0 }}">{{ budget.name }}</a>
+          </td>
+          <td>
+            {{ budget.amount }}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>
