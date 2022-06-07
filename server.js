@@ -1,7 +1,8 @@
 const express = require("express");
 const app = require("liquid-express-views")(express());
 const methodOverride = require("method-override");
-const Pokemon = require("../models/pokemon.js");
+const Pokemon = require("./models/pokemon.js");
+const rowdy = require('rowdy-logger')
 const routesReport = rowdy.begin(app);
 const port = 3000
 
@@ -22,8 +23,22 @@ app.use(express.json());
 // positioning: as long as it aheads of the route, we will be fine
 app.use(methodOverride("_method"));
 
-// INDEX
 app.get('/', (req, res) => {
+    res.send('Welcome to Pokemon world, please buckle up for exiting experience!')
+})
+
+// CREATE
+app.post('/pokemon', (req, res) => {
+    res.send('this is create, i created in NEW and redirect to INDEX')
+})
+
+// NEW
+app.get('/pokemon/new', (req, res) => {
+    res.send('this is new form')
+})
+
+// INDEX
+app.get('/pokemon', (req, res) => {
     res.render(
         'index',
         {
@@ -33,13 +48,28 @@ app.get('/', (req, res) => {
 })
 
 // SHOW
-app.get('/:id', (req, res) => {
+app.get('/pokemon/:id', (req, res) => {
     res.render(
         'show',
         {
             data: Pokemon[req.params.id]
         }
     )
+})
+
+// DELETE
+app.delete('/pokemon/:id', (req, res) => {
+    console.log('I am delete')
+})
+
+// EDIT
+app.get('/pokemon/:id/edit', (req, res) => {
+    res.send('i can edit')
+})
+
+// UPDATE
+app.put('/pokemon/:id', (req, res) => {
+    console.log('I can update')
 })
 
 app.listen(port, () => {
