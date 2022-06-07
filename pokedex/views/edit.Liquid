@@ -10,10 +10,10 @@
     <h1>New Pokemon Entry</h1>
 
     <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="{{ pokemon.name }}" />
-      <br />Type:
+      Name: <br /><input type="text" name="name" value="{{ pokemon.name }}" />
+      <br /><br />Type:<br />
       <input type="text" name="type" value="{{ pokemon.type }}" />
-      <br />
+      <br /><br />
       <input type="submit" name="" value="Submit Changes" />
     </form>
   </body>

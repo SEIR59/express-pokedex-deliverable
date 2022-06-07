@@ -51,5 +51,5 @@ app.get("/pokemon/:id/edit", (req, res) => {
 
 app.put("/pokemon/:id", (req, res) => {
   Pokemon[req.params.id] = req.body;
-  res.redirect("/pokemon/:id");
+  res.redirect("/pokemon");
 });

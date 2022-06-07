@@ -13,8 +13,15 @@
       {% for pokemon in allPokemon %}
 
       <a href="/pokemon/{{ forloop.index0 }}"
-        ><img src="{{ pokemon.img }}" width="200"
-      /></a>
+        ><img src="{{ pokemon.img }}" width="200" /></a
+      ><br />
+
+      <p>{{ pokemon.name }}</p>
+
+      <!--EDIT FUNCTION-->
+      <a href="/pokemon/{{ forloop.index0 }}/edit"><button>Edit</button></a>
+
+      <!--DELETE FUNCTION-->
       <form action="/pokemon/{{ forloop.index0 }}?_method=DELETE" method="POST">
         <input type="submit" value="Delete" />
       </form>
