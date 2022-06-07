@@ -1,0 +1,36 @@
+.title, 
+.add-button, 
+.back-button {
+    text-align: center;
+}
+
+.grid-container {
+    padding: 0;
+    margin: 0 10% 10% 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    text-align: center;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-item {
+    border: 1px solid black;
+}
+
+img {
+    margin-bottom: 3%;
+}
+
+img:hover {
+    opacity: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

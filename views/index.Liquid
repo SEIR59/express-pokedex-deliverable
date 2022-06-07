@@ -5,26 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/app.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/app.css">
     <title>Pokedex</title>
 </head>
 
 <body>
-    <h1>Pokedex</h1>
-    <ul>
-        {% for pokemon in PokemonList%}
-            <li><a href="/{{forloop.index0}}">{{pokemon.name}}</a></li>
-            <form action="/{{forloop.index0}}?_method=DELETE" method="POST">
-                <input type="submit" value="Delete {{pokemon.name}}">
-            </form>
-            <form action="/{{forloop.index0}}/edit">
-                <input type="submit" value="Edit" {{pokemon.name}}>
-            </form>
-        {% endfor %}
-    </ul>
-    <form action="/new">
-        <input type="submit" value="Add">
+    <h1 class="title">Pokedex</h1>
+    <form action="/new" class="add-button">
+        <input type="submit" value="Add New Pokemon">
     </form>
+    <div class="grid-container">
+        {% for pokemon in PokemonList%}
+            <div class="grid-item">
+                <h4><a href="/{{forloop.index0}}">{{pokemon.name}}</a></h4>
+                <a href="/{{forloop.index0}}"><img src="{{pokemon.img}}" width="100px"></a>
+                <form action="/{{forloop.index0}}?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Pokemon">
+                </form>
+                <form action="/{{forloop.index0}}/edit">
+                    <input type="submit" value="Edit Pokemon">
+                </form>
+            </div>
+        {% endfor %}
+    </div>
 </body>
 
 </html>
