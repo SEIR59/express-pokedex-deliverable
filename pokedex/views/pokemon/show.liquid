@@ -1,15 +1,19 @@
 {% layout "layout.liquid" %}
 {% block headerTitle %}
+<form action="/pokemon" method="GET">
+    <input class="back-btn form-btn" type="submit" value="Back">
+</form>
 <h1>Pokedex Entry - {{pokemon.name}}</h1>
 {% endblock%}
 {% block content %}
 <div class="container">
     <div class="pokemon-entry-grid-template">
         <div class="pokemon-entry-quicklook grid-item">
-            <form action="/pokemon/{{index}}/edit" method="GET">
+            <form action="/pokemon/{{index}}" method="GET">
                 <input class="pokemon-entry-delete form-btn" type="submit" value="X">
             </form>
             <p><strong>ID:</strong> {{pokemon.id}}</p>
+            <hr>
             <p><strong>Name:</strong> {{pokemon.name}}</p>
             <img id="pokemon-entry-quicklook-img" src="{{pokemon.img}}" alt="Image of {{pokemon.name}}">
             <p><strong>Classification:</strong> 
@@ -26,6 +30,7 @@
         </div>
         <div class="pokemon-entry-stats grid-item">
             <h2>Stats</h2>
+            <hr>
             <p><strong>HP:</strong> {{pokemon.stats.hp}}</p>
             <p><strong>Attack:</strong> {{pokemon.stats.attack}}</p>
             <p><strong>Defence:</strong> {{pokemon.stats.defense}}</p>
@@ -35,15 +40,19 @@
         </div>
         <div class="pokemon-entry-misc grid-item">
             <h2>Details</h2>
-            <P><strong>Sex-Male:</strong> {{pokemon.misc.sex.male}}%</P>
-            <P><strong>Sex-Female:</strong> {{pokemon.misc.sex.female}}%</P>
-            <P><strong>Abilities:</strong> {{pokemon.misc.abilities.normal}}</P>
-            <P><strong>Abilities:</strong> {{pokemon.misc.abilities.hidden}}</P>
+            <hr>
+            <p><strong>Sex:</strong></p>
+            <P><strong>Male:</strong> {{pokemon.misc.sex.male}}%</P>
+            <P><strong>Female:</strong> {{pokemon.misc.sex.female}}%</P>
+            <p><strong>Abilities:</strong></p>
+            <P><strong>Normal:</strong> {{pokemon.misc.abilities.normal}}</P>
+            <P><strong>Hidden:</strong> {{pokemon.misc.abilities.hidden}}</P>
             <P><strong>Height:</strong> {{pokemon.misc.height}}</P>
             <P><strong>Weight:</strong> {{pokemon.misc.weight}}</P>
         </div>
         <div class="pokemon-entry-damages grid-item">
             <h2>Damages</h2>
+            <hr>
             <p><strong>Normal:</strong> {{pokemon.damages.normal}}</p>
             <p><strong>Fire:</strong> {{pokemon.damages.fire}}</p>
             <p><strong>Water:</strong> {{pokemon.damages.water}}</p>
