@@ -23,3 +23,7 @@ app.get('/:id', (req, res) => {
         pokemon: PokemonList[req.params.id]
     })
 })
+
+app.get('/add', (req, res) => {
+    res.render('add')
+})

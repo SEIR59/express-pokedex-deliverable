@@ -10,10 +10,13 @@
 
 <body>
     <h1>Pokedex</h1>
+    <form action="/new">
+        <input type="submit" value="Add New Pokemon">
+    </form>
     <ul>
         {% for pokemon in PokemonList%}
         <li><a href="/{{forloop.index0}}">{{pokemon.name}}</a></li>
-        
+
             
         {% endfor %}
     </ul>
