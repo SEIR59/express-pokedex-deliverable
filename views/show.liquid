@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <style type="text/css">
+    body {
+      margin-left: 50px;
+      margin-top: 50px;
+      background-color:red;
+      color: rgb(57, 57, 57);
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+        }
+    img{
+      width: 200px;
+      border: 5px solid black;
+      border-radius: 10px;
+      margin-right: 10px;
+      margin-top: 12px;
+    }
+
+    #title {
+      background-color: rgb(255, 236, 210);
+      width: 200px;
+      padding-bottom:  20px;
+      padding-right:  20px;
+      padding-left:  13px;
+      text-align: left;
+      border: 10px solid black;
+      border-radius: 10px;
+    }
+    #stats{
+      background-color: rgb(255, 236, 210);
+      width: 250px;
+      height:225px;
+      padding-left: 15px;
+      margin-left: 20px;
+  
+      text-align: left;
+      border: 10px solid black;
+      border-radius: 10px;
+    }
+    #damage{
+      background-color: rgb(255, 236, 210);
+      width: 250px;
+      height:460px;
+      padding-left: 15px;
+      margin-left: 20px;
+      text-align: left;
+      border: 10px solid black;
+      border-radius: 10px;
+
+    }
+
+    #link{
+      background-color: rgb(255, 236, 210);
+      width: 250px;
+      margin-top: 150px;
+      margin-left: -10px;
+      text-align: center;
+      border: 5px solid black;
+      border-radius: 10px;
+     
+
+    }
+   
+      
+    
+  </style>
+</head>
+<body>
+
+    <div id="title">
+    <h1>.{{pokemonList.id}}</h1>
+    <h1>{{pokemonList.name}}</h1>
+   
+    
+    <h2> Type: </h2>
+    <h3>
+        <li>
+        {{pokemonList.type}}
+        </li>
+    </h3>
+
+ <img src={{pokemonList.img}} alt="">
+
+  </div>
+   <br>
+   <div id="stats">
+    <h2 > Stats: </h2>
+    <h3>
+        <li>HP: {{pokemonList.stats.hp}}</li>
+        <li>ATTACK: {{pokemonList.stats.attack}}</li>
+        <li>DEFENSE: {{pokemonList.stats.defense}}</li> 
+        <li>SPECIAL ATTACK: {{pokemonList.stats.spattack}}</li>
+        <li>SPECIAL DEFENSE: {{pokemonList.stats.spdefense}}</li>
+        <li>SPEED: {{pokemonList.stats.speed}}</li>
+    </h3>
+    <h1 id="link"><a href="/pokemon">Back to Pokedex</a></h1>
+  </div>
+   <br>
+   <div id="damage">
+    <h2> Damages: </h2>
+    <h3>
+        <li>NORMAL:    {{pokemonList.damages.normal}}</li>
+        <li>FIRE:    {{pokemonList.damages.fire}}</li>
+        <li>WATER:    {{pokemonList.damages.water}}</li> 
+        <li>ELECTRIC:    {{pokemonList.damages.electric}}</li>
+        <li>GRASS:    {{pokemonList.damages.grass}}</li>
+        <li>ICE:    {{pokemonList.damages.ice}}</li>
+        <li>FIGHT:    {{pokemonList.damages.fight}}</li>
+        <li>POISON:    {{pokemonList.damages.poison}}</li>
+        <li>GROUND:    {{pokemonList.damages.ground}}</li>
+        <li>FLYING:    {{pokemonList.damages.flying}}</li>
+        <li>PSYCHIC:    {{pokemonList.damages.psychic}}</li>
+        <li>BUG:    {{pokemonList.damages.bug}}</li>
+        <li>ROCK:    {{pokemonList.damages.rock}}</li>
+        <li>GHOST:    {{pokemonList.damages.ghost}}</li>
+        <li>DRAGON:    {{pokemonList.damages.dragon}}</li>
+        <li>DARK:    {{pokemonList.damages.dark}}</li>
+        <li>STEEL:    {{pokemonList.damages.steel}}</li>
+       
+    </h3>
+</div>
+
+   <br>
+
+    
+    
+    
+
+   
+
+</body>
+</html>

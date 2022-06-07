@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        body {
+           width: auto;
+            text-align: left;
+            display: flex;
+        }
+
+        h1 {
+            margin-right: 100px;
+            
+        }
+
+        #top {
+            font-size: larger;
+            text-align: right;
+            width: 250px;
+            padding: 10px;
+            border: 5px solid black;
+            border-radius: 10px;
+            margin-right: 20px;
+            margin-top: 12px;
+            height: 100px;
+            background-color: rgb(255, 236, 210);
+        }
+
+        #stats {
+            font-size: larger;
+            text-align: right;
+            background-color: rgb(255, 236, 210);
+            width: 300px;
+            height: 250px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: 20px;
+         
+            border: 10px solid black;
+            border-radius: 10px;
+        }
+
+        #damage {
+            font-size: larger;
+            text-align: right;
+            background-color: rgb(255, 236, 210);
+            width: 300px;
+            height: 425px;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-left: 20px;
+         
+            border: 10px solid black;
+            border-radius: 10px;
+
+        }
+        #butt{
+            font-size: x-large;
+            background-color: rgb(255, 236, 210);
+      width: 250px;
+      margin-top: 150px;
+      margin-left: -10px;
+      text-align: center;
+      border: 5px solid black;
+      border-radius: 10px;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit Pokemon Page</h1>
+
+    <div id="top">
+        <form action="/pokemon" method="POST">
+            ID: <input type="text" name="id" value="{{pokemon.id}}" /><br />
+            Name: <input type="text" name="name" value="{{pokemon.name}}" /><br />
+            Type: <input type="text" name="type" value="{{pokemon.type[0]}}" /><br />
+            Image: <input type="text" name="img" value="{{pokemon.img}}" />
+            <br>
+            <br>
+    </div>
+
+    <div id="stats">
+        Stats:
+        <li>HP:<input type="text" name="hp" value="{{pokemon.stats.hp}}" /></li>
+        <li>ATTACK: <input type="text" name="attack" value="{{pokemon.stats.attack}}" /></li>
+        <li>DEFENSE: <input type="text" name="defense" value="{{pokemon.stats.defense}}" /></li>
+        <li>SP ATTACK: <input type="text" name="spattack" value="{{pokemon.stats.spattack}}" /></li>
+        <li>SP DEFENSE: <input type="text" name="spdefense" value="{{pokemon.stats.spdefense}}" /></li>
+        <li>SPEED: <input type="text" name="speed" value="{{pokemon.stats.speed}}" /></li>
+   <input id="butt" type="submit" name="" value="Submit Changes" /> 
+</div>
+    <br>
+    <br>
+
+    <div id="damage">
+        Damage:
+        <li>NORMAL: <input type="text" name="normal" value="{{pokemon.damage.normal}}" /></li>
+        <li>FIRE:<input type="text" name="fire" value="{{pokemon.damage.fire}}" /> </li>
+        <li>WATER:<input type="text" name="water" value="{{pokemon.damage.water}}" /> </li>
+        <li>ELECTRIC:<input type="text" name="electric" value="{{pokemon.damage.electric}}" /> </li>
+        <li>GRASS:<input type="text" name="grass" value="{{pokemon.damage.grass}}" /></li>
+        <li>ICE:<input type="text" name="ice" value="{{pokemon.damage.ice}}" /> </li>
+        <li>FIGHT:<input type="text" name="fight" value="{{pokemon.damage.fight}}" /></li>
+        <li>POISON:<input type="text" name="poison" value="{{pokemon.damage.poison}}" /></li>
+        <li>GROUND:<input type="text" name="ground" value="{{pokemon.damage.ground}}" /></li>
+        <li>FLYING:<input type="text" name="flying" value="{{pokemon.damage.flying}}" /></li>
+        <li>PSYCHIC:<input type="text" name="psychic" value="{{pokemon.damage.psychic}}" /></li>
+        <li>BUG:<input type="text" name="bug" value="{{pokemon.damage.bug}}" /> </li>
+        <li>ROCK:<input type="text" name="rock" value="{{pokemon.damage.rock}}" /> </li>
+        <li>GHOST:<input type="text" name="ghost" value="{{pokemon.damage.ghost}}" /> </li>
+        <li>DRAGON:<input type="text" name="dragon" value="{{pokemon.damage.dragon}}" /></li>
+        <li>DARK:<input type="text" name="dark" value="{{pokemon.damage.dark}}" /> </li>
+        <li>STEEL:<input type="text" name="steel" value="{{pokemon.damage.steel}}" /> </li>
+        <br>
+        <br>
+    </div>
+
+    
+    </form>
+</body>
+
+</html>
