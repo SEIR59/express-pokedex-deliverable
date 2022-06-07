@@ -2,6 +2,7 @@
 const express = require('express')
 const app = require('liquid-express-views')(express())
 const PokemonList = require('./models/pokemon.js')
+const methodOverride = require("method-override");
 
 // indicating which port is being used
 let port = 3000
@@ -12,6 +13,7 @@ app.listen(port, () => {
 // setting up middleware
 app.use(express.urlencoded({extended:false})); // to view request.body
 app.use(express.static('public')); // to use css
+app.use(methodOverride("_method")); // to use delete and update method
 
 // create route
 // creating a new pokemon
@@ -44,6 +46,13 @@ app.get('/:id', (request, response) => {
     response.render('pokemon', {
         pokemon: PokemonList[request.params.id]
     })
+})
+
+// delete route
+// deleting a pokemon from the pokedex
+app.delete('/:id', (request, response) => {
+    PokemonList.splice(request.params.id, 1)
+    response.redirect('/')
 })
 
 // index route
