@@ -15,10 +15,16 @@
           {% for pokemon in allPokemon %}
           <li>
               <!-- link to show -->
-              <a href="/pokemon/{{forloop.index0}}">{{pokemon.name}}<img src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+              <a href="/pokemon/{{forloop.index0}}">{{pokemon.name}}</a>
+              
               <!-- link to edit -->
-              <a href="/pokemon/{{forloop.index0}}/edit">Edit</a>
+              <a href="/pokemon/{{forloop.index0}}/edit"><img src="{{pokemon.img}}" alt="{{pokemon.name}}">Edit</a>
+              
               <!-- link to delete -->
+              <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="post">
+                <input type="submit" value="DELETE">
+              </form>
+              
           </li>
           {% endfor %}
       </ul>
