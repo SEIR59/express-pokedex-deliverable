@@ -2,10 +2,20 @@ body {
     background-image: url('../background.jpg');
     background-size: auto;
 }
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: bisque;
+}
+.navInput {
+    cursor: pointer;
+}
 
 ul {
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 li {
@@ -13,8 +23,8 @@ li {
 }
 
 img {
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     margin: 10px 10px;
     border-radius: 20%;
 }
@@ -25,5 +35,26 @@ img {
 }
 h1 {
     text-align: center;
+    color: rgb(172, 170, 137);
+}
+
+.small {
+    width: 55px;
+    height: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+input {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 10%;
+    border: none;
+    background-color: rgb(216, 204, 38);
     color: aliceblue;
+    font-size: medium;
+}
+form {
+
 }
