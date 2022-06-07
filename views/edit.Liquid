@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Edit Pokemon</h1>
-    <form action="/fruits/{{index}}?_method=PUT" method="POST">
+    <form action="/pokemon/{{index}}?_method=PUT" method="POST">
       Name : <input type="text" name="name" value="{{thisPokemon.name}}">
       <br>
       ID # : <input type="text" name="id" value="{{thisPokemon.id}}">
@@ -15,6 +15,7 @@
       <br>
       Weight : <input type="text" name="weight" value="{{thisPokemon.misc.weight}}"> 
       <br />
+      Type: <input type="text" name="type" value="{{thisPokemon.type}}">
       <input type="submit" name="" value="Submit Changes" />
     </form>
   </body>

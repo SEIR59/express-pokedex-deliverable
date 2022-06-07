@@ -1,11 +1,14 @@
 const express = require('express')
 const app = require('liquid-express-views')(express())
 const Pokemon = require('./models/pokedex/pokemon.js')
+const methodOverride = require('method-override')
 const port = 3000
 
 app.use(express.urlencoded({extended: false}))
 
 app.use(express.static('public'))
+
+app.use(methodOverride('_method'))
 
 app.post('/pokemon', (req, res) => {
     Pokemon.push(req.body)
@@ -24,15 +27,27 @@ app.get('/pokemon/new', (req, res) => {
 
 app.get('/pokemon/:id', (req, res) => {
     res.render('show', { 
-        thisPokemon: Pokemon[req.params.id] 
+        thisPokemon: Pokemon[req.params.id],
+        index: req.params.id
     })
 })
 
-app.get('/fruits/:id/edit', (req, res) => {
+app.get('/pokemon/:id/edit', (req, res) => {
     res.render('edit', {
         thisPokemon: Pokemon[req.params.id],
         index: req.params.id
     })
+})
+
+app.put('/pokemon/:id', (req,res) => {
+    let thisPokemon = Pokemon[req.params.id]
+    const {name, id, height, weight, type} = req.body
+    thisPokemon.name = req.body.name
+    thisPokemon.id = req.body.id
+    thisPokemon.misc.height = req.body.height
+    thisPokemon.misc.weight = req.body.weight
+    thisPokemon.type = req.body.type
+    res.redirect('/pokemon')
 })
 
 
