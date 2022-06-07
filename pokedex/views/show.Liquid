@@ -15,16 +15,18 @@
     <section>
         <img src={{data.img}} alt={{data.name}}>
         <h3>Type:</h3>
+        <ul>
         {% for type in data.type %}
-            <p>{{type}}</p>
+         <li><p>{{type}}</p> </li>   
         {% endfor %}
-{% comment %} TODO: show object key and value {% endcomment %}
+        </ul>
         <h3>Stats:</h3>
-        {% for s in data.stats %}
-          {{s|json}} 
-          
-        {% endfor %}
-     
+        <li>HP: {{data.stats.hp}}</li>
+        <li>Attack: {{data.stats.attack}}</li>
+        <li>Defense: {{data.stats.defense}}</li>
+        <li>Spattack: {{data.stats.spattack}}</li>
+        <li>Spdefense: {{data.stats.spdefense}}</li>
+        <li>Speed: {{data.stats.speed}}</li>
 
 
     </section>

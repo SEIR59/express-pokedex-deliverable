@@ -3,7 +3,7 @@ nav {
 }
 
 img {
-  max-width: 200px;
+  width: 200px;
 }
 
 .grid-container {
@@ -16,4 +16,8 @@ img {
 .grid-card {
   width: 200px;
   justify-content: center;
+}
+
+p {
+  display: inline;
 }

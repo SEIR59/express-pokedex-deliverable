@@ -22,10 +22,12 @@
        
         {% for pokemon in data %}
             <div class="grid-card">  
-                <p>{{ pokemon.name }}</p> 
+                <p>{{ pokemon.name }}</p>
+                <a href="/pokemon/{{forloop.index0}}/edit">Edit</a>
                 <a href="/pokemon/{{ forloop.index0 }}">
                     <img src={{pokemon.img}} alt={{pokemon.name}}>
                 </a>
+            
             </div>
         {% endfor %}
         

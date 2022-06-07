@@ -16,34 +16,50 @@ app.use((req, res, next) => {
 //near the top, around other app.use() calls
 app.use(express.urlencoded({ extended: false }));
 
+// Create
 app.post("/pokemon", (req, res) => {
   Pokemon.push(req.body);
   res.redirect("/pokemon");
 });
 
-// INDEX
+// Index
 app.get("/pokemon", (req, res) => {
   res.render("index", { data: Pokemon });
 });
-// NEW
+// New
 app.get("/pokemon/new", (req, res) => {
   res.render("new");
 });
 
-// SHOW
+// Show
 app.get("/pokemon/:id", (req, res) => {
   res.render("show", { data: Pokemon[req.params.id] });
 });
 
 // Edit
 app.get("/pokemon/:id/edit", (req, res) => {
-  res.render("edit", { data: Pokemon[req.params.id] });
+  res.render("edit", {
+    data: Pokemon[req.params.id],
+    index: req.params.id,
+  });
 });
 
-// Create
-
 // Update
+app.put("/pokemon/:id", (req, res) => {
+  req.body.type = [req.body.type];
+  req.body.stats = {
+    hp: req.body.hp,
+    attack: req.body.attack,
+    defense: req.body.defense,
+    spattack: req.body.spattack,
+    spdefense: req.body.spdefense,
+    speed: req.body.speed,
+  };
+  console.log(req.body);
+  Pokemon[req.params.id] = req.body;
 
+  res.redirect("/pokemon");
+});
 // Delete
 
 app.listen(port, () => {
