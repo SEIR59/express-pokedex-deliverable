@@ -16,22 +16,26 @@
         </button>
     </nav>
 
-        <div class="pIndex">
+        <container class="pIndex">
            
                 {% for pokemon in data %}
-                
-                    <a href="/pokemon/{{ forloop.index0}}">
-                        <img src="{{pokemon.img}}" alt="" >
-                     </a>
-                     {% comment %} Delete button {% endcomment %}
-                    <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
-                        <input type="submit" value="Delete {{data.name}}" />                
-                    </form>
-                    
+                    <div class="card">
+                        <p>{{pokemon.name}}</p>
+                        <a href="/pokemon/{{ forloop.index0}}">
+                            <img src="{{pokemon.img}}" alt="" >
+                        </a>
+                        {% comment %} Edit button {% endcomment %}
+                        <button onclick=location.href="/pokemon/{{forloop.index0}}/edit">Edit {{data.name}}</button>
+                        
+                        {% comment %} Delete button {% endcomment %}
+                        <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete {{data.name}}" />                
+                        </form>
+                    </div>
                 {%endfor%}
             
 
-        </div>
+                </container>
 
 
 

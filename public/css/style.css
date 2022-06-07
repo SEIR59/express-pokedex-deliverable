@@ -1,13 +1,33 @@
+:root {
+    background-color: lightskyblue;
+}
+
+nav {
+    background-color: green;
+}
+
 .pIndex {
-    display: flexbox;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
-    text-decoration: none;
+    background-color: lightgreen;
+
+}
+
+.card {
+    height: 7rem;
+    width: 7rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    background-color: white;
 }
 
 img {
-    width: 10vw;
+    width: 60%;
     height: auto;
     text-decoration: none;
 }
