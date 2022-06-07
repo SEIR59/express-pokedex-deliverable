@@ -21,11 +21,7 @@
         <h3>{{pokemon.id}}</h3>
         <h4>Type:
             {% for type in pokemon.type %}
-                {% if forloop.index0 == typeLastIndex%}
-                    {{type}}
-                {% else %}
-                    {{type}}, 
-                {% endif %}
+                {{type}}
             {% endfor %}
         </h4>
         <h5 class="heading">Stats</h5>

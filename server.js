@@ -46,7 +46,6 @@ app.get('/new', (request, response) => {
 app.get('/:id', (request, response) => {
     response.render('pokemon', {
         pokemon: PokemonList[request.params.id],
-        typeLastIndex: PokemonList[request.params.id].type.length - 1
     })
 })
 
