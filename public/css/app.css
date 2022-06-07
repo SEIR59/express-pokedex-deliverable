@@ -41,4 +41,9 @@ a {
 
 .profile-picture{
     text-align: center;
+    margin: 0 25% 0 25%;
+}
+
+.heading{
+    text-align: left;
 }
