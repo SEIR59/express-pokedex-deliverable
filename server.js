@@ -10,9 +10,18 @@ app.use(express.static('public'))
 
 app.use(methodOverride('_method'))
 
+
 app.post('/pokemon', (req, res) => {
-    Pokemon.push(req.body)
-    res.redirect('/')
+    let thisPokemon = {}
+    thisPokemon.img = req.body.img
+    thisPokemon.name = req.body.name
+    thisPokemon.id = req.body.id
+    thisPokemon.misc = {}
+    thisPokemon.misc.height = req.body.height
+    thisPokemon.misc.weight = req.body.weight
+    thisPokemon.type = req.body.type
+    Pokemon.unshift(thisPokemon)
+    res.redirect('/pokemon')
 })
 
 app.get('/pokemon', (req, res) => {
@@ -24,6 +33,7 @@ app.get('/pokemon', (req, res) => {
 app.get('/pokemon/new', (req, res) => {
     res.render('new')
 })
+
 
 app.get('/pokemon/:id', (req, res) => {
     res.render('show', { 
@@ -41,7 +51,6 @@ app.get('/pokemon/:id/edit', (req, res) => {
 
 app.put('/pokemon/:id', (req,res) => {
     let thisPokemon = Pokemon[req.params.id]
-    const {name, id, height, weight, type} = req.body
     thisPokemon.name = req.body.name
     thisPokemon.id = req.body.id
     thisPokemon.misc.height = req.body.height

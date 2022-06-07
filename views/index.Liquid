@@ -9,6 +9,8 @@
 </head>
 <body>
     <h1>Kanto Pokedex</h1>
+    <a href="/pokemon/new">Add a new Pokemon?</a>
+    <br>
     {%for pokemon in allPokemon limit: 12%}
     <a href="/pokemon/{{forloop.index0}}"><img src="{{pokemon.img}}" alt="{{pokemon.name}} image"></a>
     {%endfor%}
