@@ -1,0 +1,11 @@
+.pokemon-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+img{
+    width: 10em;
+    max-height: fit-content;
+}

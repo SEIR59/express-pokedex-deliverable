@@ -15,12 +15,9 @@
         <a href="/pokemon/new">Add New Pokemon</a>
     </nav>
     <div class="pokemon-container">
-    {%for pokemon in allPokemon%}
-    <div>
-        <a href="/pokemon/{{forloop.index0}}">{{pokemon.name}}</a>
-        <br>
-        {{pokemon.img}}
-    </div>
+
+    {%for pokemon in data%}
+        <a href="/pokemon/{{forloop.index0}}"><img src="{{pokemon.img}}" alt="Image of the pokemon"></a>
     {% endfor%}
     </div>
     <br>

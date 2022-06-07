@@ -1,7 +1,7 @@
 const express = require("express");
 const app = require("liquid-express-views")(express());
 const port = 3000;
-const pokemon = require("./pokedex/pokemon");
+const Pokemon = require("./pokedex/pokemon");
 
 //middleware - must always be at the top
 app.use((req, res, next) => {
@@ -16,13 +16,18 @@ app.use(express.static("public")); //tells express to try to match requests with
 
 // INDEX
 app.get("/pokemon", (req, res) => {
-  res.render("index", { allPokemon: pokemon });
+  res.render("index", { data : Pokemon } );
 });
 
-// SHOW
-app.get("/pokemon:id", (req, res) => {
-  res.render("show", { data:pokemon[req.params.id] });
-});
+// //NEW
+// app.get('/pokemon/new', (req,res) => {
+//   res.render('new')
+// });
+
+// // SHOW
+// app.get("/pokemon:id", (req, res) => {
+//   res.render("show", { data: Pokemon[req.params.id] });
+// });
 
 app.listen(port, () => {
   console.log(`Listening`);

@@ -11,8 +11,18 @@
 </head>
 <body>
     <h1>Pokemon Show Page</h1>
-    <div class='pokemon-name-image'>{{pokemon.name}} <br>
-    {{pokemon.img}}
+    <nav><a href="/pokemon">Home</a><a href="/pokemon/new">Add New Pokemon</a></nav>
+    <div class='pokemon-name-image'>
+        <h3>Name:</h3>{{pokemon.name}} <br>
+        <img src="{{pokemon.img}}" alt="Image of the pokemon">
+    </div>
+    <div class="type">
+        {%for pokemon in data%}
+        <h3>Type:</h3><h4>{{pokemon.type}}</h4>
+    </div>
+    <div class="stats">
+        <h3>Stats:</h3><h4>{{pokemon.stats}}</h4>
+        {%endfor%}
     </div>
 </body>
 </html>
