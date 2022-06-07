@@ -54,6 +54,7 @@ app.get('/pokemon', (req, res) => {
 
 // SHOW
 app.get('/pokemon/:id', (req, res) => {
+    // console.log(Pokemon[req.params.id].type)
     res.render(
         'show',
         {
