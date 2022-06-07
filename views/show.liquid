@@ -8,23 +8,32 @@
     <link rel="stylesheet" href="/app.css">
     <link rel="stylesheet" href="/skeleton.css">
     <link rel="stylesheet" href="/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Pokemon Show Page</h1>
-    <nav><a href="/pokemon/">Home</a><a href="/pokemon/new">Add New Pokemon</a></nav>
-    <div class='pokemon-individual-page'>
+    <nav>
+        <h1>Pokemon Show Page</h1>
+    <button onclick=location.href="/pokemon/">Home</button>
+    <button onclick=location.href="/pokemon/new">Add new Pokemon</button>
+    </nav>
+    <div class='pokemon-name-image'>
         <h2>Name:</h2>{{data.name}} <br>
         <img src="{{data.img}}" alt="Image of the pokemon">
     </div>
-    {% comment %} <div class="type">
-        <h2>Type:</h2><h4>{{pokemon.type}}</h4>
-        {%for pokemon in data%}
+    <div class="type">
+        <h2>Type:</h2>
+        {% comment %} {%for pokemon in data%} {% endcomment %}
+        <h4>{{data.type}}</h4>
+        {% comment %} {%endfor%} {% endcomment %}
     </div>
     <div class="stats">
         <h2>Stats:</h2><br>
-        <h3>HP:</h3><h4>{{data.stats.hp}}</h4><br>
-        <h3>Attack:</h3><h4>{{data.stats.attack}}</h4>
-        {%endfor%} {% endcomment %}
-    {% comment %} </div> {% endcomment %}
+        <h4>HP:</h4><h6>{{data.stats.hp}}</h6><br>
+        <h4>Attack:</h4><h6>{{data.stats.attack}}</h6>
+        <h4>Defense:</h4><h6>{{data.stats.defense}}</h6>
+        <h4>Speed:</h4><h6>{{data.stats.speed}}</h6>
+    </div>
 </body>
 </html>
