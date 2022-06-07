@@ -6,6 +6,9 @@
 <div class="container">
     <div class="pokemon-entry-grid-template">
         <div class="pokemon-entry-quicklook grid-item">
+            <form action="/pokemon/{{index}}/edit" method="GET">
+                <input class="pokemon-entry-delete form-btn" type="submit" value="Delete Pokemon">
+            </form>
             <p><strong>ID:</strong> {{pokemon.id}}</p>
             <p><strong>Name:</strong> {{pokemon.name}}</p>
             <img id="pokemon-entry-quicklook-img" src="{{pokemon.img}}" alt="Image of {{pokemon.name}}">
@@ -29,6 +32,15 @@
             <p><strong>spAttack:</strong> {{pokemon.stats.spattack}}</p>
             <p><strong>spDefense:</strong> {{pokemon.stats.spdefense}}</p>
             <p><strong>speed:</strong> {{pokemon.stats.speed}}</p>
+        </div>
+        <div class="pokemon-entry-misc grid-item">
+            <h2>Details</h2>
+            {% for each in pokemon.misc.sex %}
+            <P><strong>sex</strong>{{each}}</P>
+            {% endfor %}
+            <P><strong>abilities</strong>{{pokemon.misc.abilities}}</P>
+            <P><strong>height</strong>{{pokemon.misc.height}}</P>
+            <P><strong>weight</strong>{{pokemon.misc.weight}}</P>
         </div>
         <div class="pokemon-entry-damages grid-item">
             <h2>Damages</h2>
