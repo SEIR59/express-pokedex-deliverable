@@ -12,7 +12,7 @@
                 <img src="{{thePokemon.img}}" alt="Pokemon" width="200" height="250">
                 {{thePokemon.name}}
                 HP: {{thePokemon.stats.hp}}
-                {{thePokemon.type}}
+                {{thePokemon.type | join: ", "}}
 
                 <a href="/pokemon"><button>Back</button></a>
                 
