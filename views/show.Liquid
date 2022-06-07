@@ -20,14 +20,18 @@
             {% comment %} An unordered list of the Pokemon's types (eg. water, poison, etc) {% endcomment %}
             Type: 
             {% comment %} for loop to run through and get all values {% endcomment %}
-            {% for pokemon in data %}
+            {{data.type}}
+            {% comment %} {% for pokemon in data %}
                {{pokemon.type | split: "|" | join: ", " }}
         
-            {%endfor%} <br>
+            {%endfor%} <br> {% endcomment %}
             {% comment %} The pokemon's stats for HP, ATTACK, and DEFENSE. {% endcomment %}
+            <br>
             Stats: <br>
                Hp: {{data.stats.hp}}, <br>
-                Attack: {{data.stats.attack}}
+                Attack: {{data.stats.attack}} <br>
+                Defense: {{data.stats.defense}} <br>
+                Speed: {{data.stats.speed}}
             <br>
         </ul>
     </div>
