@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,13 +10,25 @@
     <link rel="stylesheet" href="/css/app.css">
     <title>{{pokemon.name}}</title>
 </head>
+
 <body>
-    <h1 class="title">{{pokemon.name}}</h1>
-    <div>
-        
-    </div>
     <form action="/" class="back-button">
         <input type="submit" value="Back to Pokedex">
     </form>
+    <h1 class="title">{{pokemon.name}}</h1>
+    <div class="profile-picture">
+        <img src="{{pokemon.img}}" alt="{{pokemon.name}} profile picture" width="150px">
+        <h3>{{pokemon.id}}</h3>
+        <h4>Type:
+            {% for type in pokemon.type %}
+                {% if forloop.index0 == typeLastIndex%}
+                    {{type}}
+                {% else %}
+                    {{type}}, 
+                {% endif %}
+            {% endfor %}
+        </h4>
+    </div>
 </body>
+
 </html>

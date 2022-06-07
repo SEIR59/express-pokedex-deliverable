@@ -3,6 +3,7 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const PokemonList = require('./models/pokemon.js')
 const methodOverride = require("method-override");
+const pokemon = require('./models/pokemon.js');
 
 // indicating which port is being used
 let port = 3000
@@ -44,7 +45,8 @@ app.get('/new', (request, response) => {
 // viewing more details about the pokemon
 app.get('/:id', (request, response) => {
     response.render('pokemon', {
-        pokemon: PokemonList[request.params.id]
+        pokemon: PokemonList[request.params.id],
+        typeLastIndex: PokemonList[request.params.id].type.length - 1
     })
 })
 
