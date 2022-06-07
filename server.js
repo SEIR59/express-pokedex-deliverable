@@ -1,21 +1,35 @@
 const express    = require('express');
 const app        = require('liquid-express-views')(express())
 const port = 3000
-const pokemon = require('./pokedex/pokemon');
+const Pokemon = require('./pokedex/pokemon');
+
+
+
 
 
 // INDEX
-app.get('/', (req, res) => {
+app.get('/pokemon', (req, res) => {
 
-    res.render('index', { data: pokemon });
+    res.render('index', { 
+        data: Pokemon });
 });
 
- 
+//NEW
+app.get('/fruits/new', (req, res) => {
+  res.render('new')
+})
 // SHOW
-app.get('/:id', (req, res) => {
-res.render('show', { data: pokemon[req.params.id] });
-});
+
+app.get('/pokemon/:id', (req, res) => {
+    
+  res.render('show', {
+    data: Pokemon[req.params.id]
+  })
+
+})
+
 
 app.listen(port, (req, res) => {
     console.log('We are live from 3000, the pokemon center')
 })
+

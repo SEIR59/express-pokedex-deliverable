@@ -9,16 +9,12 @@
 </head>
 <body>
     <h1>Welcome to the Pokemon Center!</h1>
-    {% for fruit in data %}
+    <a href="/new"><button>Create New Pokemon</button></a>
+    {% for poke in data %}
         <li>
-            <a href="/fruits/{{
-                forloop.index0}}">{{ fruit.name }} 
-            </a> The {{fruit.name}} 
-            {% if fruit.readyToEat == true %}
-                 is ready to eat
-            {% else %}
-             is not ready to eat
-            {% endif %}
+            <a href="/pokemon/{{forloop.index0}}">{{ poke.name }}
+            </a>  
+            
         </li>
         {% endfor %}
 </body>

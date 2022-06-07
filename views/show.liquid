@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokedex</title>
+
 </head>
 <body>
-    <h1>This is the page for each individual pokemon. </h1>
+    <h1>Welcome to the Pokemon Center!</h1>
+    <ul>
+    <li>name:{{data.name}}</li>
+    <li>img: <img src="{{data.img}}"></li>
+    <li>type:{{data.type}}</li>
+    Stats 
+    <li>hp:{{data.stats.hp}}</li>
+    <li>attack:{{data.stats.attack}}</li>
+    <li>defense:{{data.stats.defense}}</li>
+    </ul>
+    <a href="/pokemon">index</a>
 </body>
 </html>
