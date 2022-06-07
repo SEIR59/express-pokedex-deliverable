@@ -10,7 +10,20 @@
     <h1>Pokedex!</h1>
     <ul>
         {%for pokemon in pokemonList%}
-        <li> {{pokemon.name}} </li>
+        <li> 
+            <h1>{{pokemon.name}}</h1>
+            <img src="{{pokemon.img}}" alt="">
+                <p>Types: {{pokemon.type | join: ", " }}</p>
+                <p>Height: {{pokemon.misc.height}} Weight: {{pokemon.misc.weight}}</p>
+                <div class="container">
+                    <p>HP: {{ pokemon.stats.hp}}</p>
+                    <p>Attack: {{ pokemon.stats.attack}}</p>
+                    <p>Defense: {{ pokemon.stats.defense}}</p>
+                    <p>Speed: {{ pokemon.stats.speed}}</p>
+                </div>
+
+
+        </li>
         {% endfor%}
     </ul>
 </body>
