@@ -10,9 +10,21 @@
     <title>Edit Pokemon</title>
 </head>
 <body>
+    <form action="/">
+        <input type="submit" value="Back to Pokedex">
+    </form>
     <h1>Edit Pokemon</h1>
     <form action="/{{index}}/update?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="{{pokemon.name}}"><br>
+        Image Link: <input type="text" name="img" value="{{pokemon.img}}"><br>
+        Type: <input type="text" name="type" value="{{pokemon.type}}"><br>
+
+        <b>Stats</b><br>
+        HP: <input type="text" name="statshp" value="{{pokemon.stats.hp}}"><br>
+        Attack: <input type="text" name="statsattack" value="{{pokemon.stats.attack}}"><br>
+        Defense: <input type="text" name="statsdefense" value="{{pokemon.stats.defense}}"><br>
+        Speed: <input type="text" name="statsspeed" value="{{pokemon.stats.speed}}"><br>
+
         <input type="submit" value="Submit Changes">
     </form>
     

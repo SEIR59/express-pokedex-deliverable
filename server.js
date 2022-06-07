@@ -28,7 +28,7 @@ app.post('/create', (request, response) => {
         hp: request.body.statshp, 
         attack: request.body.statsattack, 
         defense: request.body.statsdefense,
-        speed: request.body.statsdefense
+        speed: request.body.statsspeed
     }
     PokemonList.push(pokemon)
     response.redirect('/')
@@ -70,6 +70,12 @@ app.get('/:id/edit', (request, response) => {
 // update route
 app.put('/:id/update', (request, response) => {
     PokemonList[request.params.id].name = request.body.name
+    PokemonList[request.params.id].img = request.body.img
+    PokemonList[request.params.id].type = request.body.type
+    PokemonList[request.params.id].stats.hp = request.body.statshp
+    PokemonList[request.params.id].stats.attack = request.body.statsattack
+    PokemonList[request.params.id].stats.defense = request.body.statsdefense
+    PokemonList[request.params.id].stats.speed = request.body.statsspeed
     response.redirect('/')
 })
 
