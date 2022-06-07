@@ -5,8 +5,8 @@ const Pokemon = [
       img: "http://img.pokemondb.net/artwork/bulbasaur.jpg",
       type: [
         "Grass",
-        "Poison"
-      ],
+        "Poison"  
+      ],  
       stats: {
         hp: "45",
         attack: "49",
@@ -15,7 +15,7 @@ const Pokemon = [
         spdefense: "65",
         speed: "45"
       },
-      moves: {
+      moves: {    
         level: [{
           learnedat: "",
           name: "tackle",

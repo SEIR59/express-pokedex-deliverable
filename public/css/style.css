@@ -1,5 +1,5 @@
 body{
-    background: rgb(12, 141, 176);
+    background: rgb(194, 0, 0);
 }
 h1{
     text-align: center;
@@ -24,7 +24,7 @@ div {
   border-radius: 100%;
   padding: 10px;
     }
-input{
+/* input{
     text-align: center;
     padding: 20px;
     border: 0ch;
@@ -32,4 +32,4 @@ input{
     position: absolute;
     top: 0;
     left:50%;
-}    
+}     */
