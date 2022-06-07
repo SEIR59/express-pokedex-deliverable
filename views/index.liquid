@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Manager</title>
+    <link rel="stylesheet" href="/app.css">
+    <link rel="stylesheet" href="/skeleton.css">
+    <link rel="stylesheet" href="/normalize.css">
+</head>
+<body>
+    <h1>Pokemon Manager</h1>
+    <div class="pokemon-container">
+    {%for pokemon in allPokemon%}
+    <div>
+        <a href="//{{forloop.index0}}">{{pokemon.name}}</a>
+    </div>
+    {% endfor%}
+    </div>
+    <br>
+    <nav>
+        <a href="/pokemon/new">Create New Pokemon</a>
+    </nav>
+</body>
+</html>
