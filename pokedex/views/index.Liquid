@@ -4,16 +4,22 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="stylesheet.css">
             <title>Index</title>
         </head>
         <body>
             <div>
                 <h1>Pokedex</h1>
                 <a href="/pokemon/new"><button>Create New</button></a>
+                <div>
+                    <ul class="container">
                     {%for pokemon in allPokemon%}
-                        {{pokemon.name}}
-                        <img src="{{pokemon.img}}" alt="Pokemon" width="200" height="250">
+                        <li>
+                            <img src="{{pokemon.img}}" alt="Pokemon" width="200" height="250">
+                            <h3>{{pokemon.name}}</h3>
+                        </li>
                     {%endfor%}
+                    </ul>
             </div>
         </body>
     </html>

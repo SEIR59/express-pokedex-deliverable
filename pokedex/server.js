@@ -1,9 +1,13 @@
 const express = require('express');
+const methodOverride = require('method-override')
 const pokemon = require('./pokemon');
 const app = require("liquid-express-views")(express());
 const Pokemon = require('./pokemon');
 
 const port = 3000;
+
+//Middleware
+app.use(methodOverride('_method'))
 
 app.use((req, res, next) => {
     console.log('I run for all routes');
