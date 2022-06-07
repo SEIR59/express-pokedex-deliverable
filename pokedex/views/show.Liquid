@@ -18,7 +18,7 @@
         {% for type in data.type %}
             <p>{{type}}</p>
         {% endfor %}
-
+{% comment %} TODO: show object key and value {% endcomment %}
         <h3>Stats:</h3>
         {% for s in data.stats %}
           {{s|json}} 

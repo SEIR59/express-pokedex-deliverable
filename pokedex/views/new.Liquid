@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Pokemon</title>
+    <link rel="stylesheet" href="../css/app.css">    
+</head>
+<body>
+    <form action="/pokemon" method="POST">
+        Name: <input type="text" name="name" required /><br/>
+        ImageUrl: <input type="url" name="img" placeholder="https://img.pokemondb.nex/artwork/..."
+            pattern="https://.*"/><br/>
+        Type: <input type="text" name="type" /><br/>
+        Stats: <input type="text" name="stats" /><br/>
+        <input type="submit" value="Create Pokemon"/>
+    </form>
+    
+</body>
+</html>
