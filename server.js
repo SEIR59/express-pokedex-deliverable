@@ -64,12 +64,34 @@ app.delete('/pokemon/:id', (req, res) => {
 
 // EDIT
 app.get('/pokemon/:id/edit', (req, res) => {
-    res.send('i can edit')
+    // res.send('i can edit')
+    res.render(
+        'edit',
+        {
+            pokemon: Pokemon[req.params.id],
+            id: req.params.id
+        }
+    )
 })
 
 // UPDATE
 app.put('/pokemon/:id', (req, res) => {
     console.log('I can update')
+    Pokemon[req.params.id] = {
+        id: req.body.id,
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type,
+        stats: {
+            hp: req.body.hp,
+            attack:req.body.attack,
+            defense: req.body.defense,
+            spattack: req.body.spattack,
+            spdefense: req.body.spdefense,
+            speed: req.body.speed
+        }
+    }
+    res.redirect('/pokemon')
 })
 
 app.listen(port, () => {

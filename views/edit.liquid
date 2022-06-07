@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <title>{{ pokemon.name }}</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit {{ pokemon.name }}</h1>
+      <form action="/pokemon/{{ id }}?_method=PUT" method="post">
+        <label> Id: <input type="text" name="id" value="{{ id }}" /> </label>
+        <label>
+          Name: <input type="text" name="name" value="{{ pokemon.name }}" />
+        </label>
+        <label>
+          Image: <input type="text" name="img" value="{{ pokemon.img }}" />
+          <br />
+        </label>
+        <label>
+          Type: <input type="text" name="type" value="{{pokemon.type}}" /> <br />
+        </label>
+        <!-- how to deal with the array here? -->
+        <!-- {% for type in pokemon.type %} -->
+        <!-- {{type}} -->
+        <!-- {% endfor %} -->
+        <h5>Stats:</h5>
+        
+        <label>
+          Hp: <input type="number" name="hp" value="{{ pokemon.stats.hp }}" />
+          <br />
+        </label>
+        <label>
+          Attack:
+          <input
+            type="number"
+            name="attack"
+            value="{{ pokemon.stats.attack }}"
+          />
+          <br />
+        </label>
+
+        <label>
+          Defense:
+          <input
+            type="number"
+            name="defense"
+            value="{{ pokemon.stats.defense }}"
+          />
+          <br />
+        </label>
+
+        <label>
+          SpAttach:<input
+            type="number"
+            name="spattack"
+            value="{{ pokemon.stats.spattack }}"
+          />
+          <br />
+        </label>
+
+        <label>
+          SpDefence:
+          <input
+            type="number"
+            name="spdefense"
+            value="{{ pokemon.stats.spdefense }}"
+          />
+          <br />
+        </label>
+
+        <label>
+          Speed:
+          <input type="number" name="speed" value="{{ pokemon.stats.speed }}" />
+          <br />
+        </label>
+
+        <input type="submit" value="Confirm edit {{ pokemon.name }}" />
+      </form>
+    </div>
+  </body>
 </html>
