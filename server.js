@@ -18,24 +18,37 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 
 // INDEX
-app.get('/', (req, res) => {
+app.get('/pokemon', (req, res) => {
     res.render('index', { 
         allPokemon: Pokemon 
     })
 })
 
 // SHOW
-app.get('/:id', (req, res) => {
+app.get('/pokemon/:id', (req, res) => {
     res.render('show', { 
-        Pokemon: Pokemon[req.params.id] 
+        Pokemon: Pokemon[req.params.id],
+        index: req.params.id
     })
 })
 
 // NEW
-app.get('/new', (req, res) => {
+app.get('/pokemon/new', (req, res) => {
     res.render('new', {
 
     })
+})
+
+// UPDATE
+app.put('/pokemon/:id', (req, res) => {
+    Pokemon[req.params.id] = req.body
+    res.redirect('/pokemon')
+})
+
+// DELETE
+app.delete('/pokemon/:id', (req, res) => {
+    Pokemon.splice(req.params.id, 1)
+    res.redirect('/pokemon')
 })
 
 

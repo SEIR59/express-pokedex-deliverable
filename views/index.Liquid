@@ -14,7 +14,7 @@
     <main id="poke-container">
         {% for pokemon in allPokemon %}
         <fieldset>
-            <a href="/{{forloop.index0}}">
+            <a href="/pokemon/{{forloop.index0}}">
                 <img src="{{pokemon.img}}" class="poke-img">
             </a>
         </fieldset>
