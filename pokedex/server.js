@@ -7,7 +7,6 @@ const methodOverride = require('method-override');
 const Pokemon = require('./models/pokemon');
 const port = 3000;
 
-
 ///! * -------------------------------------------------------------------------- */
 ///! *                               // MIDDLEWARES                               */
 ///! * -------------------------------------------------------------------------- */
@@ -23,17 +22,23 @@ app.use(express.json());
 
 //? INDEX
 app.get('/pokemon', (req, res) => {
-    try {
-      res.render('index', { Pokemons: Pokemon });
-    } catch (error) {
-      res.status(500).json({ Message: error.message });
-    }
-  });
+  try {
+    res.render('index', { Pokemons: Pokemon });
+  } catch (error) {
+    res.status(500).json({ Message: error.message });
+  }
+});
 
-
-
+//? NEW
+app.get('/pokemon/new', (req, res) => {
+  try {
+    res.render('new');
+  } catch (error) {
+    res.status(500).json({ Message: error.message });
+  }
+});
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-    routesReport.print();
-  });
+  console.log(`Server is running on port ${port}`);
+  routesReport.print();
+});
