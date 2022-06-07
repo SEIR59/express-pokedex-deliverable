@@ -23,7 +23,6 @@ app.use(methodOverride("_method")) // set up method for methodOverride
 /*============================================================
         Routes
 ============================================================*/
-
 // "/pokemon" GET - index TODO: Add basic layout forloop, add button for edit and delete
 app.get("/pokemon", (req, res) => {
     
