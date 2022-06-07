@@ -28,6 +28,13 @@ app.get('/pokemon/:id', (req, res) => {
     })
 })
 
+app.get('/fruits/:id/edit', (req, res) => {
+    res.render('edit', {
+        thisPokemon: Pokemon[req.params.id],
+        index: req.params.id
+    })
+})
+
 
 app.listen(port, () => {
     console.log(`Listening to port: ${port}`)
