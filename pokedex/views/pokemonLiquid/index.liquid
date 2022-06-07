@@ -2,19 +2,12 @@
 
     <a href="/pokemon/new"><button>Add new Pokemon!</button></a>
 
-    <div class="container">
+    <div class="container-grid3x">
         {%for pokemon in pokemonList%}
-        <div>
+        <div class="container-flex pokemon-index">
             <h1>{{pokemon.name}}</h1>
-            <a href="/pokemon/{{ forloop.index0 }}"><img src="{{pokemon.img}}" alt=""></a>
-            <p>Types: {{pokemon.type | join: ", " }}</p>
-            <p>Height: {{pokemon.misc.height}} Weight: {{pokemon.misc.weight}}</p>
-            <div class="container4">
-                <p>HP: {{ pokemon.stats.hp}}</p>
-                <p>Attack: {{ pokemon.stats.attack}}</p>
-                <p>Defense: {{ pokemon.stats.defense}}</p>
-                <p>Speed: {{ pokemon.stats.speed}}</p>
-            </div>
+            <a class="img-wrap" href="/pokemon/{{ forloop.index0 }}"><img src="{{pokemon.img}}" alt=""></a>
+            <h4>Types: {{pokemon.type | join: ", " }}</h4>
         </div>
 
         {% endfor%}

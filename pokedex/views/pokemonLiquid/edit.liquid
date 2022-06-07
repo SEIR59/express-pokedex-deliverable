@@ -1,4 +1,24 @@
 {% layout "layout.liquid" %} {% block content %}
 
-
+<a href="/pokemon/{{id}}"><button>Go back</button></a>
+<br />
+<form action="/pokemon/{{id}}" method="POST">
+    <h1>Editing - {{pokemon.name}}</h1>
+    <h3>Name:</h3>
+    <input type="text" name="name"  value="{{pokemon.name }}">
+    <h3>Image:</h3>
+    <input type="text" name="img" value="{{pokemon.img }}">
+    <h3>Types:</h3>
+    <input type="text" name="type"  value="{{pokemon.type | join: ', ' }}">
+    <h3>HP:</h3>
+    <input type="number" name="hp" value="{{pokemon.stats.hp }}">
+    <h3>Attack:</h3>
+    <input type="number" name="attack" value="{{pokemon.stats.attack}}">
+    <h3>Defense:</h3>
+    <input type="number" name="defense" value="{{pokemon.stats.defense }}">
+    <h3>Speed:</h3>
+    <input type="number" name="speed" value="{{pokemon.stats.speed }}">
+    <br />
+    <input type="submit" value="Update {{pokemon.name}}">
+</form>
 {% endblock %}

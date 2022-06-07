@@ -1,10 +1,36 @@
 body, main{
+    width:95vw;
     background-color: black;
     color:white;
     display: flex;
     flex-flow:column nowrap;
     justify-content: center;
     align-items: center;
+    margin-top:5vh;
+
+}
+p{
+    margin:0;
+    text-align:center;
+}
+header{
+    position: absolute;
+    top:0;
+    left:2vw;
+}
+a, button{
+    width:25vw;
+}
+.img-wrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+nav{
+    width:100vw;
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: space-evenly;
 }
 form{
     display:flex;
@@ -13,8 +39,101 @@ form{
     align-items: center;
     padding:10vh;
     width:80vw;
-    background-color: rgba(255,50,50,.9);
+    background-color: rgba(255,165,0,.9);
 }
 input{
 width:50%;
+height:3vh;
+}
+img{
+    width:20vw;
+    height:20vw;
+    border-radius: 10vh;
+}
+
+.img-large{
+    width:30vw;
+    height:30vw;
+}
+.container-flex{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-index{
+    background-color: rgba(255,165,0,.9);
+    border-radius: 5vh;
+}
+
+.container-grid3x{
+    width:75vw;
+    height: auto;
+    display:grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(auto, auto);
+    gap: 1vw;
+    margin-top:2vh;
+}
+.container-grid2x{
+    gap:2vw;
+    width:40vw;
+    height:40vh;
+    display:grid;
+    grid-template-columns: repeat(2, auto);
+
+}
+
+#name-pic-container{
+    width:50vw;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#stats-container{
+    font-size: 6vh;
+    width:50vw;
+    height:100%;
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: top;
+    align-items: top;
+}
+#show-container-container{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;;
+    width:90vw;
+
+}
+#pokemon-name{
+    font-size: 10vh;
+    text-align:center;
+    margin-bottom:3vh;
+}
+#show-container{
+    width:100vw;
+    height:50vh;
+  display:flex;
+  flex-flow:row nowrap;
+  align-items: center;
+}
+
+.grid-centering{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:12vh;
+}
+
+#stats-list{
+    height:25vh;
+    font-size: 6vh;
+}
+
+#types{
+    text-align: left;
 }

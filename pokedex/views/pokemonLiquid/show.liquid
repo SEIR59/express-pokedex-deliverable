@@ -1,6 +1,42 @@
 {% layout "layout.liquid" %} {% block content %}
-    <h1>Pokemon individual show page goes here</h1>
-    <h2>Edit pokemon button goes here</h2>
-    <h2>Delete pokemon button goes here</h2>
+
+<nav>
     <a href="/pokemon"><button>Go back to Pokedex</button></a>
-    {% endblock %}
+    <a href="/pokemon/{{id}}/edit"><button>Edit this Pokemon</button></a>
+    <a href="/pokemon"><button>Delete this Pokemon</button></a>
+</nav>
+<div class="show-container-container">
+    <h1 id="pokemon-name">{{pokemon.name}}</h1>
+    <div class="'container-flex-row" id="show-container">
+        <div class="container-flex" id="name-pic-container">
+            <img src="{{pokemon.img}}" alt="" class="img-large"></a>
+        </div>
+        <div id="stats-container">
+            <p id="types">Types: {{pokemon.type | join: ", " }}</p>
+            <div class="container-grid2x" id="stats-list">
+                <div class="grid-centering">
+                    <p>Height: {{pokemon.misc.height}}</p>
+                </div>
+                <div class="grid-centering">
+                    <p>Weight: {{pokemon.misc.weight}}</p>
+                </div>
+                <div class="grid-centering">
+                    <p>HP: {{ pokemon.stats.hp}}</p>
+                </div>
+                <div class="grid-centering">
+                    <p>Attack: {{ pokemon.stats.attack}}</p>
+                </div>
+                <div class="grid-centering">
+                    <p>Defense: {{ pokemon.stats.defense}}</p>
+                </div>
+                <div class="grid-centering">
+                    <p>Speed: {{ pokemon.stats.speed}}</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
