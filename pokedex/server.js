@@ -15,11 +15,11 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 // INDEX
-app.get("/", (req, res) => {
+app.get("/pokemon", (req, res) => {
   res.render("index", { allPokemon: Pokemon });
 });
 
 // SHOW
-app.get("/:id", (req, res) => {
+app.get("/pokemon/:id", (req, res) => {
   res.render("show", { pokemon: Pokemon[req.params.id] });
 });
