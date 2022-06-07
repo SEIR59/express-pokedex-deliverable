@@ -12,7 +12,10 @@
     <h1>Pokedex</h1>
 
     {% for entry in data %}
-    <img src="{{ entry.img }}" alt="{{ entry.name }}">
+    {% assign i = entry %}
+    <a href="/pokemon/{{ forloop.index0 }}">
+        <img src="{{ entry.img }}" alt="{{ entry.name }}">
+    </a>
     {% endfor %}
 </body>
 

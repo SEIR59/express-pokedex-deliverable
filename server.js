@@ -16,13 +16,13 @@ app.get('/pokemon', (req, res) => {
     res.render('index', { data: Pokemon })
 })
 
-// Show
-app.get('/pokemon/:id', (req, res) => {
+// New
+app.get('/pokemon/new', (req, res) => {
     res.render('show', { data: Pokemon[req.params.id] })
 })
 
-// New
-app.get('/pokemon/new', (req, res) => {
+// Show
+app.get('/pokemon/:id', (req, res) => {
     res.render('show', { data: Pokemon[req.params.id] })
 })
 
