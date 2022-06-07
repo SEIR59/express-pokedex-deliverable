@@ -1,3 +1,7 @@
+/////////////////////////////////////////////
+// Dependencies
+/////////////////////////////////////////////
+
 const express = require("express");
 const app = require("liquid-express-views")(express());
 const Pokemon = require("./pokedex/pokemon.js");
@@ -51,22 +55,35 @@ app.post("/pokemon", (req, res) => {
   res.redirect('/pokemon')
 })
 
+
+
+
 //DELETE
 
 //PUT
 app.put("/pokemon/:index", (req, res) => {
- 
+  
   Pokemon[req.params.index] = req.body; //in our fruits array, find the index that is specified in the url (:indexOfFruitsArray).  Set that element to the value of req.body (the input data)
   res.redirect("/pokemon"); //redirect to the index page
 });
 
 
+//EDIT
+app.get("/pokemon/:index/edit", (req, res) => {
+    res.render("edit", 
+    {
+       pokemon: Pokemon[req.params.index], //the pokemon object
+       index: req.params.index, //index of the array
+    })
+    console.log('edit route is working')
+  })
 
 
-// ID
-app.get("/pokemon/:id", (req, res) => {
+// SHOW
+app.get("/pokemon/:index", (req, res) => {
     res.render("show", {
-        data: Pokemon[req.params.id]
+        data: Pokemon[req.params.index],
+        index: req.params.index
     })
 })
 

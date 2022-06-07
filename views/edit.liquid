@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <title>Show</title>
+        <title>Edit</title>
     </head>
     <body>
-        <h1>Show page</h1>
+        <h1>Edit page</h1>
         <div class="card">
         {% comment %} The pokemon's name {% endcomment %}
         Name: {{data.name}}
@@ -36,8 +36,7 @@
             <br>
         </ul>
     </div>
-      {% comment %} Add edit link here  {% endcomment %}
-     <a href="/pokemon/{{index}}/edit">Edit</a>
+
         <a href="/pokemon/">Back to homepage</a> 
 
 
