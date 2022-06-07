@@ -16,7 +16,9 @@
           <li>
               <!-- link to show -->
               <a href="/pokemon/{{forloop.index0}}">{{pokemon.name}}<img src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
-              
+              <!-- link to edit -->
+              <a href="/pokemon/{{forloop.index0}}/edit">Edit</a>
+              <!-- link to delete -->
           </li>
           {% endfor %}
       </ul>
