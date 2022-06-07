@@ -8,7 +8,10 @@
 </head>
 <body>
     <div class="container">
-        
+        {% for pokemons in pokemon limit:15 %}
+        {{ pokemons.name }}
+        <a href="pokemon/{{ forloop.index0 }}"><img src="{{ pokemons.img }}" /></a>
+        {% endfor %}
     </div>
 </body>
 </html>
