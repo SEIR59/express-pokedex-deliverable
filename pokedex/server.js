@@ -38,6 +38,15 @@ app.get('/pokemon/new', (req, res) => {
   }
 });
 
+//? SHOW
+app.get('/pokemon/:id', (req, res) => {
+  try {
+    res.render('show', { Pokemon: Pokemon[req.params.id] });
+  } catch (error) {
+    res.status(500).json({ Message: error.message });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   routesReport.print();
