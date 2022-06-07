@@ -29,7 +29,9 @@ app.get('/', (req, res) => {
 
 // CREATE
 app.post('/pokemon', (req, res) => {
-    res.send('this is create, i created in NEW and redirect to INDEX')
+    // res.send('this is create, i created in NEW and redirect to INDEX')
+    Pokemon.push(req.body)
+    res.redirect('/pokemon')
 })
 
 // NEW
