@@ -10,33 +10,70 @@
   <body>
     <div class="navBar">
       <h1>Pokemon Manager</h1>
-      <form action="/pokemon">
-        <input type="submit" value="Home" class="navInput" />
-      </form>
+      <div class="home-button-container">
+        <form action="/pokemon">
+          <input type="submit" value="Home" class="navInput" />
+        </form>
+      </div>
     </div>
 
     <h1>Edit Pokemon</h1>
     <img src="{{ pokemon.img }}" alt="" id="show" />
     <!--  NOTE: action will be the route, method will be the HTTP verb-->
-    <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="{{ pokemon.name }}" /><br />
-      Type: <input type="text" name="type" value="{{ pokemon.type }}" /><br />
-      Stats: HP:
-      <input type="text" name="hp" value="{{ pokemon.stats.hp }}" /><br />
-      ATTACK:
-      <input
-        type="text"
-        name="attack"
-        value="{{ pokemon.stats.attack }}"
-      /><br />
-      DEFENSE:
-      <input
-        type="text"
-        name="defense"
-        value="{{ pokemon.stats.defense }}"
-      /><br />
+    <div>
+      <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
+        <div class="form-row-container">
+          Name:
+          <input
+            class="main-input"
+            type="text"
+            name="name"
+            value="{{ pokemon.name }}"
+          />
+        </div>
+        <div class="form-row-container">
+          Type:
+          <input
+            class="main-input"
+            type="text"
+            name="type"
+            value="{{ pokemon.type }}"
+          /><br />
+        </div>
 
-      <input type="submit" value="Edit Pokemon" />
-    </form>
+        <div class="form-row-container">
+          HP:
+          <input
+            class="main-input"
+            type="text"
+            name="hp"
+            value="{{ pokemon.stats.hp }}"
+          /><br />
+        </div>
+
+        <div class="form-row-container">
+          ATTACK:
+          <input
+            class="main-input"
+            type="text"
+            name="attack"
+            value="{{ pokemon.stats.attack }}"
+          /><br />
+        </div>
+
+        <div class="form-row-container">
+          DEFENSE:
+          <input
+            class="main-input"
+            type="text"
+            name="defense"
+            value="{{ pokemon.stats.defense }}"
+          /><br />
+        </div>
+        <div class="form-row-container">
+          <input class="main-input" type="submit" value="Edit Pokemon" />
+        </div>
+      </form>
+    </div>
   </body>
 </html>

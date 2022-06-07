@@ -10,28 +10,34 @@
   <body>
     <div class="navBar">
       <h1>Pokemon Manager</h1>
-      <form action="/pokemon">
-        <input type="submit" value="Home" class="navInput" />
-      </form>
+      <div class="home-button-container">
+        <form action="/pokemon">
+          <input type="submit" value="Home" class="navInput" />
+        </form>
+      </div>
     </div>
 
     <h1>{{ pokemon.name }}</h1>
 
     <img src="{{ pokemon.img }}" alt="" id="show" />
-    <div>
-      <h3>Types</h3>
-      {% for type in pokemon.type %}
-      <p>{{ type }}</p>
-      {% endfor %}
+    <div class="stats">
+      <div class="form-row-container">
+        <h3>Types:</h3>
+        {% for type in pokemon.type %}
+        <p>{{ type }}</p>
+        {% endfor %}
+      </div>
     </div>
-    <div>
-      <h3>Stats</h3>
-      HP:
-      <p>{{ pokemon.stats.hp }}</p>
-      Attack:
-      <p>{{ pokemon.stats.attack }}</p>
-      Defense:
-      <p>{{ pokemon.stats.defense }}</p>
+    <div class="stats">
+      <div class="form-row-container">
+        <h3>Stats</h3>
+        HP:
+        <p>{{ pokemon.stats.hp }}</p>
+        Attack:
+        <p>{{ pokemon.stats.attack }}</p>
+        Defense:
+        <p>{{ pokemon.stats.defense }}</p>
+      </div>
     </div>
   </body>
 </html>

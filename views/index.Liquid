@@ -10,16 +10,18 @@
   <body>
     <div class="navBar">
       <h1>Pokemon Manager</h1>
-      <form action="/pokemon/new">
-        <input type="submit" value="Create a New Pokemon" class="navInput" />
-      </form>
+      <div class="home-button-container">
+        <form action="/pokemon/new">
+          <input type="submit" value="Create a New Pokemon" class="navInput" />
+        </form>
+      </div>
     </div>
 
     <div class="flexBox">
       <ul>
         {% for pokemon in allPokemons %}
         <li>
-          <div>
+          <div class="img-container">
             <p>{{ pokemon.name }}</p>
             <a href="/pokemon/{{ forloop.index0 }}"
               ><img src="{{ pokemon.img }}" alt=""

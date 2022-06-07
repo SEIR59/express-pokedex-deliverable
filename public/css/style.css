@@ -1,12 +1,22 @@
 body {
-    background-image: url('../background.jpg');
-    background-size: auto;
+   margin: 0;
 }
+html { 
+    background: url('../background.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
 .navBar {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: bisque;
+    background-color: rgb(230, 48, 20);
+    border: 5px solid rgb(29, 18, 18);
+    margin: 0;
 }
 .navInput {
     cursor: pointer;
@@ -27,6 +37,7 @@ img {
     width: 100px;
     margin: 10px 10px;
     border-radius: 20%;
+    margin-top: 0;
 }
 
 #show {
@@ -35,7 +46,7 @@ img {
 }
 h1 {
     text-align: center;
-    color: rgb(172, 170, 137);
+    color: rgb(218, 222, 9);
 }
 
 .small {
@@ -48,13 +59,33 @@ h1 {
 input {
     width: 200px;
     height: 40px;
-    margin-bottom: 20px;
-    border-radius: 10%;
+    border-radius: 20px;
     border: none;
     background-color: rgb(216, 204, 38);
     color: aliceblue;
     font-size: medium;
 }
-form {
 
+.main-input {
+    padding-left: 20px;
+}
+
+.stats {
+    background-color:rgb(218, 222, 9) ;
+    width: 20%;
+    margin-left: 30px;
+}
+.home-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.form-row-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 400px;
+    margin-bottom: 20px;
 }
