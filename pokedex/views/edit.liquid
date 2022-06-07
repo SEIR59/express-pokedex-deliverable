@@ -13,7 +13,13 @@
             {% comment %} checkbox? {% endcomment %}
             <h3>Types:</h3>
             {% for type in allTypes %} 
-            {{type}}: <input type="checkbox" name="{{type}}" /><br/>
+            {{type}}: <input type="checkbox" name="{{type}}" 
+                {% for typeChecked in data.type %}  
+                {% if typeChecked == type %}
+                    checked 
+                    {% endif %} 
+                {% endfor %}    
+            /><br/>
             {% endfor %}
             {% comment %} Type: <input type="text" name="type" value="{{data.type | join:", "}}" /><br /> {% endcomment %}
             Stats hp: <input type="number" name="hp" value="{{data.stats.hp}}" /><br />
