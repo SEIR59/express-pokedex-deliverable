@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
     <title>Document</title>
 </head>
 <body>
     <h1>Edit {{data.name}}</h1>
-    <form action = '/pokemon/{{index}}?_method=PUT' method="POST">
+    <form action = '/pokemon/{{forloop.index0}}?_method=PUT' method="POST">
       <!--  NOTE: the form is pre-populated with values for the server-->
       Name: <input type="text" name="name" value="{{data.name}}" /><br />
       Type: <input type="text" name="type" value="{{data.type}}" /><br />
-      <input type="submit" name="" value="Submit Changes" />
+      <input type="submit" value="Submit Changes" />
     </form>
     <a href="/pokemon/"><button>Back to POKEDEX</button></a>
 </body>

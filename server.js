@@ -3,6 +3,10 @@ const app  = require("liquid-express-views")(express())
 const Pokemon = require('./pokedex/pokemon.js');
 const methodOverride = require('method-override');
 const pokemon = require('./pokedex/pokemon.js');
+
+/////////////////////////////////////
+//////MIDDLEWEAR
+///////////////////////////////
 app.use(methodOverride("_method")); // override for put and delete requests from forms
 app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
 app.use(express.static("public")); 
@@ -11,22 +15,29 @@ app.use(express.static("public"));
 app.get('/pokemon', (req, res) => {
 res.render('index', { data: Pokemon });
 });
-//NEW
+
+//NEW - CREAT
 app.get('/pokemon/new', (req,res) =>{
     res.render('new')
 })
-//Creat Post
+//Delete
+app.delete('/pokemon/:id', (req,res) =>{
+    Pokemon.splice(req.params.id, 1)
+    res.redirect('/pokemon')
+})
+
+//UPDATE
+app.put('/pokemon/:id', (req, res) =>{   
+    Pokemon[req.params.id]= req.body
+      res.redirect('/pokemon')
+  })
+
+//CREATE - POST
 app.post('/pokemon/' ,(req,res) =>{
     Pokemon.push(req.body)
     res.redirect('/pokemon')
 })
 
-// SHOW
-app.get('/pokemon/:id', (req, res) => {
-    let id = req.params.id
-res.render('show', { data: Pokemon[id] });
-
-});
 //EDIT
 app.get('/pokemon/:id/edit' , (req, res) =>{
     res.render('edit', 
@@ -36,12 +47,12 @@ app.get('/pokemon/:id/edit' , (req, res) =>{
         })
 })
 
- app.put('/pokemon/:id', (req, res) =>{
-      
-    Pokemon[req.params.id]= req.body
-      res.redirect('/pokemon')
-  })
-
+ 
+// SHOW
+app.get('/pokemon/:id', (req, res) => {
+    let id = req.params.id
+res.render('show', { data: Pokemon[id] });
+});
 
 app.listen(3000 , () =>{
     console.log("Pokemon! I choose you!")
