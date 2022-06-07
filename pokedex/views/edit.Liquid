@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- Milligram CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
     <title>Edit Pokemon</title>
   </head>
   <body>
@@ -11,10 +27,22 @@
 
     <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
       Name: <br /><input type="text" name="name" value="{{ pokemon.name }}" />
-      <br /><br />Type:<br />
+      <br /><br />
+
+      Type:<br />
       <input type="text" name="type" value="{{ pokemon.type }}" />
       <br /><br />
+
+      Image URL:<br />
+      <input type="text" name="img" value="{{ pokemon.img }}" />
+      <br /><br />
+
+      HP:<br />
+      <input type="text" name="hp" value="{{ pokemon.stats.hp }}" />
+      <br />
+
       <input type="submit" name="" value="Submit Changes" />
     </form>
+    <br /><a href="/pokemon">Back</a>
   </body>
 </html>

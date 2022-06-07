@@ -13,6 +13,7 @@ app.listen(port, () => {
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride("_method"));
+app.use(express.static("public"));
 
 // INDEX
 app.get("/pokemon", (req, res) => {
@@ -53,3 +54,13 @@ app.put("/pokemon/:id", (req, res) => {
   Pokemon[req.params.id] = req.body;
   res.redirect("/pokemon");
 });
+
+// app.put("/pokemon/:id", (req, res) => {
+//     Pokemon[req.params.id] = {
+//       name: req.body.name,
+//       type: req.body.type,
+//       img: req.body.img,
+//       stats: req.body.stats,
+//     };
+//     res.redirect("/pokemon");
+//   });

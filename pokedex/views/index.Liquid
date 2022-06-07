@@ -4,28 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <!-- CSS Reset -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+    />
+
+    <!-- Milligram CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ 'public/style.css' | asset_url }}"
+    /> -->
+
     <title>Pokemon Index</title>
   </head>
   <body>
-    <h1>Pokedex. Gotta catch 'em y'all.</h1>
-    <br /><a href="/pokemon/new">Enter New Pokemon</a>
-    <div>
+    <h1>POKEDEX</h1>
+    <h5>Gotta catch 'em y'all.</h5>
+    <div id="entry">
+      <a href="/pokemon/new"><button>Enter New Pokemon</button></a>
+    </div>
+
+    <div id="container">
       {% for pokemon in allPokemon %}
+      <div id="indiv">
+        <a href="/pokemon/{{ forloop.index0 }}"
+          ><img src="{{ pokemon.img }}" width="200" />
+          <h4>{{ pokemon.name }}</h4></a
+        >
 
-      <a href="/pokemon/{{ forloop.index0 }}"
-        ><img src="{{ pokemon.img }}" width="200" /></a
-      ><br />
+        <!--EDIT FUNCTION-->
+        <a href="/pokemon/{{ forloop.index0 }}/edit"><button>Edit</button></a>
 
-      <p>{{ pokemon.name }}</p>
-
-      <!--EDIT FUNCTION-->
-      <a href="/pokemon/{{ forloop.index0 }}/edit"><button>Edit</button></a>
-
-      <!--DELETE FUNCTION-->
-      <form action="/pokemon/{{ forloop.index0 }}?_method=DELETE" method="POST">
-        <input type="submit" value="Delete" />
-      </form>
-
+        <!--DELETE FUNCTION-->
+        <form
+          action="/pokemon/{{ forloop.index0 }}?_method=DELETE"
+          method="POST"
+        >
+          <input type="submit" value="Delete" />
+        </form>
+      </div>
       {% endfor %}
     </div>
   </body>
