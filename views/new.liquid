@@ -11,7 +11,71 @@
 <body>
     <div class="container">
         <h1>New Pokemon</h1>
-        
+        <form action="/pokemon" method="post">
+            <label> Id: <input type="number" name="id" /> </label>
+            <label>
+              Name: <input type="text" name="name"  />
+            </label>
+            <label>
+              Image: <input type="text" name="img" />
+              <br />
+            </label>
+            <label>
+              Type: <input type="text" name="type"/> <br />
+            </label>
+            <!-- how to deal with the array here? -->
+            <!-- {% for type in pokemon.type %} -->
+            <!-- {{type}} -->
+            <!-- {% endfor %} -->
+            <h5>Stats:</h5>
+            
+            <label>
+              Hp: <input type="number" name="hp" />
+              <br />
+            </label>
+            <label>
+              Attack:
+              <input
+                type="number"
+                name="attack"
+              />
+              <br />
+            </label>
+    
+            <label>
+              Defense:
+              <input
+                type="number"
+                name="defense"
+              />
+              <br />
+            </label>
+    
+            <label>
+              SpAttach:<input
+                type="number"
+                name="spattack"
+              />
+              <br />
+            </label>
+    
+            <label>
+              SpDefence:
+              <input
+                type="number"
+                name="spdefense"
+              />
+              <br />
+            </label>
+    
+            <label>
+              Speed:
+              <input type="number" name="speed" />
+              <br />
+            </label>
+    
+            <input type="submit" value="Create New Pokemon" />
+          </form>
     </div>
 </body>
 </html>

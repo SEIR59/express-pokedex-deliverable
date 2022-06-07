@@ -11,6 +11,11 @@
   <body>
     <div class="container">
       <h1>Pokedex</h1>
+      <form action="/pokemon/new">
+        <button>
+          Create New Pokemon
+        </button>
+      </form>
       <ul>
           {% for pokemon in allPokemon %}
           <li>

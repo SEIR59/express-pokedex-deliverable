@@ -12,7 +12,7 @@
     <div class="container">
       <h1>Edit {{ pokemon.name }}</h1>
       <form action="/pokemon/{{ id }}?_method=PUT" method="post">
-        <label> Id: <input type="text" name="id" value="{{ id }}" /> </label>
+        <label> Id: <input type="number" name="id" value="{{ id }}" /> </label>
         <label>
           Name: <input type="text" name="name" value="{{ pokemon.name }}" />
         </label>
