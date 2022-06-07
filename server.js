@@ -55,6 +55,22 @@ app.delete('/:id', (request, response) => {
     response.redirect('/')
 })
 
+// edit route
+// editting information on selected pokemon
+app.get('/:id/edit', (request, response) => {
+    response.render('edit', 
+    {
+        index: request.params.id,
+        pokemon: PokemonList[request.params.id]
+    })
+})
+
+// update route
+app.put('/:id/update', (request, response) => {
+    PokemonList[request.params.id].name = request.body.name
+    response.redirect('/')
+})
+
 // index route
 // showing the list of all the pokemon in the pokedex
 app.get('/', (request, response) => {

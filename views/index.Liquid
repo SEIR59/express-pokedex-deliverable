@@ -16,6 +16,9 @@
             <form action="/{{forloop.index0}}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete {{pokemon.name}}">
             </form>
+            <form action="/{{forloop.index0}}/edit">
+                <input type="submit" value="Edit" {{pokemon.name}}>
+            </form>
         {% endfor %}
     </ul>
     <form action="/new">
