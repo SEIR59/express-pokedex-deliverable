@@ -13,10 +13,28 @@ app.listen(port, () => {
 app.use(express.urlencoded({extended:false})); // to view request.body
 app.use(express.static('public')); // to use css
 
+// create route
+app.post('/create', (request, response) => {
+    let pokemon = {}
+    pokemon.id = request.body.id
+    pokemon.name = request.body.name
+    pokemon.img = request.body.img
+    pokemon.type = request.body.type.split(", ")
+    pokemon.stats = {
+        hp: request.body.statshp, 
+        attack: request.body.statsattack, 
+        defense: request.body.statsdefense,
+    }
+    PokemonList.push(pokemon)
+    response.redirect('/')
+})
+
 // new route
 // directing to a page to make the new pokemon
 app.get('/new', (request, response) => {
-    response.render('new')
+    response.render('new', {
+        lastIndex: PokemonList.length
+    })
 })
 
 // show route

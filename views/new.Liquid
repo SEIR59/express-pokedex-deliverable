@@ -11,5 +11,17 @@
         <input type="submit" value="Back to Pokedex">
     </form>
     <h1>Create a new pokemon!</h1>
+    <form action="/create" method="POST">
+        Id: <input type="text" value="{{lastIndex}}" name="id"><br>
+        Name: <input type="text" name="name"><br>
+        Image: <input type="image" name="img"><br>
+        Type: <input type="text" name="type"><br>
+
+        Stats<br>
+        hp: <input type="text" name="statshp"><br>
+        attack: <input type="text" name="statsattack"><br>
+        defense: <input type="text" name="stats-efense"><br>
+        <input type="submit" value="Create new pokemon!">
+    </form>
 </body>
 </html>
