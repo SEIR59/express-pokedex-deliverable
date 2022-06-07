@@ -8,6 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="/pokemon/{{index}}?_method=DELETE" method="post">
+        <input type="submit" value="Delete this pokemon? :(">
+    </form>
     <div id="profile">
         {{thisPokemon.name}}
         <img src="{{thisPokemon.img}}" alt="{{thisPokemon.name}} image">
