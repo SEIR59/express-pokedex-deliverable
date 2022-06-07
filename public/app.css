@@ -1,14 +1,11 @@
 
 body{
     /* background-color: #d8d9de; */
-    background-color: white;
+    background-color: palegoldenrod
 }
 .pokemon-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: space-between;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 0 auto;
     gap: 1em;
     max-width: 1200px;
@@ -27,6 +24,9 @@ body{
 }
 .btn-nav{
     margin-right: 2em;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
 }
 .btn-nav:hover{
     background-color: palegoldenrod;
@@ -39,5 +39,30 @@ h1,h2,h3,h4,h5{
 
 img{
     width: 10em;
-    max-height: 10em;
+    height: 10em;
+}
+
+.pokemon-name-image{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.info-container{
+    display: flex;
+    justify-content: center;
+}
+.index-container{
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-row: 1fr 1fr 1fr 1fr;
+    border: 3px solid darkslategray;
+    border-radius: 10%;
+    background-color: white;
+    margin: 1em;
+}
+#pokepics{
+    margin: 1em;
 }
