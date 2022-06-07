@@ -7,13 +7,16 @@ const Pokemon = require('./models/pokemon.js');
 app.use(express.static('public'))
 app.use(express.urlencoded({extended:false}));
 
-INDEX
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
+//     res.send("test")
+
+// INDEX (const data = Pokemon)
+app.get('/pokemon', (req, res) => {
 res.render('index', { data: Pokemon });
 });
 
 
-SHOW
+// SHOW
 app.get('/:id', (req, res) => {
 res.render('show', { data: Pokemon[req.params.id] });
 });

@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>Pokemon Index Page</h1>
+
+    <div class="container">
+       
+        {% for Pokemon in data %}
+            <img src="{{ Pokemon.img }}" />
+            {% endfor %}
+
+    </div>
     
 </body>
 </html>
