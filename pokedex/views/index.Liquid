@@ -9,13 +9,14 @@
   <body>
     <h1>Pokedex. Gotta catch 'em y'all.</h1>
     <br />
-    <ul>
+    <div>
       {% for pokemon in allPokemon %}
-      <li>
-        <a href="/pokemon/{{ forloop.index0 }}">{{ pokemon.name }}</a
-        ><br />
-      </li>
+
+      <a href="/pokemon/{{ forloop.index0 }}"
+        ><img src="{{ pokemon.img }}" width="200"
+      /></a>
+
       {% endfor %}
-    </ul>
+    </div>
   </body>
 </html>

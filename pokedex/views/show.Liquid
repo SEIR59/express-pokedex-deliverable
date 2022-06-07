@@ -7,6 +7,29 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Show Route. Gotta catch 'em y'all.</h1>
+    <h3>{{ pokemon.id }}</h3>
+    <h1>{{ pokemon.name }}</h1>
+    <br />
+    <img src="{{ pokemon.img }}" width="200" /><br />
+
+    <p>Type:</p>
+    <ul>
+      {% for type in pokemon.type%}
+      <li>{{ type }}</li>
+      {% endfor %}
+    </ul>
+    <br />
+
+    <p>Stats:</p>
+    <ul>
+      <li>HP: {{ pokemon.stats.hp }}</li>
+      <li>Attack: {{ pokemon.stats.attack }}</li>
+      <li>Defense: {{ pokemon.stats.defense }}</li>
+      <li>SP Attack: {{ pokemon.stats.spattack }}</li>
+      <li>SP Defense: {{ pokemon.stats.spdefense }}</li>
+      <li>Speed: {{ pokemon.stats.speed }}</li>
+    </ul>
+    <br />
+    <a href="/pokemon">Back</a>
   </body>
 </html>
