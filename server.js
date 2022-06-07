@@ -36,7 +36,10 @@ app.post('/pokemon', (req, res) => {
 
 // NEW
 app.get('/pokemon/new', (req, res) => {
-    res.send('this is new form')
+    // res.send('this is new form')
+    res.render(
+        'new'
+    )
 })
 
 // INDEX
