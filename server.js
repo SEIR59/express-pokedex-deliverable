@@ -14,6 +14,7 @@ app.use(express.urlencoded({extended:false})); // to view request.body
 app.use(express.static('public')); // to use css
 
 // create route
+// creating a new pokemon
 app.post('/create', (request, response) => {
     let pokemon = {}
     pokemon.id = request.body.id
