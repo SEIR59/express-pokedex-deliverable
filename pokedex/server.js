@@ -40,6 +40,7 @@ app.get('/pokemon/new', (req, res) => {
 
 //? SHOW
 app.get('/pokemon/:id', (req, res) => {
+  console.log('show', Pokemon[req.params.id].type);
   try {
     res.render('show', { Pokemon: Pokemon[req.params.id] });
   } catch (error) {
@@ -50,9 +51,13 @@ app.get('/pokemon/:id', (req, res) => {
 //? EDIT
 app.get('/pokemon/:id/edit', (req, res) => {
   try {
-    let chosenPokemon = Pokemon[req.params.id];
-    // chosenPokemon.type = chosenPokemon.type.join(',');
-    res.render('edit', { Pokemon: chosenPokemon, index: req.params.id });
+    Pokemon[req.params.id].type = [...Pokemon[req.params.id].type]
+    // ! Trims the white spaces for each type of the pokemon type array
+    Pokemon[req.params.id].type = Pokemon[req.params.id].type.map(item => item.trim());
+
+    // ! Concatenante each type with comma (,) and turn the array into one string using join method
+    Pokemon[req.params.id].type = Pokemon[req.params.id].type.join(',');
+    res.render('edit', { Pokemon: Pokemon[req.params.id], index: req.params.id });
   } catch (error) {
     console.log(error);
     res.status(500).json({ Message: error.message });
@@ -106,7 +111,7 @@ app.put('/pokemon/:id', (req, res) => {
       req.body;
 
     chosenPokemon.name = name;
-    chosenPokemon.type = type.split(',');
+    chosenPokemon.type = type.trim().split(',');
     chosenPokemon.img = img;
     chosenPokemon.stats.hp = hp;
     chosenPokemon.stats.attack = attack;
