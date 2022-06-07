@@ -51,12 +51,15 @@ app.get('/pokemon/:id', (req, res) => {
 //? EDIT
 app.get('/pokemon/:id/edit', (req, res) => {
   try {
-    Pokemon[req.params.id].type = [...Pokemon[req.params.id].type]
+    console.log(typeof Pokemon[req.params.id].type, Pokemon[req.params.id].type);
+    if(typeof Pokemon[req.params.id].type !== 'string'){
+      Pokemon[req.params.id].type = [...Pokemon[req.params.id].type]
     // ! Trims the white spaces for each type of the pokemon type array
     Pokemon[req.params.id].type = Pokemon[req.params.id].type.map(item => item.trim());
 
     // ! Concatenante each type with comma (,) and turn the array into one string using join method
     Pokemon[req.params.id].type = Pokemon[req.params.id].type.join(',');
+    }
     res.render('edit', { Pokemon: Pokemon[req.params.id], index: req.params.id });
   } catch (error) {
     console.log(error);
