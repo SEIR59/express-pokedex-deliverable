@@ -61,6 +61,10 @@ app.put("/pokemon/:id", (req, res) => {
   res.redirect("/pokemon");
 });
 // Delete
+app.delete("/pokemon/:id", (req, res) => {
+  Pokemon.splice(req.params.id, 1);
+  res.redirect("/pokemon");
+});
 
 app.listen(port, () => {
   console.log("listening to the port 3000");
