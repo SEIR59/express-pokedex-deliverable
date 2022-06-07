@@ -7,6 +7,11 @@
     <title>Pokemon Show Page</title>
 </head>
 <body>
-    <h1>Pokemon Show Page</h1>
+    <h1>Pokedex Entry</h1>
+    <li>{{index.name}} the {{index.misc.classification}} <br><img src='{{index.img}}'><br>{{index.type}}</li><br>
+    <li>HP: {{index.stats.hp}}</li><br>
+    <li>Attack: {{index.stats.attack}}</li><br>
+    <li>Defense: {{index.stats.defense}}</li>
+    <a href='/pokemon/:id/edit'><button>Edit Pokemon</button></a>
 </body>
 </html>

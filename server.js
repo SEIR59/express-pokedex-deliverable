@@ -21,12 +21,6 @@ app.get('/pokemon/new', (req, res) => {
     res.render('new')
     })
 
-
-// SHOW
-app.get('/pokemon/:id', (req, res) => {
-    console.log('you hit the show route')
-    res.render('show', { data: Pokemon[req.params.id] });
-    });
 // EDIT
 app.get('/pokemon/:id/edit', (req,res) => {
     console.log('You hit the edit route ')
@@ -35,6 +29,25 @@ app.get('/pokemon/:id/edit', (req,res) => {
 
     })
 })
+
+// SHOW
+app.get('/pokemon/:id', (req, res) => {
+    console.log('you hit the show route')
+    res.render('show', { 
+        index: Pokemon[req.params.id],
+        allPokemon: Pokemon,
+        id: req.params.id,
+        name: req.params.name,
+        img: req.params.img,
+        type: req.params.type,
+        classification: req.params.classification
+
+        // hp: req.params.stats.hp,
+        // attack: req.params.stats.attack,
+        // defense: req.params.stats.defense
+        });
+    });
+
 
 //POST
 app.post('/pokemon', (req, res) => {
