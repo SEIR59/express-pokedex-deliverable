@@ -13,9 +13,11 @@
     <a href="/pokemon/new"><button>Add New Pokemon</button></a><br>
     {% for entry in data %}
     {% assign i = entry %}
+
     <a href="/pokemon/{{ forloop.index0 }}">
         <img src="{{ entry.img }}" alt="{{ entry.name }}">
     </a>
+
     {% endfor %}
 </body>
 

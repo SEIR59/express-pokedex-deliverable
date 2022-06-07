@@ -33,7 +33,10 @@ app.get('/pokemon/:id/edit', (req, res) => {
 
 // Create
 app.post('/pokemon', (req, res) => {
-    res.render('show', { data: Pokemon[req.params.id] })
+    req.body.img = "https://i.ytimg.com/vi/gLkNlyU0qd4/mqdefault.jpg"
+    console.log(req.body.img)
+    Pokemon.push(req.body)
+    res.redirect('pokemon')
 })
 
 // Update
