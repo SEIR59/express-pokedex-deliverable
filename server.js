@@ -18,14 +18,15 @@ app.get('/', (req,res) => {
 
 // INDEX
 app.get('/pokemon', (req, res) => {
-res.render('index.liquid', { data: Pokemon });
+res.render('index.liquid', { allPokemon: Pokemon });
 });
 
 // SHOW
-app.get('/:id', (req, res) => {
-res.render('show.liquid', { data: Pokemon[req.params.id] });
+app.get('/pokemon/:id', (req, res) => {
+res.render('show.liquid', { allPokemon: Pokemon[req.params.id] });
 });
 
+// PORT
 app.listen(port, () => {
     console.log("working")
     routeReport.print()

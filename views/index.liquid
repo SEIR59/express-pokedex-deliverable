@@ -30,6 +30,16 @@
    ></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Pokedex</h1>
+        <ul>
+            {% for Pokemon in allPokemon %}
+            <li>
+                <!-- Links to show.liquid -->
+                <a href="/pokemon/{{forloop.index0}}">{{Pokemon.name}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>
