@@ -1,4 +1,8 @@
 
+body{
+    /* background-color: #d8d9de; */
+    background-color: white;
+}
 .pokemon-container{
     display: flex;
     flex-direction: row;
@@ -6,14 +10,31 @@
     align-items: space-between;
     justify-content: center;
     margin: 0 auto;
-    gap: 1.25em;
+    gap: 1em;
     max-width: 1200px;
-    
+}
+
+.nav{
+    background-color: #7facd6;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav h1{
+    font-size: 4em;
+    margin-left: 1em;
+}
+.btn-nav{
+    margin-right: 2em;
+}
+.btn-nav:hover{
+    background-color: palegoldenrod;
 }
 
 h1,h2,h3,h4,h5{
     font-family: 'Luckiest Guy', cursive;
-    color: darkcyan;
+    color: #393b45;
 }
 
 img{
