@@ -11,30 +11,34 @@
     <body>
         <h1>Edit page</h1>
         <div class="card">
-        {% comment %} The pokemon's name {% endcomment %}
-        Name: {{data.name}}
-        <br>
-        {% comment %} The image of the pokemon {% endcomment %}
-        <img src="{{data.img}}" alt="" >
-        <br>
-        <ul>
-            {% comment %} An unordered list of the Pokemon's types (eg. water, poison, etc) {% endcomment %}
-            Type: 
-            {% comment %} for loop to run through and get all values {% endcomment %}
-            {{data.type}}
-            {% comment %} {% for pokemon in data %}
-               {{pokemon.type | split: "|" | join: ", " }}
-        
-            {%endfor%} <br> {% endcomment %}
-            {% comment %} The pokemon's stats for HP, ATTACK, and DEFENSE. {% endcomment %}
-            <br>
-            Stats: <br>
-               Hp: {{data.stats.hp}}, <br>
-                Attack: {{data.stats.attack}} <br>
-                Defense: {{data.stats.defense}} <br>
-                Speed: {{data.stats.speed}}
-            <br>
-        </ul>
+            <form action="/fruits/{{index}}?_method=PUT" method="POST">
+
+                    {% comment %} The pokemon's name {% endcomment %}
+                    Name: <input type="text" name="name" value="{{data.name}}">
+                    {{data.name}}
+                    <br>
+                    {% comment %} The image of the pokemon {% endcomment %}
+                    <img src="{{data.img}}" alt="" >
+                    <br>
+                    <ul>
+                        {% comment %} An unordered list of the Pokemon's types (eg. water, poison, etc) {% endcomment %}
+                        Type: 
+                        {% comment %} for loop to run through and get all values {% endcomment %}
+                        {{data.type}}
+                        {% comment %} {% for pokemon in data %}
+                        {{pokemon.type | split: "|" | join: ", " }}
+                    
+                        {%endfor%} <br> {% endcomment %}
+                        {% comment %} The pokemon's stats for HP, ATTACK, and DEFENSE. {% endcomment %}
+                        <br>
+                        Stats: <br>
+                        Hp: {{data.stats.hp}}, <br>
+                            Attack: {{data.stats.attack}} <br>
+                            Defense: {{data.stats.defense}} <br>
+                            Speed: {{data.stats.speed}}
+                        <br>
+                    </ul>
+            </form>
     </div>
 
         <a href="/pokemon/">Back to homepage</a> 

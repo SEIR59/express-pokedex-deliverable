@@ -37,9 +37,17 @@
         </ul>
     </div>
       {% comment %} Add edit link here  {% endcomment %}
-     <a href="/pokemon/{{index}}/edit">Edit</a>
-        <a href="/pokemon/">Back to homepage</a> 
+     <button onclick=location.href="/pokemon/{{index}}/edit">Edit {{data.name}}</button>
+   
 
+
+
+
+
+
+<footer>
+        <a href="/pokemon/">Back to homepage</a> 
+    </footer>
 
     </body>
     </html>
