@@ -9,6 +9,7 @@
         <body>
             <div>
                 <h1>Pokedex</h1>
+                <a href="/pokemon/new"><button>Create New</button></a>
                     {%for pokemon in allPokemon%}
                         {{pokemon.name}}
                         <img src="{{pokemon.img}}" alt="Pokemon" width="200" height="250">
