@@ -2,6 +2,7 @@ const express = require("express");
 const app = require("liquid-express-views")(express());
 const Pokemon = require("./pokedex/pokemon.js");
 
+
 //include the method-override package
 const methodOverride = require("method-override");
 
@@ -45,7 +46,8 @@ app.get("/pokemon/new", (req, res) => {
 app.post("/pokemon", (req, res) => {
 
   //create new pokemon
-  Pokemon.push(req.body)
+  Pokemon.unshift(req.body) //unshift posts all new to the very beginning
+  console.log('post is working')
   res.redirect('/pokemon')
 })
 
