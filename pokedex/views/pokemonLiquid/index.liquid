@@ -1,0 +1,22 @@
+{% layout "layout.liquid" %} {% block content %}
+
+    <a href="/pokemon/new"><button>Add new Pokemon!</button></a>
+
+    <div class="container">
+        {%for pokemon in pokemonList%}
+        <div>
+            <h1>{{pokemon.name}}</h1>
+            <a href="/pokemon/{{ forloop.index0 }}"><img src="{{pokemon.img}}" alt=""></a>
+            <p>Types: {{pokemon.type | join: ", " }}</p>
+            <p>Height: {{pokemon.misc.height}} Weight: {{pokemon.misc.weight}}</p>
+            <div class="container4">
+                <p>HP: {{ pokemon.stats.hp}}</p>
+                <p>Attack: {{ pokemon.stats.attack}}</p>
+                <p>Defense: {{ pokemon.stats.defense}}</p>
+                <p>Speed: {{ pokemon.stats.speed}}</p>
+            </div>
+        </div>
+
+        {% endfor%}
+    </div>
+    {% endblock %}
