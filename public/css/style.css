@@ -19,6 +19,11 @@ img {
     border-radius: 20%;
 }
 
+#show {
+    width: 20%;
+    height: 20%;
+}
 h1 {
     text-align: center;
+    color: aliceblue;
 }

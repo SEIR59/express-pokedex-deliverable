@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="navBar">
+      <h1>Pokemon Manager</h1>
+      <form action="/pokemon">
+        <input type="submit" value="Home" />
+      </form>
+    </div>
+
+    <h1>Edit Pokemon</h1>
+    <img src="{{ pokemon.img }}" alt="" id="show" />
+    <!--  NOTE: action will be the route, method will be the HTTP verb-->
+    <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
+      Name: <input type="text" name="name" value="{{ pokemon.name }}" /><br />
+      Type: <input type="text" name="type" value="{{ pokemon.type }}" /><br />
+      Stats: HP:
+      <input type="text" name="hp" value="{{ pokemon.stats.hp }}" /><br />
+      ATTACK:
+      <input
+        type="text"
+        name="attack"
+        value="{{ pokemon.stats.attack }}"
+      /><br />
+      DEFENSE:
+      <input
+        type="text"
+        name="defense"
+        value="{{ pokemon.stats.defense }}"
+      /><br />
+
+      <input type="submit" value="Edit Pokemon" />
+    </form>
+  </body>
+</html>

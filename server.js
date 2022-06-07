@@ -62,7 +62,12 @@ app.get("/pokemon/:id/edit", (req, res) => {
 });
 
 app.put("/pokemon/:id", (req, res) => {
-  pokemons[req.params.id] = req.body;
+  console.log(req.body);
+  pokemons[req.params.id].name = req.body.name;
+  pokemons[req.params.id].type = req.body.type;
+  pokemons[req.params.id].stats.hp = req.body.hp;
+  pokemons[req.params.id].stats.attack = req.body.attack;
+  pokemons[req.params.id].stats.defense = req.body.defense;
   res.redirect("/pokemon");
 });
 
