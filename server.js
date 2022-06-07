@@ -11,20 +11,40 @@ app.use((req, res, next) => {
 
 app.use(express.urlencoded({ extended: false}))
 
-// INDEX
-app.get('/', (req, res) => {
+// Index
+app.get('/pokemon', (req, res) => {
     res.render('index', { data: Pokemon })
 })
 
-
-// SHOW
-app.get('/:id', (req, res) => {
+// Show
+app.get('pokemon/:id', (req, res) => {
     res.render('show', { data: Pokemon[req.params.id] })
 })
 
+// New
+app.get('/pokemon/new', (req, res) => {
+    res.render('show', { data: Pokemon[req.params.id] })
+})
 
+// Edit
+app.get('pokemon/:id/edit', (req, res) => {
+    res.render('show', { data: Pokemon[req.params.id] })
+})
 
+// Create
+app.post('/pokemon', (req, res) => {
+    res.render('show', { data: Pokemon[req.params.id] })
+})
 
+// Update
+app.put('/pokemon/:id', (req, res) => {
+    res.render('show', { data: Pokemon[req.params.id] })
+})
+
+// Destroy
+app.delete('/pokemon/:id', (req, res) => {
+    res.render('show', { data: Pokemon[req.params.id] })
+})
 
 
 
