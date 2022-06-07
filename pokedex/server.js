@@ -19,6 +19,16 @@ app.get("/pokemon", (req, res) => {
   res.render("index", { allPokemon: Pokemon });
 });
 
+app.post("/pokemon", (req, res) => {
+  Pokemon.push(req.body);
+  console.log(Pokemon);
+  res.redirect("/pokemon");
+});
+
+app.get("/pokemon/new", (req, res) => {
+  res.render("new");
+});
+
 // SHOW
 app.get("/pokemon/:id", (req, res) => {
   res.render("show", { pokemon: Pokemon[req.params.id] });

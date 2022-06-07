@@ -12,6 +12,8 @@
     <br />
     <img src="{{ pokemon.img }}" width="200" /><br />
 
+    <p>{{ pokemon.misc.classification | capitalize }}</p>
+
     <p>Type:</p>
     <ul>
       {% for type in pokemon.type%}

@@ -7,16 +7,11 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Pokedex. Gotta catch 'em y'all.</h1>
-    <br />
-    <div>
-      {% for pokemon in allPokemon %}
-
-      <a href="/pokemon/{{ forloop.index0 }}"
-        ><img src="{{ pokemon.img }}" width="200" />{{ pokemon.name }}</a
-      >
-
-      {% endfor %}
-    </div>
+    <h1>New Pokemon Entry</h1>
+    <form action="/pokemon" method="POST">
+      Name: <input type="text" name="name" /><br />
+      Type: <input type="text" name="type" /><br />
+      <input type="submit" value="Enter New Pokemon" />
+    </form>
   </body>
 </html>
