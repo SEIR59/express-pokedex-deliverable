@@ -45,6 +45,15 @@ app.put('/pokemon/:id', (req, res) => {
     res.redirect('/pokemon')
 })
 
+// ***** EDITING THE NAME RIGHT NOW EDITS EVERY OTHER ASPECT OF POKEMON TO '' ******
+// EDIT
+app.get('/pokemon/:id/edit', (req, res) => [
+    res.render('edit', {
+        Pokemon: Pokemon[req.params.id],
+        index: req.params.id
+    })
+])
+
 // DELETE
 app.delete('/pokemon/:id', (req, res) => {
     Pokemon.splice(req.params.id, 1)

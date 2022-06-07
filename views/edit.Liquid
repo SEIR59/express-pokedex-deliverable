@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Edit a {{Pokemon.name}}</h1>
+    <form action="/pokemon/{{index}}?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="{{Pokemon.name}}">
+        <input type="submit" value="Submit Pokemon Changes">
+
+    </form>
     <a href="/pokemon">Go Back to Pokedex</a>
 </body>
 </html>
