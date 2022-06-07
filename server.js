@@ -52,7 +52,7 @@ app.get('/pokemon/:id', (req, res) => {
     res.render(
         'show',
         {
-            data: Pokemon[req.params.id]
+            pokemon: Pokemon[req.params.id]
         }
     )
 })

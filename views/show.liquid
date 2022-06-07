@@ -6,9 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
-    <title>Document</title>
+    <title>{{pokemon.name}}</title>
 </head>
 <body>
-    
+    <h1>{{pokemon.name}}</h1>
+      <table>
+        <tr>
+          <td>
+            <img src="{{pokemon.img}}" alt="{{pokemon.name}}">
+          </td>
+          <td>
+            <h5>Type</h5>
+            <p>
+                {% if pokemon.type.length > 1 %}
+                {% for type in pokemon.type %}
+                {{type}} <br>
+                {% endfor %}
+                {% endif %}
+                <!-- {{pokemon.type.length}} -->
+            </p>
+          </td>
+          <td>
+            <h5>Stats</h5>
+            <p>hp: {{pokemon.stats.hp}} <br>
+            attack: {{pokemon.stats.attack}} <br>
+            defense: {{pokemon.stats.defense}} <br>
+            pattack: {{pokemon.stats.spattack}} <br>
+            spdefense: {{pokemon.stats.spdefense}} <br>
+            speed: {{pokemon.stats.speed}}</p>
+          </td>
+        </tr>
+      </table>
+      <a href="/pokemon">Back to Pokedex</a>
 </body>
 </html>
