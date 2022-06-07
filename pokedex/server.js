@@ -51,7 +51,7 @@ app.get('/pokemon/:id', (req, res) => {
 app.get('/pokemon/:id/edit', (req, res) => {
   try {
     let chosenPokemon = Pokemon[req.params.id];
-    chosenPokemon.type = chosenPokemon.type.join(',');
+    // chosenPokemon.type = chosenPokemon.type.join(',');
     res.render('edit', { Pokemon: chosenPokemon, index: req.params.id });
   } catch (error) {
     console.log(error);
@@ -91,6 +91,30 @@ app.post('/pokemon', (req, res) => {
 app.delete('/pokemon/:id', (req, res) => {
   try {
     Pokemon.splice(req.params.id, 1);
+    res.redirect('/pokemon');
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ Message: error.message });
+  }
+});
+
+//? UPDATE
+app.put('/pokemon/:id', (req, res) => {
+  try {
+    let chosenPokemon = Pokemon[req.params.id];
+    const { name, type, hp, attack, defense, spattack, spdefense, speed, img } =
+      req.body;
+
+    chosenPokemon.name = name;
+    chosenPokemon.type = type.split(',');
+    chosenPokemon.img = img;
+    chosenPokemon.stats.hp = hp;
+    chosenPokemon.stats.attack = attack;
+    chosenPokemon.stats.defense = defense;
+    chosenPokemon.stats.spattack = spattack;
+    chosenPokemon.stats.spdefense = spdefense;
+    chosenPokemon.stats.speed = speed;
+
     res.redirect('/pokemon');
   } catch (error) {
     console.log(error);

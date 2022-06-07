@@ -5,37 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>New Pokemon</title>
+    <title>Update Pokemon</title>
   </head>
   <body class="bg-slate-300">
     <a href="/pokemon">
-      <button
-        class="flex justify-center gap-x-2 items-center bg-slate-500 text-white mt-5 w-24 rounded-md h-10 hover:bg-slate-400 ml-6"
-      >
-        <svg
-          class="h-6 w-6"
-          fill="none"
-          stroke-width="2"
-          stroke="currentColor"
-          viewbox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="flex justify-center gap-x-2 items-center bg-slate-500 text-white mt-5 w-24 rounded-md h-10 hover:bg-slate-400 ml-6"
         >
-          <path
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        Back
-      </button>
-    </a>
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke-width="2"
+            stroke="currentColor"
+            viewbox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Back
+        </button>
+      </a>
     <div class="flex flex-col justify-center items-center m-4">
       <div>
-        <h1 class="text-4xl mb-4 text-gray-500 font-bold">
-          Create New Pokemon
+        <h1 class="text-4xl mb-8 text-gray-500 font-bold">
+          Update Pokemon -> {{Pokemon.name}}
         </h1>
       </div>
-      <form class="w-full max-w-sm" action="/pokemon" method="POST">
+      <form class="w-full max-w-sm" action="/pokemon/{{index}}?_method=PUT" method="POST">
         <!--? START ~ NAME -->
         <div class="md:flex md:items-center mb-6">
           <div class="md:w-1/3">
@@ -52,6 +52,7 @@
               name="name"
               type="text"
               placeholder="Enter Name"
+              value="{{Pokemon.name}}"
             />
           </div>
         </div>
@@ -73,6 +74,7 @@
               name="type"
               type="text"
               placeholder="Enter Type"
+              value="{{Pokemon.type}}"
             />
           </div>
         </div>
@@ -94,6 +96,7 @@
               name="hp"
               type="text"
               placeholder="Enter HP"
+              value="{{Pokemon.stats.hp}}"
             />
           </div>
         </div>
@@ -115,6 +118,7 @@
               name="attack"
               type="text"
               placeholder="Enter Attack"
+              value="{{Pokemon.stats.attack}}"
             />
           </div>
         </div>
@@ -136,6 +140,7 @@
               name="defense"
               type="text"
               placeholder="Enter Defense"
+              value="{{Pokemon.stats.defense}}"
             />
           </div>
         </div>
@@ -157,6 +162,7 @@
               name="spattack"
               type="text"
               placeholder="Enter SP Attack"
+              value="{{Pokemon.stats.spattack}}"
             />
           </div>
         </div>
@@ -178,6 +184,7 @@
               name="spdefense"
               type="text"
               placeholder="Enter SP Defense"
+              value="{{Pokemon.stats.spdefense}}"
             />
           </div>
         </div>
@@ -199,6 +206,7 @@
               name="speed"
               type="text"
               placeholder="Enter Speed"
+              value="{{Pokemon.stats.speed}}"
             />
           </div>
         </div>
@@ -220,6 +228,7 @@
               name="img"
               type="text"
               placeholder="Enter Image URL"
+              value="{{Pokemon.img}}"
             />
           </div>
         </div>
@@ -231,7 +240,7 @@
             <input
               class="shadow bg-slate-500 hover:bg-slate-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded cursor-pointer"
               type="submit"
-              value="Create Pokemon"
+              value="Update Pokemon"
             >
               
             </input>
