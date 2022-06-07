@@ -11,7 +11,11 @@
             Name: <input type="text" name="name" value="{{data.name}}" /><br />
             ImageUrl: <input type="url" name="img" value="{{data.img}}" /><br />
             {% comment %} checkbox? {% endcomment %}
-            Type: <input type="text" name="type" value="{{data.type | join:", "}}" /><br />
+            <h3>Types:</h3>
+            {% for type in allTypes %} 
+            {{type}}: <input type="checkbox" name="{{type}}" /><br/>
+            {% endfor %}
+            {% comment %} Type: <input type="text" name="type" value="{{data.type | join:", "}}" /><br /> {% endcomment %}
             Stats hp: <input type="number" name="hp" value="{{data.stats.hp}}" /><br />
             Stats attack: <input type="number" name="attack" value="{{data.stats.attack}}" /><br /> 
             Stats defense: <input type="number" name="defense" value="{{data.stats.defense}}" /><br /> 

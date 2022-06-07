@@ -18,7 +18,7 @@
         Name: <input type="text" name="name" required /><br/>
         ImageUrl: <input type="url" name="img" placeholder="https://img.pokemondb.nex/artwork/..."
             pattern="http://.*"/><br/>
-        {% comment %} TODO: {% endcomment %}
+        
         <h3>Types:</h3>
         {% for type in types %} 
         {{type}}: <input type="checkbox" name="{{type}}" /><br/>

@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 //near the top, around other app.use() calls
 app.use(express.urlencoded({ extended: false }));
 
-// Create
+// Create - post
 app.post("/pokemon", (req, res) => {
   // transcript type check box into type array
   req.body.type = [];
@@ -77,12 +77,22 @@ app.get("/pokemon/:id/edit", (req, res) => {
   res.render("edit", {
     data: Pokemon[req.params.id],
     index: req.params.id,
+    allTypes: distinctTypes,
   });
 });
 
-// Update
+// Update - put
 app.put("/pokemon/:id", (req, res) => {
-  req.body.type = [req.body.type];
+  // transcript type check box into type array
+  req.body.type = [];
+  for (let i = 0; i < distinctTypes.length; i++) {
+    let typeVar = distinctTypes[i];
+    // cannot use window - it's in node js
+    // have to use eval ....
+    if (eval("req.body." + typeVar) == "on") {
+      req.body.type.push(distinctTypes[i]);
+    }
+  }
 
   req.body.stats = {
     hp: req.body.hp,
