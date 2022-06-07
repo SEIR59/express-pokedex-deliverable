@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pokemon.name}}</title>
+</head>
+<body>
+    <h1>{{pokemon.name}}</h1>
+    <img src="{{pokemon.img}}" alt="{{pokemon.name}} profile picture" width="150px">
+    <h3>{{pokemon.id}}</h3>
+        <h4>Type:
+            {% for type in pokemon.type %}
+                {{type}}
+            {% endfor %}
+        </h4>
+    
+    <h4 class="heading">Stats</h4>
+        <table class="u-full-width">
+            <thead>
+              <tr>
+                <th>HP</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{pokemon.stats.hp}}</td>
+                <td>{{pokemon.stats.attack}}</td>
+                <td>{{pokemon.stats.defense}}</td>
+                <td>{{pokemon.stats.speed}}</td>
+              </tr>
+            </tbody>
+          </table>
+</body>
+</html> 
