@@ -1,14 +1,19 @@
+nav {
+  display: block;
+}
+
 img {
-  object-fit: cover;
-  width: 150px;
+  max-width: 200px;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 150px);
-  grid-column-gap: 10px;
+  justify-content: center;
+  grid-template-columns: repeat(5, 200px);
+  grid-row-gap: 25px;
+  grid-column-gap: 25px;
 }
 .grid-card {
-  display: grid;
-  grid-template-rows: 10px 100px;
+  width: 200px;
+  justify-content: center;
 }

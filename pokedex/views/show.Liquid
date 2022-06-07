@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{data.name}}</title>
+    <link rel="stylesheet" href="../css/app.css">    
 </head>
 <body>
-    
+    <nav>
+        <a href="/pokemon">Home</a>
+    </nav>
+  <h1>{{data.name}} Detail</h1>  
+    <section>
+        <img src={{data.img}} alt={{data.name}}>
+        <h3>Type:</h3>
+        {% for type in data.type %}
+            <p>{{type}}</p>
+        {% endfor %}
+
+        <h3>Stats:</h3>
+        {% for s in data.stats %}
+          {{s|json}} 
+          
+        {% endfor %}
+     
+
+
+    </section>
+
+
 </body>
 </html>

@@ -9,16 +9,22 @@
 
 </head>
 <body>
+   
+    <nav>
+    <a href="/pokemon">Home</a>
+    </nav> 
     <h1>Pokedex</h1>
-    <div class=".grid-container">
-        <div class=".grid-card">  
+    <div class="grid-container">
+       
         {% for pokemon in data %}
+            <div class="grid-card">  
                 <p>{{ pokemon.name }}</p> 
                 <a href="/pokemon/{{ forloop.index0 }}">
                     <img src={{pokemon.img}} alt={{pokemon.name}}>
                 </a>
+            </div>
         {% endfor %}
-        </div>
+        
     </div>
 
 </body>
