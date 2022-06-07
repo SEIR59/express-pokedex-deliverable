@@ -21,13 +21,14 @@
     <!--  NOTE: action will be the route, method will be the HTTP verb-->
     <form action="/pokemon" method="POST">
       <div class="form-row-container">
-        Name: <input type="text" name="name" /><br />
+        Name: <input type="text" name="name" placeholder="  name" /><br />
       </div>
       <div class="form-row-container">
-        Type: <input type="text" name="type" /><br />
+        Type: <input type="text" name="type" placeholder="  type" /><br />
       </div>
       <div class="form-row-container">
-        Image: <input type="file" id="img" name="img" accept="image/*" /><br />
+        Image:
+        <input type="url" id="img" name="img" placeholder="  image url" /><br />
       </div>
       <div class="form-row-container">
         <input type="submit" value="Create Pokemon" />
