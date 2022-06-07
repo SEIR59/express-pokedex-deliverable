@@ -4,7 +4,7 @@ const app = require("liquid-express-views")(express())
 
 // INDEX
 app.get('/', (req, res) => {
-    res.render('index.liquid', { data: Pokemon });
+    res.render('index', { data: Pokemon });
     });
     
     
@@ -14,3 +14,10 @@ app.get('/', (req, res) => {
     });
     
     
+
+
+
+
+    app.listen(3000, () => {
+        console.log("listening on port 3000!")
+    })
