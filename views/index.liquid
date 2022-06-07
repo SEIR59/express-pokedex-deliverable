@@ -11,8 +11,31 @@
 </head>
 
 <body>
+    <div class="container">
+    <div class="line">
     <h1>Pokemon</h1>
-    
+    <button class="btn" type="submit">Add a Pokemon</button>
+    </div>
+        <ul>
+            {% for pokemon in data%}
+            <h2>{{pokemon.name}}</h2>
+
+            <a href="/pokemon/{{forloop.index0}}">
+                <li>
+                    <img src="{{pokemon.img}}" class="img-style" alt=""></li>
+                    <a href="/pokemon/" type="submit">Edit</a>
+                    <a href="/pokemon/" type="submit">Delete</a>
+                </li>
+
+            </a>
+            {% endfor %}
+
+        </ul>
+
+
+
+    </div>
+
 </body>
 
 </html>
