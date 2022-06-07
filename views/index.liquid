@@ -37,6 +37,9 @@
             <li>
                 <!-- Links to show.liquid -->
                 <a href="/pokemon/{{forloop.index0}}">{{Pokemon.name}}</a>
+                <img src="{{Pokemon.img}}">
+                <!-- Links to edit.liquid -->
+                <a href="/pokemon/{{forloop.index0}}/edit">Edit</a>
             </li>
             {% endfor %}
         </ul>
