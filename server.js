@@ -1,10 +1,20 @@
 const express = require('express')
 const app = require("liquid-express-views")(express())
 const port = 3000;
-const pokemon = require('./pokedex/pokemon.js')
+const pokemons = require('./pokedex/pokemon.js')
+app.get('/pokemon', (req, res) => {
+    res.render(
+        'index'
+    )
+})
 
-app.get('/', (req, res) => {
-    res.send(`You're now on the Index.`)
+app.get('/pokemon/:id', (req, res) => {
+    res.render(
+        'show',       
+        {
+            pokemon: pokemons[req.params.id]
+        }
+    )
 })
 
 app.listen(port, () => {
