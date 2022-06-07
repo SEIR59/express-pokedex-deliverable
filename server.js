@@ -13,7 +13,11 @@ app.use(methodOverride('_method'))
 // INDEX
 app.get('/pokemon', (req, res) => {
     console.log('you hit the index route')
-    res.render('index', { data: Pokemon });
+    res.render('index', 
+    { 
+        allPokemon: Pokemon, 
+        index: Pokemon[req.params.id]
+    });
     });
 // New    
 app.get('/pokemon/new', (req, res) => {
@@ -24,10 +28,17 @@ app.get('/pokemon/new', (req, res) => {
 // EDIT
 app.get('/pokemon/:id/edit', (req,res) => {
     console.log('You hit the edit route ')
-    res.render('edit',
-    {
-
-    })
+    res.render('edit', {
+       index: Pokemon[req.params.id],
+        allPokemon: Pokemon,
+        id: req.params.id,
+        id: req.params.id,
+        name: req.params.name,
+        img: req.params.img,
+        type: req.params.type,
+        classification: req.params.classification
+        }
+    )
 })
 
 // SHOW

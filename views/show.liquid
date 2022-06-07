@@ -8,10 +8,12 @@
 </head>
 <body>
     <h1>Pokedex Entry</h1>
+    {%for Pokemon in allPokemon %}
     <li>{{index.name}} the {{index.misc.classification}} <br><img src='{{index.img}}'><br>{{index.type}}</li><br>
     <li>HP: {{index.stats.hp}}</li><br>
     <li>Attack: {{index.stats.attack}}</li><br>
     <li>Defense: {{index.stats.defense}}</li>
-    <a href='/pokemon/:id/edit'><button>Edit Pokemon</button></a>
+    <a href='/pokemon/{{forloop.index.0}}/edit'><button>Edit Pokemon</button></a>
+    {%endfor%}
 </body>
 </html>

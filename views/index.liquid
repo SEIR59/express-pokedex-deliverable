@@ -9,7 +9,13 @@
 <body>
     <h1>Pokemon Index Page</h1>
     <ul>
-        <li>{{allPokemon}}</li>
+        {%for Pokemon in allPokemon %}
+    <li>{{Pokemon.name}} the {{Pokemon.misc.classification}} <br><img src='{{Pokemon.img}}'><br>{{index.type}}</li><br>
+    <li>HP: {{Pokemon.stats.hp}}</li><br>
+    <li>Attack: {{Pokemon.stats.attack}}</li><br>
+    <li>Defense: {{Pokemon.stats.defense}}</li><br><br>
+    
+    {%endfor%}
     </ul>
 </body>
 </html>
