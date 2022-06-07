@@ -9,5 +9,20 @@
     </head>
     <body>
         
+        {% comment %} form section for img url so they have to add in their own image {% endcomment %}
+
+
+{% comment %} create array, append each then push all / create three sections on form / could set it up where coma seperated then pops them into an array {% endcomment %}
+<h1>New Pokemon Page</h1>
+<form action="/pokemon" method="POST">
+    Name: <input type="text" name="name"><br>
+    {% comment %} Color: <input type="text" name="color"><br>
+    Is Ready To Eat: <input type="checkbox" name="readyToEat"><br>
+    <input type="submit" name="Create Fruit"> {% endcomment %}
+</form>
+
+
+
+
     </body>
     </html>

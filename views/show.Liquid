@@ -9,6 +9,31 @@
     </head>
     <body>
         <h1>Show page</h1>
+        <div class="card">
+        {% comment %} The pokemon's name {% endcomment %}
+        Name: {{data.name}}
+        <br>
+        {% comment %} The image of the pokemon {% endcomment %}
+        <img src="{{data.img}}" alt="" >
+        <br>
+        <ul>
+            {% comment %} An unordered list of the Pokemon's types (eg. water, poison, etc) {% endcomment %}
+            Type: 
+            {% comment %} for loop to run through and get all values {% endcomment %}
+            {% for pokemon in data %}
+               {{pokemon.type | split: "|" | join: ", " }}
+        
+            {%endfor%} <br>
+            {% comment %} The pokemon's stats for HP, ATTACK, and DEFENSE. {% endcomment %}
+            Stats: <br>
+               Hp: {{data.stats.hp}}, <br>
+                Attack: {{data.stats.attack}}
+            <br>
+        </ul>
+    </div>
+
+        <a href="/pokemon/">Back to homepage</a> 
+
 
     </body>
     </html>
