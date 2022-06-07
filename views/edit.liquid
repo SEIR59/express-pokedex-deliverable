@@ -18,5 +18,20 @@
         <button class="btn-nav" onclick=location.href="/pokemon/">Home</button>
         <button class="btn-nav" onclick=location.href="/pokemon/new">Add new Pokemon</button>
         </nav>
+        <h1>Edit {{ data.name}}</h1>
+        <form action="/pokemon/{{index}}?_method=PUT" method="POST">
+            <input type="text" name="name" placeholder="Name of Pokemon..">
+            <input type="text" name="type" placeholder="Type of Pokemon..">
+            Enter Stats:
+            <input type="text" name="hp" placeholder="HP">
+            <input type="text" name="attack" placeholder="Attack">
+            <input type="text" name="defense" placeholder="Defense">
+            <input type="text" name="speed" placeholder="Speed">
+            <input type="submit" value="Edit {{ data.name}}">
+        
+        
+        </form>
+
+        
     </body>
 </html>
