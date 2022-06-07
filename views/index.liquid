@@ -32,6 +32,9 @@
 <body>
     <div class="container">
         <h1>Pokedex</h1>
+        <form action="/pokemon/new">
+            <input type="submit" value="ADD">
+        </form>
         <ul>
             {% for Pokemon in allPokemon %}
             <li>

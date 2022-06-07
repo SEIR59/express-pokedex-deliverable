@@ -16,16 +16,32 @@ app.get('/', (req,res) => {
     res.send('working')
 })
 
+// CREATE
+app.post('/pokemon', (req,res) => {
+    Pokemon.push(req.body)
+    res.redirect('/pokemon')
+})
+
 // INDEX
 app.get('/pokemon', (req, res) => {
-res.render('index.liquid', { allPokemon: Pokemon });
+    res.render('index.liquid', { allPokemon: Pokemon });
 });
+
+// NEW
+app.get('/pokemon/new', (req, res) => {
+    res.render('new')
+})
 
 // SHOW
 app.get('/pokemon/:id', (req, res) => {
-res.render('show.liquid', { allPokemon: Pokemon[req.params.id] });
+    res.render('show.liquid', { allPokemon: Pokemon[req.params.id] });
 });
 
+// DELETE
+app.delete('/pokemon/:id', (req, res) => {
+    Pokemon.splice(req.params.id, 1)
+    res.redirect('/pokemon')
+})
 
 
 // PORT
