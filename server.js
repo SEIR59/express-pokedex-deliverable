@@ -1,4 +1,5 @@
 const express = require("express");
+const pokemon = require("./pokedex/pokemon");
 const app = require("liquid-express-views")(express());
 const port = 3000;
 const Pokemon = require("./pokedex/pokemon");
@@ -19,15 +20,15 @@ app.get("/pokemon", (req, res) => {
   res.render("index", { data : Pokemon } );
 });
 
-// //NEW
-// app.get('/pokemon/new', (req,res) => {
-//   res.render('new')
-// });
+//NEW
+app.get('/pokemon/new', (req,res) => {
+  res.render('new')
+});
 
-// // SHOW
-// app.get("/pokemon:id", (req, res) => {
-//   res.render("show", { data: Pokemon[req.params.id] });
-// });
+// SHOW
+app.get("/pokemon/:id", (req, res) => {
+  res.render("show", {data: Pokemon[req.params.id] });
+});
 
 app.listen(port, () => {
   console.log(`Listening`);
