@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/skeleton.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>Show</title>
     </head>
@@ -19,17 +21,18 @@
         <br>
         <ul>
             {% comment %} An unordered list of the Pokemon's types (eg. water, poison, etc) {% endcomment %}
-            Type: 
+            <h2> Type: </h2> 
             {% comment %} for loop to run through and get all values {% endcomment %}
-            {{data.type}}
-            {% comment %} {% for pokemon in data %}
-               {{pokemon.type | split: "|" | join: ", " }}
-        
-            {%endfor%} <br> {% endcomment %}
+
+            
+                {% for type in data.type %}
+                    {{type}}
+                
+                {%endfor%} <br> 
             {% comment %} The pokemon's stats for HP, ATTACK, and DEFENSE. {% endcomment %}
             <br>
-            Stats: <br>
-               Hp: {{data.stats.hp}}, <br>
+            <h2>Stats: </h2>
+               Hp: {{data.stats.hp}} <br>
                 Attack: {{data.stats.attack}} <br>
                 Defense: {{data.stats.defense}} <br>
                 Speed: {{data.stats.speed}}

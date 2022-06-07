@@ -5,43 +5,37 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/skeleton.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>New</title>
     </head>
     <body>
-        
-
-
-{% comment %} create array, append each then push all / create three sections on form / could set it up where coma seperated then pops them into an array {% endcomment %}
-<nav>
-    <h1>New Pokemon Page</h1>
-    <a href="/pokemon/">Back to homepage</a>
-</nav>
+ 
+        <nav>
+            <h1>New Pokemon Page</h1>
+            <a href="/pokemon/">Back to homepage</a>
+        </nav>
 
         <form action="/pokemon" method="POST">
         <label>
-            Name: <input type="text" name="name" placeholder="Name"><br>
+           <h2> Name: </h2><input type="text" name="name" placeholder="Name"><br>
             {% comment %} Color: <input type="text" name="color"><br>
             Is Ready To Eat: <input type="checkbox" name="readyToEat"><br>
             <input type="submit" name="Create Fruit"> {% endcomment %}
 
         <label>
-            Img Url: <input type="url" name="img" id="" placeholder="Image URL Here"> <br>
-        </label>
+           <h2> Img Url: </h2> <input type="url" name="img" id="" placeholder="Image URL Here"> <br>
+        </label><br>
         <label>
-            Type: <input type="text" name="type" placeholder="Poison"><br>
+           <h2> Type: </h2> <input type="text" name="type" placeholder="Poison"><br>
         </label>
-        {% comment %} whenever type is checked, push to array {% endcomment %}
-            Stats: inp<br> 
-
-
-
-
-
-    {% comment %} submit button {% endcomment %}
-    <input type="submit" value="Submit">
-</form>
-
+       
+            
+        <br>
+                {% comment %} submit button {% endcomment %}
+                <input type="submit" value="Submit">
+            </form>
 
     </body>
     </html>

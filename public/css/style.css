@@ -1,9 +1,9 @@
 :root {
-    background-color: lightskyblue;
+    background-color: #9AC791;
 }
 
 nav {
-    background-color: green;
+    background-color: #9AC791;
 }
 
 .pIndex {
@@ -13,13 +13,13 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    background-color: lightgreen;
+    background-color: #9AC791;
 
 }
 
 .card {
-    height: 7rem;
-    width: 7rem;
+    height: 13rem;
+    width: 13rem;
     padding: 1rem;
     border-radius: 10px;
     text-align: center;
@@ -27,24 +27,8 @@ nav {
 }
 
 img {
-    width: 60%;
+    width:40%;
     height: auto;
     text-decoration: none;
 }
 
-
-
-/* to organize the show page  */
-/* grid-template: 
-            "a a a" 40px
-            "b c c" 40px
-            "b c c" 40px / 1fr 1fr 1fr; */
-
-
-/* snap scroll if want to make one line to scroll through - check screenshot
-.carousel {
-    scroll-snap-type: x mandatory;
-  }
-  .carousel .item {
-     scroll-snap-align: start;
-  } */
