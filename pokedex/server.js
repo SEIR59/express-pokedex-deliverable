@@ -34,18 +34,25 @@ app.use(express.urlencoded({ extended: false }));
 
 // Create
 app.post("/pokemon", (req, res) => {
+  // transcript type check box into type array
   req.body.type = [];
-
   for (let i = 0; i < distinctTypes.length; i++) {
     let typeVar = distinctTypes[i];
     // cannot use window - it's in node js
     // have to use eval ....
-    console.log(eval("req.body." + typeVar) == "on");
     if (eval("req.body." + typeVar) == "on") {
       req.body.type.push(distinctTypes[i]);
     }
-    console.log(req.body);
   }
+  // store stats
+  req.body.stats = {
+    hp: req.body.hp,
+    attack: req.body.attack,
+    defense: req.body.defense,
+    spattack: req.body.spattack,
+    spdefense: req.body.spdefense,
+    speed: req.body.speed,
+  };
 
   Pokemon.push(req.body);
   res.redirect("/pokemon");
@@ -76,6 +83,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
 // Update
 app.put("/pokemon/:id", (req, res) => {
   req.body.type = [req.body.type];
+
   req.body.stats = {
     hp: req.body.hp,
     attack: req.body.attack,
