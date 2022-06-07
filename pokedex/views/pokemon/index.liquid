@@ -3,13 +3,15 @@
 <h1>Pokedex</h1>
 {% endblock%}
 {% block content %}
-<ul class="pokedex-entries">
-    {% for pokemon in allPokemon %}
-    <li>
-        <div class="pokedex-entry-index">
-            <a class="pokedex-img-link" href="/pokemon/{{forloop.index0}}"><img class="pokedex-img" src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+<!-- <ul class="pokedex-entries"> -->
+    <div class="pokedex">
+        {% for pokemon in allPokemon %}
+        <!-- <li> -->
+            <div class="pokedex-entry-index">
+                <a class="pokedex-img-link" href="/pokemon/{{forloop.index0}}"><img class="pokedex-img" src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+            </div>
+            <!-- </li> -->
+            {% endfor %}
         </div>
-    </li>
-    {% endfor %}
-</ul>
+<!-- </ul> -->
 {% endblock%}
