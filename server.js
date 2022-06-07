@@ -20,8 +20,8 @@ app.get("/pokemon", (req, res) => {
 });
 
 // SHOW
-app.get("/:id", (req, res) => {
-  res.render("show.liquid", { data: Pokemon[req.params.id] });
+app.get("/pokemon:id", (req, res) => {
+  res.render("show", { data:pokemon[req.params.id] });
 });
 
 app.listen(port, () => {

@@ -11,16 +11,18 @@
 </head>
 <body>
     <h1>Pokemon Manager</h1>
+    <nav>
+        <a href="/pokemon/new">Add New Pokemon</a>
+    </nav>
     <div class="pokemon-container">
     {%for pokemon in allPokemon%}
     <div>
-        <a href="//{{forloop.index0}}">{{pokemon.name}}</a>
+        <a href="/pokemon/{{forloop.index0}}">{{pokemon.name}}</a>
+        <br>
+        {{pokemon.img}}
     </div>
     {% endfor%}
     </div>
     <br>
-    <nav>
-        <a href="/pokemon/new">Create New Pokemon</a>
-    </nav>
 </body>
 </html>
