@@ -41,7 +41,12 @@ app.get('/pokemon/new', (req, res) => {
 //? SHOW
 app.get('/pokemon/:id', (req, res) => {
   console.log('show', Pokemon[req.params.id].type);
+  console.log('typeof', typeof Pokemon[req.params.id].type);
+
   try {
+    if(typeof Pokemon[req.params.id].type === 'string') {
+      Pokemon[req.params.id].type = Pokemon[req.params.id].type.split(",")
+    }
     res.render('show', { Pokemon: Pokemon[req.params.id] });
   } catch (error) {
     res.status(500).json({ Message: error.message });
