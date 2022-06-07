@@ -1,12 +1,15 @@
 .pIndex {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    display: flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-decoration: none;
 }
 
 img {
     width: 10vw;
     height: auto;
+    text-decoration: none;
 }
 
 
@@ -16,3 +19,12 @@ img {
             "a a a" 40px
             "b c c" 40px
             "b c c" 40px / 1fr 1fr 1fr; */
+
+
+/* snap scroll if want to make one line to scroll through - check screenshot
+.carousel {
+    scroll-snap-type: x mandatory;
+  }
+  .carousel .item {
+     scroll-snap-align: start;
+  } */

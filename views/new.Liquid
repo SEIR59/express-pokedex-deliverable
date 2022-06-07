@@ -15,13 +15,18 @@
 {% comment %} create array, append each then push all / create three sections on form / could set it up where coma seperated then pops them into an array {% endcomment %}
 <h1>New Pokemon Page</h1>
 <form action="/pokemon" method="POST">
-    Name: <input type="text" name="name"><br>
+    Name: <input type="text" name="name" placeholder="Name"><br>
     {% comment %} Color: <input type="text" name="color"><br>
     Is Ready To Eat: <input type="checkbox" name="readyToEat"><br>
     <input type="submit" name="Create Fruit"> {% endcomment %}
+    Img Url: <input type="url" name="img-url" id="" placeholder="Image URL Here"> <br>
+    Type: <input type="checkbox" name="type" id=""><br>
+    Stats: <br>
+    {% comment %} submit button {% endcomment %}
+    <input type="submit" value="Submit">
 </form>
 
-
+<a href="/pokemon/">Back to homepage</a>
 
 
     </body>
