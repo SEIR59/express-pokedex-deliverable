@@ -20,6 +20,12 @@ app.get("/pokemon", (req, res) => {
   res.render("index", { data : Pokemon } );
 });
 
+//POST
+app.post("/pokemon", (req,res) => {
+  Pokemon.push(req.body);
+  res.redirect('/pokemon')
+})
+
 //NEW
 app.get('/pokemon/new', (req,res) => {
   res.render('new')
