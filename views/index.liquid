@@ -15,19 +15,19 @@
      
     <ul> 
         
-       
+       <div class="pokedexscreen">
         {% for pokemon in data %}
      <li>
          
          <h2>{{pokemon.name}}</h2>
-         <div class="pokedexscreen">
+         
         <a href="/pokemon/{{forloop.index0}}">
            
            <img src="{{pokemon.img}}"></a>
            <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
             <input type="submit" value="Delete">
            </form>
-          </div>
+          
          </li>
         {% endfor %}
     </div>
