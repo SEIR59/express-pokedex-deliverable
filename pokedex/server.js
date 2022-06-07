@@ -20,6 +20,13 @@ app.get('/', (req, res) => {
     res.send('Hello')
 })
 
+app.get('/pokemon/', (req, res) => {
+    res.render(
+        'index.liquid', {
+            allPokemon: Pokemon
+        }
+    )
+})
 
 app.listen(3000, () => {
     console.log("listening on port 3000!")
