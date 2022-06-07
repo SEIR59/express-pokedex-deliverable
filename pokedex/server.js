@@ -20,10 +20,27 @@ app.get('/', (req, res) => {
     res.send('Hello')
 })
 
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.liquid')
+})
+
+app.post('/pokemon', (req, res) => {
+    Pokemon.push(req.body)
+    res.redirect('/pokemon')
+})
+
 app.get('/pokemon/', (req, res) => {
     res.render(
         'index.liquid', {
             allPokemon: Pokemon
+        }
+    )
+})
+
+app.get('/pokemon/:index', (req, res) => {
+    res.render(
+        'show.liquid', {
+            pokemon: Pokemon[req.params.index]
         }
     )
 })
