@@ -17,13 +17,14 @@
     <form action="/create" method="POST">
         Id: <input type="text" value="{{lastIndex}}" name="id"><br>
         Name: <input type="text" name="name"><br>
-        Image: <input type="image" name="img"><br>
+        Image Link: <input type="text" name="img" value="https://img.game.co.uk/assets/features/hubs/pokemon/backCover.png"><br>
         Type: <input type="text" name="type"><br>
 
-        Stats<br>
-        hp: <input type="text" name="statshp"><br>
-        attack: <input type="text" name="statsattack"><br>
-        defense: <input type="text" name="stats-efense"><br>
+        <b>Stats</b><br>
+        HP: <input type="text" name="statshp"><br>
+        Attack: <input type="text" name="statsattack"><br>
+        Defense: <input type="text" name="statsdefense"><br>
+        Speed: <input type="text" name="statsspeed"><br>
         <input type="submit" value="Create new pokemon!">
     </form>
 </body>

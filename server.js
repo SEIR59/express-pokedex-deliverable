@@ -28,6 +28,7 @@ app.post('/create', (request, response) => {
         hp: request.body.statshp, 
         attack: request.body.statsattack, 
         defense: request.body.statsdefense,
+        speed: request.body.statsdefense
     }
     PokemonList.push(pokemon)
     response.redirect('/')
