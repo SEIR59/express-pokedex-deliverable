@@ -11,7 +11,19 @@
 <body>
     <h1>{{ data.name }}</h1>
 
-    <img src="{{ data.img }}" alt="{{ data.name }}">
+    <img src="{{ data.img }}" alt="{{ data.name }}"><br>
+    <ul>
+        Type(s):
+        {% for t in data.type %}
+        <li>{{ t }}</li>
+        {% endfor %}<br>
+
+        Stats:<br>
+        HP: {{ data.stats.hp }}<br>
+        Attack: {{ data.stats.attack }}<br>
+        Defense: {{ data.stats.defense }}<br>
+    </ul><br>
+    <a href="/pokemon"><button>Pokedex Home</button></a>
 </body>
 
 </html>
