@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokémon Index!</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+    <div class="topnav">
+        <a class="active" href="#home">Pokédex</a>
+        <a href="#news">Add A Pokémon</a>
+        <a href="#contact">Edit Pokémon Data</a>
+        <a href="#about">Remove Pokémon</a>
+      </div>
     <div class="container">
         {% for pokemons in pokemon limit:15 %}
         {{ pokemons.name }}
