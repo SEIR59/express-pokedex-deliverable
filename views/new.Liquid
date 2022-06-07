@@ -9,7 +9,22 @@
 </head>
 <body>
     <h1>Add a Pokemon to the Pokedex</h1>
-
+    <form action="/pokemon" method="POST">
+        Name: <input type="text" name="name" value="{{Pokemon.name}}">
+        Type: <select name="type" id="type">
+            <option value="normal">Normal</option>
+            <option value="fire">Fire</option>
+            <option value="ghost">Ghost</option>
+            <option value="poison">Poison</option>
+            <option value="water">Water</option>
+        </select>
+        <!-- I couldn't get these to work... -->
+        <!-- Stats: 
+        <input type="text" name="hp" placeholder="HP">
+        <input type="text" name="attack" placeholder="Attack">
+        <input type="text" name="defense" placeholder="Defense"> -->
+        <input type="submit" value="Submit Pokemon Changes">
+    <br>
     <a href="/pokemon">Go Back to Pokedex</a>
 </body>
 </html>

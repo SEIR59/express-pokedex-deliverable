@@ -8,8 +8,18 @@
 </head>
 <body>
     <h1>Edit a {{Pokemon.name}}</h1>
+    <img src="{{Pokemon.img}}" alt="">
     <form action="/pokemon/{{index}}?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="{{Pokemon.name}}">
+        Type: <select name="type" id="type">
+            <option value="normal">Normal</option>
+            <option value="fire">Fire</option>
+            <option value="ghost">Ghost</option>
+            <option value="poison">Poison</option>
+            <option value="water">Water</option>
+
+
+        </select>
         <input type="submit" value="Submit Pokemon Changes">
 
     </form>
