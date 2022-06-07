@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+
+.box {
+    width: 20%; 
+    height: 150px; 
+    float: left;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}

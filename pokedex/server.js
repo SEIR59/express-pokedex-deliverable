@@ -20,15 +20,6 @@ app.get('/', (req, res) => {
     res.send('Hello')
 })
 
-app.get('/pokemon/new', (req, res) => {
-    res.render('new.liquid')
-})
-
-app.post('/pokemon', (req, res) => {
-    Pokemon.push(req.body)
-    res.redirect('/pokemon')
-})
-
 app.get('/pokemon/', (req, res) => {
     res.render(
         'index.liquid', {
@@ -37,12 +28,45 @@ app.get('/pokemon/', (req, res) => {
     )
 })
 
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.liquid')
+})
+
 app.get('/pokemon/:index', (req, res) => {
     res.render(
         'show.liquid', {
             pokemon: Pokemon[req.params.index]
         }
     )
+})
+
+app.post('/pokemon', (req, res) => {
+    Pokemon.push(req.body)
+    res.redirect('/pokemon')
+})
+
+app.get('/pokemon/:index/edit', (req, res) => {
+    res.render(
+        'edit.liquid',
+        {
+            pokemon: Pokemon[req.params.index],
+            index: req.params.index
+        }
+    )
+})
+
+app.put('/pokemon/:index', (req, res) => {
+    Pokemon[req.params.index].name = req.body.name
+    Pokemon[req.params.index].type = req.body.type
+    Pokemon[req.params.index].stats.hp = req.body.hp
+    Pokemon[req.params.index].stats.attack = req.body.attack
+    Pokemon[req.params.index].stats.defense = req.body.defense
+    res.redirect('/pokemon')
+})
+
+app.delete('/pokemon/:index', (req, res) => {
+    Pokemon.splice(req.params.index, 1)
+    res.redirect('/pokemon')
 })
 
 app.listen(3000, () => {

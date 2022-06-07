@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Pokemon</title>
 </head>
 <body>
@@ -20,11 +21,11 @@
         {% endfor %}
     </ul>
     <h2>Stats</h2>
-    <ul>
-        <li>HP: {{ pokemon.stats.hp }}</li>
-        <li>ATTACK: {{ pokemon.stats.attack }}</li>
-        <li>DEFENSE: {{ pokemon.stats.defense }}</li>
-    </ul>
-    <button onclick="window.location.href='/pokemon'">Home</a></button>
+        HP: {{ pokemon.stats.hp }}
+        ATTACK: {{ pokemon.stats.attack }}
+        DEFENSE: {{ pokemon.stats.defense }}
+        <form action="/pokemon">
+            <input type="submit" value="Home">
+        </form>
 </body>
 </html>

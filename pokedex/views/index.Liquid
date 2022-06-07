@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <title>Pokemon</title>
 </head>
 <body>
         <h1>Choose your Pokemon</h1>
         <nav>
-            <button onclick="window.location.href='/pokemon/new'">Add a Pokemon</a></button>
+            <form action="/pokemon/{{ forloop.index0 }}/new">
+                <input type="submit" value="Add a Pokemon">
+            </form>
         </nav> 
         <table>
             {% for pokemon in allPokemon %}  
-                        <tr>
-                            <a href="/pokemon/{{ forloop.index0 }}"><img src ="{{ pokemon.img }}"></a>
-                        </tr>
+            <div class="box">
+                <div class="poke-image">
+                        <a href="/pokemon/{{ forloop.index0 }}"><img src ="{{ pokemon.img }}"></a>
+                    </div>
+                    <div class="class-btn">
+                        <form action="/pokemon/{{ forloop.index0 }}/edit">
+                            <input type="submit" value="Edit">
+                        </form>
+                        <form action="/pokemon/{{ forloop.index0 }}?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </div>
+            </div>
             {% endfor %}
         </table>
     </div>
