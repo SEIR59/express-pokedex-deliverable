@@ -1,4 +1,4 @@
-module.exports = [
+const Pokemon = [
     {
       id: "001",
       name: "Bulbasaur",
@@ -50957,4 +50957,6 @@ module.exports = [
         entreeforestlevel: "30"
       }
     }
-  ];
+  ]
+
+  module.exports = Pokemon
