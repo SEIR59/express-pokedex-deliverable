@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="../public/app.css">
+    <link type="text/css" rel="stylesheet" href="{{'app.css' | asset_url}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="show">
+        <div class="line">
+            <h1>Pokemon</h1>
+            <a href="/pokemon/" type="submit">Home</a>
+        </div>
+        <ul>
+            {% for pokemon in data%}
+            <h2>{{pokemon.name}}</h2>
+
+            <a href="/pokemon/{{forloop.index0}}">
+                <li>
+                    <img src="{{pokemon.img}}" class="img-style" alt="">
+                    <p>{{pokemon.stats}}</p>
+                    <p> {{pokemon.type}}</p>
+
+
+                </li>
+
+            </a>
+            {% endfor %}
+
+        </ul>
+
+
+
+    </div>
+
+</body>
+
+</html>
+<a href="/pokemon"><button>Home</button></a>
+
+</div>
+</body>
+
+</html>

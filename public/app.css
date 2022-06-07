@@ -1,0 +1,54 @@
+.container {
+    height: 34em;
+    width: 60em;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    background-color: rgb(224, 237, 225);
+border-radius: 2%;
+}
+
+body {
+    justify-content: center;
+
+}
+
+.img-style {
+    height: 8em;
+    width: 7em;
+    border: 2px solid grey;
+    border-radius: 10%;
+
+
+}
+
+.line {
+    flex-direction: row;
+    border: 2px solid grey;
+    
+    justify-content: space-evenly;
+    border: 2px solid black;
+    background-color: rgb(129, 169, 134);
+    border-radius: 2%;
+
+}
+
+h1 {
+    color: black;
+}
+
+.container2 {
+    height: 34em;
+    width: 60em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    background-color: aqua;
+
+
+}
+.btn {
+    
+}

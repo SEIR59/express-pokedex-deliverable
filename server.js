@@ -11,7 +11,10 @@ app.use(express.urlencoded({
     extended: false
 })) 
 
-
+app.use((req, res, next) => {
+    //  console.log('I run for all routes');
+    next();
+});
 // INDEX
 app.get('/pokemon', (req, res) => {
     res.render('index', { data: Pokemon });
