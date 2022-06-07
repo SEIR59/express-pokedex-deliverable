@@ -7,14 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Pokemon </h1>
+    <h1> Pokemons </h1>
     {% for every in data %}
-    <ul>
-        <li>
-     {{ every.name }} 
-     <img src="{{ every.img }}" alt="">
-        </li>
-    </ul>
-    {% endfor %}
+    <div>
+       
+  <a href= "/{{ forloop.index0 }}" ><h2>{{ every.name }}</h2></a>
+  <a href= "/{{ forloop.index0 }}" > <img src="{{ every.img }}" alt=""></a>
+    </div>
+    
+     {% endfor %}
 </body>
 </html>
+
+

@@ -7,6 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ data }}</h1>
+    <div>
+  
+   <img src="{{ data.img }}" alt="">
+   <h1> {{ data.name }}</h1>
+   <h3>id: {{ data.id }}</h3>
+   <h3>hp: {{ data.stats.hp }}</h3>
+   <h3>attack:{{ data.stats.attack }}</h3>
+   <h3>defense:{{ data.stats.defense }}</h3>
+   <h3>spattack:{{ data.stats.spattack }}</h3>
+   <h3>speed {{ data.stats.speed }}</h3>
+  
+   <ul>
+    <h3>Type</h3>
+      {% for type in data.type %}
+      
+      <li>
+         {{ type }} 
+      </li> 
+      {% endfor %} 
+    </ul>
+    <form action="/" method="get" >
+        <input type="submit" name="" value="Return to Pokedex Entries" />
+</div>
 </body>
 </html>
+
