@@ -14,9 +14,10 @@
       <ul>
           {% for pokemon in allPokemon %}
           <li>
-              {{pokemon.name}}
+              <!-- {{pokemon.name}} -->
               <!-- link to show -->
-              <a href="/pokemon/{{forloop.index0}}"><img src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+              <a href="/pokemon/{{forloop.index0}}">{{pokemon.name}}<img src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+              
           </li>
           {% endfor %}
       </ul>
