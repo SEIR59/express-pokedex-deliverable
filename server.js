@@ -5,6 +5,9 @@ const Pokemon = require('./pokedex/pokemon.js');
 const methodOverride= require('method-override')
 
 
+
+
+
 app.use((req, res, next) => {
     console.log('I run for all routes');
     next();
@@ -31,7 +34,7 @@ app.get('/', (req, res) => {
 app.get('/pokemon/:id/edit',(req,res)=>{
 res.render('edit',{
     data: Pokemon[req.params.id] ,
-     
+    index: req.params.id,
          name:Pokemon[req.params.id].name,
          type: Pokemon[req.params.id].type,
          id: Pokemon[req.params.id].id,
@@ -39,7 +42,8 @@ res.render('edit',{
          attack:Pokemon[req.params.id].stats.attack,
          defense:Pokemon[req.params.id].stats.defense,
          spattack:Pokemon[req.params.id].stats.spattack,
-         speed :Pokemon[req.params.id].stats.speed
+         speed :Pokemon[req.params.id].stats.speed,
+         img:Pokemon[req.params.id].img
 })
 })
 
@@ -60,7 +64,9 @@ app.post('/pokemon', (req,res)=>{
 
 app.put('/pokemon/:id',(req,res)=>{
     Pokemon[req.params.id] = req.body; 
+   
     res.redirect("/")
+
 })
 
 

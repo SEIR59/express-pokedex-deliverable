@@ -9,17 +9,18 @@
   
 </head>
 <body>
-    <form action="/pokemon/{{ data }}" method="get"> 
-    <input type="text" name="name" value="{{name}}" />
-    <input type="text" name="type" value="{{type}}" />
+    <form action="/pokemon/{{ index }}?_method=put" method="post"> 
+    <input type="text" name="name:" value="{{name}}" />
+    <input type="text" name="img" value="{{img}}" />
     <input type="text" name="hp" value="{{hp}}" />
     <input type="text" name="attack" value="{{attack}}" />
     <input type="text" name="defense" value="{{defense}}" />
     <input type="text" name="spattack" value="{{spattack}}" />
     <input type="text" name="speed" value="{{speed}}" />
-    <form action="/pokemon/{{ data }}" method="get">
-  <input type="button" value="Edit And Submit">
-
+</form>
+    <form action="/pokemon/{{ index }}?_method=put" method="post">
+  <input type="submit" value="Edit And Submit">
+</form>
 </body>
 </html>
 
