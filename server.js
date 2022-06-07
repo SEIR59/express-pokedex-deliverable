@@ -26,6 +26,8 @@ app.get('/pokemon/:id', (req, res) => {
 res.render('show.liquid', { allPokemon: Pokemon[req.params.id] });
 });
 
+
+
 // PORT
 app.listen(port, () => {
     console.log("working")

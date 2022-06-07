@@ -30,6 +30,33 @@
    ></script>
 </head>
 <body>
-    
+    <h1>{{allPokemon.name}}</h1>
+    <table>
+        <tr>
+            <td>
+                <img src="{{allPokemon.img}}">
+            </td>
+            <td>
+                <h4>Type</h4>
+                <p>
+                    {% for type in allPokemon.type %}
+                    {{type}}
+                    {% endfor %}
+                </p>
+            </td>
+            <td>
+                <h4>Stats</h4>
+                <p>
+                    <p>HP: {{allPokemon.stats.hp}}</p>
+                    <p>Attack: {{allPokemon.stats.attack}}</p>
+                    <p>Defense: {{allPokemon.stats.defense}}</p>
+                    <p>Sp Attack: {{allPokemon.stats.spattack}}</p>
+                    <p>Sp Defense: {{allPokemon.stats.spdefense}}</p>
+                    <p>Speed: {{allPokemon.stats.speed}}</p>
+                </p>
+            </td>
+        </tr>
+    </table>
+    <a href="/pokemon">Back to Pokedex</a>
 </body>
 </html>
