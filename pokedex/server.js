@@ -19,12 +19,13 @@ app.get("/pokemon", (req, res) => {
   res.render("index", { allPokemon: Pokemon });
 });
 
+// CREATE
 app.post("/pokemon", (req, res) => {
   Pokemon.push(req.body);
-  console.log(Pokemon);
   res.redirect("/pokemon");
 });
 
+// NEW
 app.get("/pokemon/new", (req, res) => {
   res.render("new");
 });
@@ -32,4 +33,23 @@ app.get("/pokemon/new", (req, res) => {
 // SHOW
 app.get("/pokemon/:id", (req, res) => {
   res.render("show", { pokemon: Pokemon[req.params.id] });
+});
+
+// DELETE
+app.delete("/pokemon/:id", (req, res) => {
+  Pokemon.splice(req.params.id, 1); //remove the item from the array
+  res.redirect("/pokemon");
+});
+
+// EDIT
+app.get("/pokemon/:id/edit", (req, res) => {
+  res.render("edit", {
+    pokemon: Pokemon[req.params.id],
+    index: req.params.id,
+  });
+});
+
+app.put("/pokemon/:id", (req, res) => {
+  Pokemon[req.params.id] = req.body;
+  res.redirect("/pokemon/:id");
 });

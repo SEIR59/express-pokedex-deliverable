@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Pokemon Index</title>
   </head>
   <body>
     <h1>Pokedex. Gotta catch 'em y'all.</h1>
-    <br />
+    <br /><a href="/pokemon/new">Enter New Pokemon</a>
     <div>
       {% for pokemon in allPokemon %}
 
       <a href="/pokemon/{{ forloop.index0 }}"
-        ><img src="{{ pokemon.img }}" width="200" />{{ pokemon.name }}</a
-      >
+        ><img src="{{ pokemon.img }}" width="200"
+      /></a>
+      <form action="/pokemon/{{ forloop.index0 }}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" />
+      </form>
 
       {% endfor %}
     </div>
