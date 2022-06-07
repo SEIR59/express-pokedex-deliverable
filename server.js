@@ -11,15 +11,17 @@ app.use(express.urlencoded({extended:false}));
 //     res.send("test")
 
 // INDEX (const data = Pokemon)
-app.get('/pokemon', (req, res) => {
+app.get("/pokemon", (req, res) => {
 res.render('index', { data: Pokemon });
 });
 
 
 // SHOW
-app.get('/:id', (req, res) => {
-res.render('show', { data: Pokemon[req.params.id] });
+app.get("/pokemon/:id", (req, res) => {
+    res.render('show', { data: Pokemon[req.params.id] });
+    
 });
+
 
 // Port listening
 app.listen(3500, () => {

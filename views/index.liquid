@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poke Index</title>
-</head>
-<body>
-    <h1>Pokemon Index Page</h1>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Poke Index</title>
+	</head>
+	<body>
+		<h1>Pokemon Index Page</h1>
 
-    <div class="container">
-       
-        {% for Pokemon in data %}
-            <img src="{{ Pokemon.img }}" />
-            {% endfor %}
-
-    </div>
+		<div class="container">
+			{% for Pokemon in data %} 
+            {% if Pokemon.id < "0150" %}
+			<a href="/pokemon/{{ forloop.index0 }}"><img src="{{ Pokemon.img }}" />
     
-</body>
+			{% endif %} 
+            {% endfor %}
+		</div>
+	</body>
 </html>
