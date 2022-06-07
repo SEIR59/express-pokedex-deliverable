@@ -47,17 +47,56 @@ app.get('/pokemon/:id', (req, res) => {
   }
 });
 
+//? EDIT
+app.get('/pokemon/:id/edit', (req, res) => {
+  try {
+    let chosenPokemon = Pokemon[req.params.id];
+    chosenPokemon.type = chosenPokemon.type.join(',');
+    res.render('edit', { Pokemon: chosenPokemon, index: req.params.id });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ Message: error.message });
+  }
+});
+
+//? CREATE
+app.post('/pokemon', (req, res) => {
+  try {
+    let lastId = Pokemon[Pokemon.length - 1].id;
+    const { name, type, hp, attack, defense, spattack, spdefense, speed, img } =
+      req.body;
+    let newPokemon = {
+      id: lastId + 1,
+      name,
+      img,
+      type: [type],
+      stats: {
+        hp,
+        attack,
+        defense,
+        spattack,
+        spdefense,
+        speed,
+      },
+    };
+    Pokemon.push(newPokemon);
+    res.redirect('/pokemon');
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ Message: error.message });
+  }
+});
 
 //? DELETE
 app.delete('/pokemon/:id', (req, res) => {
-    try {
-      Pokemon.splice(req.params.id, 1);
-      res.redirect('/pokemon');
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ Message: error.message });
-    }
-  });
+  try {
+    Pokemon.splice(req.params.id, 1);
+    res.redirect('/pokemon');
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ Message: error.message });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
