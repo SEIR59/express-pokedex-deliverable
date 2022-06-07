@@ -10,35 +10,16 @@
   </head>
   <body>
     <div class="container">
-      <h1>Budget All</h1>
-      <a href="/budgets/new"><button>New Item</button></a>
-      {% for budget in allBudget %}
-      <!-- assign here is to do the math -->
-      {% assign bankAccount = bankAccount | plus: budget.amount%}
-      {% endfor %}
-      {% if bankAccount < 0 %}
-      <h4 style="background-color: red; color: white;">Bank account ${{bankAccount}}</h4>
-      {% elsif bankAccount > 1000 %}
-      <h4 style="background-color: greenyellow;">Bank account ${{bankAccount}}</h4>
-      {% else %}
-      <h4>Bank account ${{bankAccount}}</h4>
-      {% endif %}
-      
-      <table>
-        {% for budget in allBudget %}
-        <tr>
-          <td>
-            {{ budget.date }}
-          </td>
-          <td>
-            <a href="/budgets/{{ forloop.index0 }}">{{ budget.name }}</a>
-          </td>
-          <td>
-            {{ budget.amount }}
-          </td>
-        </tr>
-        {% endfor %}
-      </table>
-    </div>
+      <h1>Pokedex</h1>
+      <ul>
+          {% for pokemon in allPokemon %}
+          <li>
+              {{pokemon.name}}
+              <!-- link to show -->
+              <a href="/pokemon/{{forloop.index0}}"><img src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+          </li>
+          {% endfor %}
+      </ul>
+  </div>
   </body>
 </html>

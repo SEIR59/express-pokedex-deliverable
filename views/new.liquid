@@ -6,9 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/skeleton.css" />
-    <title>Document</title>
+    <title>Pokemon index</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Pokedex</h1>
+        <ul>
+            {% for pokemon in allPokemon %}
+            <li>
+                {{pokemon.name}}
+                <!-- link to show -->
+                <a href="/pokemon/{{forloop.index0}}"><img src="{{pokemon.img}}" alt="{{pokemon.name}}"></a>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>
