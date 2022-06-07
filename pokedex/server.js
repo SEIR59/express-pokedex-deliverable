@@ -20,7 +20,9 @@ app.get('/pokemon', (req, res) =>{
 });
 
 app.get('/pokemon/:id', (req, res) =>{
-    res.render('show')
+    res.render('show', {
+        thePokemon: Pokemon[req.params.id]
+    })
 });
 
 app.get('/pokemon/new', (req, res) =>{
