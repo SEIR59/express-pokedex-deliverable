@@ -7,7 +7,7 @@
     <div class="pokemon-entry-grid-template">
         <div class="pokemon-entry-quicklook grid-item">
             <form action="/pokemon/{{index}}/edit" method="GET">
-                <input class="pokemon-entry-delete form-btn" type="submit" value="Delete Pokemon">
+                <input class="pokemon-entry-delete form-btn" type="submit" value="X">
             </form>
             <p><strong>ID:</strong> {{pokemon.id}}</p>
             <p><strong>Name:</strong> {{pokemon.name}}</p>
@@ -35,12 +35,12 @@
         </div>
         <div class="pokemon-entry-misc grid-item">
             <h2>Details</h2>
-            {% for each in pokemon.misc.sex %}
-            <P><strong>sex</strong>{{each}}</P>
-            {% endfor %}
-            <P><strong>abilities</strong>{{pokemon.misc.abilities}}</P>
-            <P><strong>height</strong>{{pokemon.misc.height}}</P>
-            <P><strong>weight</strong>{{pokemon.misc.weight}}</P>
+            <P><strong>Sex-Male:</strong> {{pokemon.misc.sex.male}}%</P>
+            <P><strong>Sex-Female:</strong> {{pokemon.misc.sex.female}}%</P>
+            <P><strong>Abilities:</strong> {{pokemon.misc.abilities.normal}}</P>
+            <P><strong>Abilities:</strong> {{pokemon.misc.abilities.hidden}}</P>
+            <P><strong>Height:</strong> {{pokemon.misc.height}}</P>
+            <P><strong>Weight:</strong> {{pokemon.misc.weight}}</P>
         </div>
         <div class="pokemon-entry-damages grid-item">
             <h2>Damages</h2>
