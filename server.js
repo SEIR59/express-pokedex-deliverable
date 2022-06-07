@@ -14,22 +14,41 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static("public")); //tells express to try to match requests with files in the directory called 'public'
 
-
-// INDEX
+/////////////////////////
+// ROUTES
+/////////////////////////
+// INDEX - GET
 app.get("/pokemon", (req, res) => {
   res.render("index", { data : Pokemon } );
 });
 
-//POST
+//NEW - GET
+app.get('/pokemon/new', (req,res) => {
+  res.render('new')
+});
+
+//DELETE
+app.delete('/pokemon/:id',)
+
+//UPDATE - PUT
+app.put('/pokemon/:id',)
+
+//CREATE - POST
 app.post("/pokemon", (req,res) => {
   Pokemon.push(req.body);
   res.redirect('/pokemon')
 })
 
-//NEW
-app.get('/pokemon/new', (req,res) => {
-  res.render('new')
-});
+//EDIT - GET
+app.get('/pokemon/:id/edit', (req,res) => {
+  res.render(
+    'edit',
+    {
+      data: Pokemon[req.params.id],
+      index: req.params.id
+    }
+  )
+})
 
 // SHOW
 app.get("/pokemon/:id", (req, res) => {
