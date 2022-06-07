@@ -4,7 +4,23 @@ const port = 3000;
 const Pokemon = require("./models/pokemon.js");
 const methodOverride = require("method-override");
 
-// static files
+// pull out distinct type
+let typesLookup = {};
+let items = Pokemon;
+let distinctTypes = [];
+
+for (let item, i = 0; (item = items[i++]); ) {
+  for (let y = 0; y < item.type.length; y++) {
+    let type = item.type[y];
+
+    if (!(type in typesLookup)) {
+      typesLookup[type] = 1;
+      distinctTypes.push(type);
+    }
+  }
+}
+console.log(distinctTypes);
+
 app.use(express.static("public"));
 app.use(methodOverride("_method"));
 
@@ -18,6 +34,19 @@ app.use(express.urlencoded({ extended: false }));
 
 // Create
 app.post("/pokemon", (req, res) => {
+  req.body.type = [];
+
+  for (let i = 0; i < distinctTypes.length; i++) {
+    let typeVar = distinctTypes[i];
+    // cannot use window - it's in node js
+    // have to use eval ....
+    console.log(eval("req.body." + typeVar) == "on");
+    if (eval("req.body." + typeVar) == "on") {
+      req.body.type.push(distinctTypes[i]);
+    }
+    console.log(req.body);
+  }
+
   Pokemon.push(req.body);
   res.redirect("/pokemon");
 });
@@ -28,7 +57,7 @@ app.get("/pokemon", (req, res) => {
 });
 // New
 app.get("/pokemon/new", (req, res) => {
-  res.render("new");
+  res.render("new", { types: distinctTypes });
 });
 
 // Show

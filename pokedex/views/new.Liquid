@@ -18,8 +18,18 @@
         Name: <input type="text" name="name" required /><br/>
         ImageUrl: <input type="url" name="img" placeholder="https://img.pokemondb.nex/artwork/..."
             pattern="https://.*"/><br/>
-        Type: <input type="text" name="type" /><br/>
-        Stats: <input type="text" name="stats" /><br/>
+        {% comment %} TODO: {% endcomment %}
+        <h3>Types:</h3>
+        {% for type in types %} 
+        {{type}}: <input type="checkbox" name="{{type}}" /><br/>
+        {% endfor %}
+        <h3>Stats:</h3>
+            Stats hp: <input type="number" name="hp"  /><br />
+            Stats attack: <input type="number" name="attack" /><br /> 
+            Stats defense: <input type="number" name="defense" /><br /> 
+            Stats spattack: <input type="number" name="spattack"  /><br /> 
+            Stats spdefense: <input type="number" name="spdefense"  /><br /> 
+            Stats speed: <input type="number" name="speed" /><br /> 
         <input type="submit" value="Create Pokemon"/>
     </form>
     

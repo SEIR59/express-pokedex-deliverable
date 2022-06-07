@@ -1,5 +1,8 @@
 nav {
   display: block;
+  padding: 20px;
+  background-color: rgb(42, 169, 169);
+  font-size: large;
 }
 
 img {
