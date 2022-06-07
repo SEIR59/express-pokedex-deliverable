@@ -27,7 +27,7 @@ app.use(methodOverride("_method")) // set up method for methodOverride
 // "/pokemon" GET - index TODO: Add basic layout forloop, add button for edit and delete
 app.get("/pokemon", (req, res) => {
     
-    res.render("index",{
+    res.render("pokemon/index",{
         allPokemon: arrPokemon            
     })
 })
@@ -35,21 +35,23 @@ app.get("/pokemon", (req, res) => {
 // "/pokemon/:id" GET - show TODO: Will display all of the information about a pokemon
 app.get("/pokemon/:id", (req, res) => {
     let indPokemon = req.params.id
-    res.render("show",{
-        pokemon: arrPokemon[indPokemon]
+    res.render("pokemon/show",{
+        pokemon: arrPokemon[indPokemon],
+        index: indPokemon
     })
 })
 
 // "/pokemon/new" GET - new TODO: Add required info to create pokemon and push to array
 app.get("/pokemon/new", (req, res) => {
-    res.render("new")
+    res.render("pokemon/new")
 })
 
 // "/pokemon/:id/edit" - GET TODO: Pull existing data form selected pokemon and display it in form, allowing to edit (all into/ some info "haven't decided yet") and then save changes. Adding bodyData to array[id] and render index via POST after.
 app.get("/pokemon/:id/edit", (req, res) => {
     let indPokemon = req.params.id
-    res.render("edit",{
-        allPokemon: arrPokemon[indPokemon]
+    res.render("pokemon/edit",{
+        pokemon: arrPokemon[indPokemon],
+        index: indPokemon
     })
 })
 

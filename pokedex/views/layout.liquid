@@ -5,10 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css">
-    <title>Pokemon Index</title>
+    <link rel="stylesheet" href="/css/show.css">
+    <title>Pokedex</title>
 </head>
 <body>
-    <h1></h1>
-    
+    <header>
+        <div>
+            {% block headerTitle %}{% endblock %}
+        </div>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>

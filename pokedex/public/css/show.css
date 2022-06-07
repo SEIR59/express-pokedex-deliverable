@@ -1,0 +1,31 @@
+/* pokemon-entry-grid-template {
+
+} */
+
+.pokemon-entry-quicklook {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: white;
+}
+#pokemon-entry-quicklook-img {
+    height: 150px;
+    width: 150px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px 2px grey;
+}
+
+.pokemon-entry-stats {
+    height: 200px;
+    width: 300px;
+    background-color: black;
+}
+.pokemon-entry-damages {
+    height: 200px;
+    width: 300px;
+    background-color: black;
+}
+.pokemon-entry-type {
+    height: 200px;
+    width: 300px;
+    background-color: black;
+}

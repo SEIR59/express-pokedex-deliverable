@@ -1,0 +1,28 @@
+{% layout "layout.liquid" %}
+{% block headerTitle %}
+<h1>Pokedex Entry - {{pokemon.name}}</h1>
+{% endblock%}
+{% block content %}
+<div class="pokemon-entry-grid-template">
+    <div class="pokemon-entry-quicklook">
+        <p>Name: {{pokemon.name}}</p>
+        <img id="pokemon-entry-quicklook-img" src="{{pokemon.img}}" alt="Image of {{pokemon.name}}">
+        <p>ID: {{pokemon.id}}</p>
+        <p>Type: {{pokemon.type}}</p>
+        <form action="/pokemon/{{index}}/edit" method="GET">
+            <input class="" type="submit" value="Edit Pokemon">
+        </form>
+        </div>
+        <div class="pokemon-entry-stats">
+            {{pokemon.}}
+        </div>
+        <div class="pokemon-entry-damages">
+            {{pokemon.}}
+        </div>
+        <div class="pokemon-entry-type">
+        {{pokemon.}}
+    </div>
+</div>
+{% endblock%}
+
+
