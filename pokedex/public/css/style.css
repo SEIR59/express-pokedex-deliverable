@@ -1,0 +1,35 @@
+body{
+  background: rgb(12, 141, 176);
+}
+h1{
+  text-align: center;
+  margin: 100px 0 0 0;
+  
+}
+img,a {
+max-width: 400px;
+max-height: 200px;
+/* display: inline-block; */
+border-radius:10% ;
+text-align: center;
+margin: 10px;
+color:white;
+
+}
+div {
+  max-width: 400px;
+  max-height: 200px;
+  display: inline-block;
+  background: rgb(195, 24, 24);
+border-radius: 100%;
+padding: 10px;
+  }
+/*input{
+  text-align: center;
+  padding: 20px;
+  border: 0ch;
+  border-radius: 10px ;
+  position: absolute;
+  top: 0;
+  left:50%;
+}   */ 
