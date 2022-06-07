@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/main.js" async defer></script>
 </head>
 <body>
-  <h1>Pokemons</h1>
-  {% for Pokemon in data %}
-  <ul>
-    <li>  
-      {{ Pokemon.name }}
-     <img src="{{ Pokemon.img }}" alt=""> 
-    </li>
-  </ul>
-  {% endfor %}
+    <form action="/pokemon/new" method="get"  >
+        <input type="submit" name="" value="Create New" />
+    </form>
+    <h1> Pokemons </h1>
+   
+   
+    {% for every in data %}
+    <div>
+       
+  <a href= "/{{ forloop.index0 }}" ><h2>{{ every.name }}</h2></a> 
+  <a href= "/{{ forloop.index0 }}" > <img src="{{ every.img }}" alt=""></a>
+</div>
+
+
+      {% endfor %}
 </body>
 </html>
