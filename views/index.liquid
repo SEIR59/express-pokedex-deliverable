@@ -1,0 +1,14 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <a href="/pokedex/new"><button>Add Pokemon</button></a>
+  {% for pokemon in pokemons %}
+  <article>
+    <a href="/pokedex/{{ pokemon._id }}">
+      <h2>
+        {{ pokemon.name }}
+      </h2>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+{% endblock %}

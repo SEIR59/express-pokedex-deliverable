@@ -1,0 +1,13 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <article>
+    <h2>{{ pokemon.name }} is {{ pokemon.color }}</h2>
+
+    <a href="/pokedex/{{ pokemon._id }}/edit"><button>Edit</button></a>
+    <form action="/pokedex/{{ pokemon._id }}?_method=DELETE" method="POST">
+      <input type="submit" value="Delete" />
+    </form>
+    <a href="/pokedex/"><button>Back to Main</button></a>
+  </article>
+</div>
+{% endblock %}

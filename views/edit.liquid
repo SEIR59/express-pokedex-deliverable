@@ -1,0 +1,26 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/pokedex/{{ pokemon._id }}?_method=PUT" method="post">
+    <fieldset>
+      <legend> {{ pokemon.name }} </legend>
+      <label>
+        NAME:<input
+          type="text"
+          name="name"
+          placeholder="enter pokemon name"
+          value="{{ pokemon.name }}"
+        />
+      </label>
+      <label>
+        COLOR:<input
+          type="text"
+          name="color"
+          placeholder="enter pokemon name"
+          value="{{ pokemon.color }}"
+        />
+      </label>
+    </fieldset>
+    <input type="submit" value="Submit Changes to {{ pokemon.name }} " />
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% layout "layout.liquid" %} {% block content %}
+<div>
+  <form action="/pokedex" method="post">
+    <fieldset>
+      <legend>Create a New Fruit</legend>
+      <label>
+        NAME:<input type="text" name="name" placeholder="enter pokemon name" />
+      </label>
+      <label>
+        COLOR:<input type="text" name="color" placeholder="enter pokemon color" />
+      
+      
+    </fieldset>
+    <input type="submit" value="create new pokemon" />
+  </form>
+</div>
+{% endblock %}
