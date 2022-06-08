@@ -2,6 +2,7 @@
         Dependencies 
 ============================================================*/
 const expr = require("express")
+const { redirect } = require("express/lib/response")
 const app = require("liquid-express-views")(expr())
 const methodOverride = require("method-override")
 
@@ -57,7 +58,18 @@ app.get("/pokemon/:id/edit", (req, res) => {
 // "/pokemon" POST - index TODO: get index after adding pokemon from "/new" route
 
 // /pokemon/:id UPDATE - redirect -> index after updating pokemon off of index TODO: get index but update array using index based off of "/edit"
+app.put("/pokemon/:id/", (req,res) => {
+    let pageData = req.body
+    let indPokemon =  req.params.id
+    for (let i = 0; i < Object.keys(pageData).length; i++){
+        console.log("test", i)
+        // arrPokemon[indPokemon][`${}`] = pageData
+    }
 
+    
+    console.log(req.body)
+    res.redirect("/pokemon")
+})
 // /pokemon/:id DELETE - redirect -> index after splicing array off of index
 
 /*============================================================

@@ -27,8 +27,9 @@ header div h1 {
     user-select: none;
 }
 .container {
+    position: relative;
     margin: 0 50px;
-    padding: 10px;
+    padding: 60px 10px;
     border: 2px solid black;
     border-radius: 20px;
     background-color: whitesmoke;
@@ -99,11 +100,14 @@ Before and after elements are used to create the top and bottom of the pokeball 
     border: 2px solid var(--color-darkGrey);
     border-radius: 5px;
     background-color: whitesmoke;
-    transition: 
-        backgrond-color ease-in-out 250ms;
+    transition: ease-in-out 500ms;
 }
 .form-btn:hover {
     background-color: var(--color-whiteGrey);    
+}
+.pokemon-entry-delete:hover {
+    color: var(--color-whiteGrey);
+    background-color: var(--color-pokemonRed);
 }
 .back-btn {
     position: absolute;
@@ -111,4 +115,12 @@ Before and after elements are used to create the top and bottom of the pokeball 
     width: 75px;
     top: 12.5px;
     left: 12.5px;
+}
+.edit-btn,
+.save-btn {
+    position: absolute;
+    top: 10px;
+    Left: 10px;
+    height: 40px;
+    width: 200px;
 }

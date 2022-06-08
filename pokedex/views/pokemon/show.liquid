@@ -7,9 +7,12 @@
 {% endblock%}
 {% block content %}
 <div class="container">
+    <form action="/pokemon/{{index}}/edit" method="GET">
+        <input class="edit-btn form-btn" type="submit" value="Edit Pokemon">
+    </form>
     <div class="pokemon-entry-grid-template">
         <div class="pokemon-entry-quicklook grid-item">
-            <form action="/pokemon/{{index}}" method="GET">
+            <form action="/pokemon/{{index}}?_method=DELETE" method="POST">
                 <input class="pokemon-entry-delete form-btn" type="submit" value="X">
             </form>
             <p><strong>ID:</strong> {{pokemon.id}}</p>
@@ -24,9 +27,6 @@
                 <li>{{type}}</li>
                 {% endfor %}
             </ul>
-            <form action="/pokemon/{{index}}/edit" method="GET">
-                <input class="form-btn" type="submit" value="Edit Pokemon">
-            </form>
         </div>
         <div class="pokemon-entry-stats grid-item">
             <h2>Stats</h2>
