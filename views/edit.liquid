@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link type="text/css" rel="stylesheet" href="{{'app.css' | asset_url}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/pokemon"><button>Back to Main</button></a>
+    <h1>Edit pokemon {{data.name}}</h1>
+    <img src="{{data.img}}" class="img-style" alt="">
+    <form action="/pokemon/{{index}}?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="{{data.name}}" /><br />
+        ID:<input type="text" name="id" value="{{data.id}}" /><br />
+        Type: <input type="text" name="type" value="{{data.type}}" /><br />
+        Stats: <input type="text" name="stats" value="{{data.stats}}" /><br />
+        Image:<input type="text"name="img" value="{{data.img}}"/><br/>
+        <input type="submit" name="submit" value="Submit pokemon" />
+    </form>
+
+</body>
+
+</html>
