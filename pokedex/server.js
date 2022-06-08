@@ -47,8 +47,7 @@ app.post('/pokemon', (req, res) => {
 
 app.get('/pokemon/:index/edit', (req, res) => {
     res.render(
-        'edit.liquid',
-        {
+        'edit.liquid', {
             pokemon: Pokemon[req.params.index],
             index: req.params.index
         }
@@ -57,7 +56,7 @@ app.get('/pokemon/:index/edit', (req, res) => {
 
 app.put('/pokemon/:index', (req, res) => {
     Pokemon[req.params.index].name = req.body.name
-    Pokemon[req.params.index].type = req.body.type
+    Pokemon[req.params.index].type = req.body.type.split(" ")
     Pokemon[req.params.index].stats.hp = req.body.hp
     Pokemon[req.params.index].stats.attack = req.body.attack
     Pokemon[req.params.index].stats.defense = req.body.defense

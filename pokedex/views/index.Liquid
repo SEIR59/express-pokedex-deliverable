@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Pokemon</title>
 </head>
 <body>
         <h1>Choose your Pokemon</h1>
         <nav>
-            <form action="/pokemon/{{ forloop.index0 }}/new">
-                <input type="submit" value="Add a Pokemon">
+            <form action="/pokemon/new">
+                <input class='btn' type="submit" value="Add a Pokemon">
             </form>
         </nav> 
         <table>
@@ -22,10 +25,10 @@
                     </div>
                     <div class="class-btn">
                         <form action="/pokemon/{{ forloop.index0 }}/edit">
-                            <input type="submit" value="Edit">
+                            <input class="btn" id="edit" type="submit" value="Edit">
                         </form>
                         <form action="/pokemon/{{ forloop.index0 }}?_method=DELETE" method="POST">
-                            <input type="submit" value="Delete">
+                            <input class="btn" id="edit" type="submit" value="Delete">
                         </form>
                     </div>
             </div>

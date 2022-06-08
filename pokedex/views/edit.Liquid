@@ -4,21 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Edit</title>
   </head>
   <body>
     <h1>Edit Pokemon</h1>
     <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="{{ pokemon.name }}"/> <br />
-      Image: <input type="text" name="img" value="{{ pokemon.img }}"/> <br />
-      Types: <input type="text" name="type" value="{{ pokemon.type }}"/> <br />
+      Name: <input type="text" name="name" value="{{ pokemon.name }}" /> <br />
+      Image: <input type="text" name="img" value="{{ pokemon.img }}" /> <br />
+      Types: <input type="text" name="type" value="{{ pokemon.type }}" /> <br />
       Stats: <br />
-      HP: <input type="text" name="hp" value="{{ pokemon.stats.hp }}"/> <br />
-      ATTACK: <input type="text" name="attack" value="{{ pokemon.stats.attack }}"/> <br />
-      DEFENSE: <input type="text" name="defense" value="{{ pokemon.stats.defense }}"/> <br />
+      HP: <input type="text" name="hp" value="{{ pokemon.stats.hp }}" /> <br />
+      ATTACK:
+      <input type="text" name="attack" value="{{ pokemon.stats.attack }}" />
+      <br />
+      DEFENSE:
+      <input type="text" name="defense" value="{{ pokemon.stats.defense }}" />
+      <br />
       <input type="submit" value="Submit Changes" />
-      
     </form>
   </body>
 </html>

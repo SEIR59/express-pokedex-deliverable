@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>New Pokemon</title>
-</head>
-<body>
+  </head>
+  <body>
+      <h1>Add a new Pokemon</h1>
     <form action="/pokemon" method="POST">
-        Name: <input type="text" name="name"> <br>
-        Image: <input type="text" name="img"> <br>
-        Types: <input type="text" name="type"> <br>
-        Stats: <br>
-        HP: <input type="text" name="hp"> <br>
-        ATTACK: <input type="text" name="attack"> <br>
-        DEFENSE: <input type="text" name="defense"> <br>
-        <input type="submit" value="Add Pokemon"/>
+      Name: <input type="text" name="name" placeholder="Enter Pokemon Name"/> <br />
+      Image: <input type="text" name="img" placeholder="Enter the image url"/> <br />
+      Types: <input type="text" name="type" placeholder="Enter Pokemon Types"/> <br /> <br>
+      Stats <br />
+      HP: <input type="text" name="hp" placeholder="Enter HP Stats"/> <br />
+      ATTACK: <input type="text" name="attack" placeholder="Enter Attack Stats"/> <br />
+      DEFENSE: <input type="text" name="defense" placeholder="Enter Defense Stats"/> <br />
+      <input class="btn"id="add" type="submit" value="Add Pokemon" />
     </form>
-</body>
+  </body>
 </html>

@@ -1,15 +1,74 @@
 body {
     margin: 0;
     text-align: center;
-}
-
-.box {
-    width: 20%; 
-    height: 150px; 
-    float: left;
+    font-family: 'Lato';
 }
 
 img {
     width: 100px;
     height: 100px;
 }
+
+h1 {
+    color: #006400;
+    font-size: 50px;
+}
+
+h2 {
+    color: #DB7093;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+    margin-left: -45px;
+}
+
+.box {
+    width: 20%; 
+    height: 170px; 
+    float: left;
+    border-radius: 10px;
+    border: 3px solid #8FBC8F;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 10px;
+}
+
+.card {
+    width: 50%;
+    height: 550px;
+    margin-left: 25%;
+    margin-top: 15%;
+    border-radius: 10px;
+    border: 3px solid #8FBC8F;
+    box-shadow: 5px 10px;
+    float: center;
+}
+
+.btn {
+    background-color: #DB7093;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+
+
+.btb:hover,
+.btn:focus {
+  background-color: #FFE4E1;
+}
+
+#home {
+    margin-top: 50%;
+}
+
+#add {
+    margin-top: 2%;
+}
+

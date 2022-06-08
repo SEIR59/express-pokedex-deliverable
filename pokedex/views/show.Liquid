@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Pokemon</title>
-</head>
-<body>
-    <h1>{{ pokemon.name }}</h1>
-    <br>
-    <img src="{{ pokemon.img }}">
-    <br>
-    <ul>
-        <h2>Pokemon Type</h2>
-        {% for type in pokemon.type %}
-            <li>
-                {{ type }}
-            </li>
-        {% endfor %}
+  </head>
+  <body>
+    <div class="card">
+      <h1>{{ pokemon.name }}</h1>
+      <br />
+      <img src="{{ pokemon.img }}" />
+      <br />
+      <h2>Pokemon Type</h2>
+      <ul>
+      {% for type in pokemon.type %}
+        <li>
+          {{ type }}
+        </li>
+      {% endfor %}
     </ul>
-    <h2>Stats</h2>
-        HP: {{ pokemon.stats.hp }}
-        ATTACK: {{ pokemon.stats.attack }}
-        DEFENSE: {{ pokemon.stats.defense }}
-        <form action="/pokemon">
-            <input type="submit" value="Home">
-        </form>
-</body>
+      <h2>Stats</h2>
+      <ul>
+        <li>HP: {{ pokemon.stats.hp }}</li>
+        <br />
+        <li>ATTACK: {{ pokemon.stats.attack }}</li>
+        <br />
+        <li>DEFENSE: {{ pokemon.stats.defense }}</li>
+        <br />
+      </ul>
+    </div>
+    <form action="/pokemon">
+      <input class="btn" id="home" type="submit" value="Home" />
+    </form>
+  </body>
 </html>
