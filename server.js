@@ -31,7 +31,7 @@ app.delete("/pokemon/:id", (req, res) => {
 app.put("/pokemon/:id", (req, res) => {
     console.log(Pokemon[req.params.id])
   Pokemon[req.params.id].name = req.body.name;
-//   Pokemon[req.params.id].type = req.body.type;
+ Pokemon[req.params.id].type = req.body.type;
   res.redirect("/pokemon");
 })
 
