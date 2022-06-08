@@ -6,6 +6,7 @@ body, main{
     flex-flow:column nowrap;
     justify-content: center;
     align-items: center;
+    margin:0;
     margin-top:5vh;
 
 }
@@ -21,6 +22,14 @@ header{
 a, button{
     width:25vw;
 }
+button{
+    height:6vh;
+    border-radius:10vh;
+    font-size: 3vh;
+    background: rgb(255,45,45);
+    border: none;
+}
+
 .img-wrap{
     display:flex;
     justify-content: center;
@@ -74,7 +83,7 @@ img{
 }
 
 .container-grid3x{
-    width:75vw;
+    width:85vw;
     height: auto;
     display:grid;
     grid-template-columns: repeat(3, auto);
