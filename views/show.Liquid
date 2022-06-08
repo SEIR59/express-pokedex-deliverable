@@ -5,11 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: salmon;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            font-size: large;
+        }
+    </style>
     <title>Pokemon</title>
 </head>
 
 <body>
     <h1>{{ data.name }}</h1>
+    <a href="/pokemon"><button>Pokedex Home</button></a><br>
     <img src="{{ data.img }}" alt="{{ data.name }}"><br>
     <ul>
         Type(s):
@@ -21,12 +34,11 @@
         HP: {{ data.stats.hp }}<br>
         Attack: {{ data.stats.attack }}<br>
         Defense: {{ data.stats.defense }}<br>
-    </ul><br>
-    <a href="/pokemon/{{ index }}/edit"><button>Edit Pokemon</button></a><br><br>
+    </ul>
+    <a href="/pokemon/{{ index }}/edit"><button>Edit Pokemon</button></a><br>
     <form action="/pokemon/{{ index }}?_method=DELETE" method="POST">
         <button>Delete Pokemon</button>
     </form><br><br>
-    <a href="/pokemon"><button>Pokedex Home</button></a><br><br>
 </body>
 
 </html>
