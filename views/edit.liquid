@@ -13,61 +13,33 @@
 	<body>
 		<h1>Edit a Pokemon!</h1>
 
-		<form action="/pokemon/{{ index }}?_method=PUT" method="POST">
-			<label
-				>Name:
-				<input
-					type="text"
-					name="name"
-					placeholder="{{ data.name }}"
-				/>
-			</label>
+		<form action="/pokemon/{{index}}?_method=PUT" method="POST">
+			 Name:
+				<input type="text" name="name" value="{{ data.name }}" />
+			
 
-			<label
-				>Image:
-				<input type="text" 
-                       name="img" 
-                       placeholder="{{ data.img }}" />
-			</label>
+			 Image:
+				<input type="text" name="img" value="{{ data.img }}" />
+			
 
-			<label
-				>Type:
-				<input
-					type="text"
-					name="type"
-					placeholder="{{ data.type }}"
-				/>
-			</label>
+			 Type:
+				<input type="text" name="type" value="{{ data.type }}" />
+			
 
-			<label
-				>HP
-				<input
-					type="text"
-					name="hp"
-					placeholder="{{ data.stats.hp }}"
-				/>
-			</label>
+			 HP:
+				<input type="text" name="hp" value="{{ data.stats.hp }}" />
+			
 
-			<label
-				>Attack
-				<input
-					type="text"
-					name="attack"
-					placeholder="{{ data.stats.attack }}"
-				/>
-			</label>
+			 Attack:
+				<input type="text" name="attack" value="{{ data.stats.attack }}" />
+			
 
-			<label
-				>Defense
-				<input
-					type="text"
-					name="defense"
-					placeholder="{{ data.stats.defense }}"
-				/>
-			</label>
+			 Defense:
+				<input type="text" name="defense" value="{{ data.stats.defense }}" />
+			
 			<br />
 			<br />
-			<input type="submit" name="" value="Submit Changes" />
+			<input type="submit" value="Submit" />
 		</form>
 	</body>
 </html>
