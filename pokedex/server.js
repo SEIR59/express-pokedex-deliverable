@@ -117,7 +117,6 @@ app.put('/pokemon/:id', (req, res) => {
     let chosenPokemon = Pokemon[req.params.id];
     const { name, type, hp, attack, defense, spattack, spdefense, speed, img } =
       req.body;
-
     chosenPokemon.name = name;
     chosenPokemon.type = type.trim().split(',');
     chosenPokemon.img = img;
