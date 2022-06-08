@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Enter new Pokemon Page</title>
 </head>
 <body>
     <h1>Enter a New Pokemon</h1>
+    <div>
+    <form action="/pokedex/create" method="POST">
+        Name : <input type="text" name="name" placeholder="Pokemon Name"><br>
+        Image: <input type="text" name="img" placeholder="image link here"><br>
+        Type: <input type="text" name="type" placeholder="Type stat here"><br>
+        ID: <input type="text" name="id" placeholder="ID stat here"><br>
+        HP: <input type="text" name="hp" placeholder="HP stat here"><br>
+        Attack: <input type="text" name="attack" placeholder="Attack stat here"><br>
+        Defense: <input type="text" name="defense" placeholder="Defense stat here"><br>
+        
+        <input type="submit" value="Enter New Pokemon">
+    </form>
+    </div>
 
 </body>
 </html>

@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Pokemon Show Page</title>
 </head>
 <body>
     <h1>Pokedex Entry</h1>
-    {%for Pokemon in allPokemon %}
-    <li>{{index.name}} the {{index.misc.classification}} <br><img src='{{index.img}}'><br>{{index.type}}</li><br>
-    <li>HP: {{index.stats.hp}}</li><br>
-    <li>Attack: {{index.stats.attack}}</li><br>
-    <li>Defense: {{index.stats.defense}}</li>
-    <a href='/pokemon/{{forloop.index.0}}/edit'><button>Edit Pokemon</button></a>
-    {%endfor%}
+    <img src='{{Pokemon.img}}'>
+    <h2>{{Pokemon.name}}</h2><br>
+    <li>Type: {{Pokemon.type}}</li><br>
+    <li>Pokedex ID: {{Pokemon.id}}</li><br>
+    <li>HP: {{Pokemon.stats.hp}}</li><br>
+    <li>Attack: {{Pokemon.stats.attack}}</li><br>
+    <li>Defense: {{Pokemon.stats.defense}}</li>   
 </body>
 </html>

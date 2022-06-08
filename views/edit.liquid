@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
     <title>Edit Your Pokemon</title>
 </head>
+
 <body>
     <h1>Edit Your Pokemon</h1>
-    <form action="">
-    <li>{{index.name}} the {{index.misc.classification}} <br><img src='{{index.img}}'><br>{{index.type}}</li><br>
-    <li>HP: {{index.stats.hp}}</li><br>
-    <li>Attack: {{index.stats.attack}}</li><br>
-    <li>Defense: {{index.stats.defense}}</li>
+    <img src="{{Pokemon.img}}">
+
+    <form action="/pokedex/{{id}}?_method=PUT" method="POST">
+        Link Image: <input type="text" name="img" value="{{Pokemon.img}}" /><br/>
+        Type:<input type="text" name="type" value="{{Pokemon.type}}"><br>
+        ID:<input type="text" name="id" value="{{Pokemon.id}}"><br>
+        Name:<input type="text" name="name" value="{{Pokemon.name}}"><br>
+        HP: <input type="text" name="hp" value="{{Pokemon.stats.hp}}"><br>
+        Attack: <input type="text" name="attack" value="{{Pokemon.stats.attack}}"><br>
+        Defense: <input type="text" name="defense" value="{{Pokemon.stats.defense}}"><br>
+        <input type="submit" value="Submit Changes">
     </form>
-    
+
 </body>
+
 </html>

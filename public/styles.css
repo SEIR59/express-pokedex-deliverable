@@ -1,0 +1,32 @@
+body{
+    text-align: center;
+    background-color: darkgray;
+    color: gold;
+}
+button{
+    background-color: cadetblue;
+}
+
+
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+input{
+    background-color:darkseagreen;
+    box-sizing: border-box;
+    
+    padding: 3px;
+}
+input[type='text']{
+   background-color: white;
+}
+h2{
+    font-size: 30px;
+}
+li{
+    font-size: 25px;
+}

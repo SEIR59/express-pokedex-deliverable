@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Pokemon Index Page</title>
 </head>
+
 <body>
     <h1>Pokemon Index Page</h1>
+
+    <a href="/pokedex/new"><button>Enter New Pokemon</button></a>
     <ul>
-        {%for Pokemon in allPokemon %}
-    <li>{{Pokemon.name}} the {{Pokemon.misc.classification}} <br><img src='{{Pokemon.img}}'><br>{{index.type}}</li><br>
-    <li>HP: {{Pokemon.stats.hp}}</li><br>
-    <li>Attack: {{Pokemon.stats.attack}}</li><br>
-    <li>Defense: {{Pokemon.stats.defense}}</li><br><br>
-    
-    {%endfor%}
+        {%for Pokemon in pokedex %}
+        <h2>
+            {{Pokemon.name}}
+        </h2><br>
+        <a href="/pokedex/{{forloop.index0}}"><button><img src='{{Pokemon.img}}'></button></a><br>
+        {{Pokemon.type}}<br>
+        <a href="/pokedex/{{forloop.index0}}/edit"><button>Edit {{Pokemon.name}}</button></a><br>
+        <form method="POST" action="/pokedex/{{forloop.index0}}?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+        {%endfor%}
     </ul>
 </body>
+
 </html>
