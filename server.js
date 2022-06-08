@@ -2,14 +2,15 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const Pokemon = require('./pokedex/models/pokemon.js')
 const port = 3000
+// const methodOverride = require("method-override");
 
 // MIDDLEWARE
 app.use((req, res, next) => {
     console.log('I run for all routes')
     next()
 })
-
 app.use(express.urlencoded({ extended: false}))
+// app.use(methodOverride("_method"));
 
 // Index
 app.get('/pokemon', (req, res) => {
@@ -23,19 +24,37 @@ app.get('/pokemon/new', (req, res) => {
 
 // Show
 app.get('/pokemon/:id', (req, res) => {
-    res.render('show', { data: Pokemon[req.params.id] })
+    res.render('show', { 
+        data: Pokemon[req.params.id],
+        index: req.params.id 
+    })
 })
 
 // Edit
 app.get('/pokemon/:id/edit', (req, res) => {
-    res.render('show', { data: Pokemon[req.params.id] })
+    res.render('edit', { 
+        data: Pokemon[req.params.id],
+    })
 })
 
 // Create
 app.post('/pokemon', (req, res) => {
-    req.body.img = "https://i.ytimg.com/vi/gLkNlyU0qd4/mqdefault.jpg"
-    console.log(req.body.img)
-    Pokemon.push(req.body)
+    let typeArray = [req.body.type1]
+    if (req.body.type2) {
+        typeArray.push(req.body.type2)
+    }
+    let currentMon = {
+        name: req.body.name,
+        type: typeArray,
+        stats: {
+            hp: req.body.hp,
+            attack: req.body.attack,
+            defense: req.body.defense
+        },
+        img: "https://i.ytimg.com/vi/gLkNlyU0qd4/mqdefault.jpg"
+    }
+    console.log(currentMon)
+    Pokemon.push(currentMon)
     res.redirect('pokemon')
 })
 
