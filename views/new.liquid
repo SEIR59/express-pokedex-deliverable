@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link type="text/css" rel="stylesheet" href="{{'app.css' | asset_url}}">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav"></nav>
+    <h1>Add new pokemon{{data.name}}</h1>
+    <a href="/pokemon"><button>Back to Main</button></a>
+    </nav>
+            <!--  NOTE: action will be the route, method will be the HTTP verb-->
+            <form action="/pokemon" method="POST">
+                Name: <input type="text" placeholder= "Pokemon name" name="name" /><br/>
+                ID: <input type="text" placeholder= "Pokemon id" name="id" /><br/>
+                Type: <input type="text" placeholder= "Pokemon type" name="type" /><br/>
+                Image: <input type="text" placeholder= "Pokemon image url" name="img" /><br>
+            
+                <input type="submit" value="submit new Pokemon"/>
+            </form>
+            
+</body>
+</html>
