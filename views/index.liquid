@@ -8,16 +8,24 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Poke Index</title>
+        <link rel="stylesheet" href="/app.css">
 	</head>
 	<body>
+        <div>
 		<h1>Pokemon Index Page</h1>
-
-		<div class="container">
-			{% for Pokemon in data %} 
-            {% if Pokemon.id < "0150" %}
+    </div>
+    <div>
+        <a href="/pokemon/new">Add</a>
+    
+    </div>
+    
+    
+    
+		<div class="gallery">
+			{% for Pokemon in data limit: 20 %} 
+            
 			<a href="/pokemon/{{ forloop.index0 }}"><img src="{{ Pokemon.img }}" />
     
-			{% endif %} 
             {% endfor %}
 		</div>
 	</body>

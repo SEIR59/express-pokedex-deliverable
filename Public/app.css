@@ -1,0 +1,11 @@
+h1 {
+    background: darkgray;
+    text-align: center;
+    color: yellow;
+}
+.container {
+    display: block;
+    text-align: center;
+    
+}
+

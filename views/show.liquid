@@ -8,31 +8,60 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Poke Show</title>
+		<link rel="stylesheet" href="/app.css" />
 	</head>
 	<body>
-		<h1>{{ Pokemon.name }}</h1>
+		<h1>{{ data.name }}</h1>
 
 		<div class="container">
-            <div>
-		{{ data.name }}
-        </div>
-            <br />
-            <div>
-			<img src="{{ data.img }}">
-        </div>
-            <br />
-            <div>
-            Type:
-            <br />
-            <br />
-			{{ data.type }}
-        </div>
-            <br />
-            <div>
-			Stats
-			{{ data.stats }}
-        </div>
-            <br />
+			<br />
+			<div>
+				<img src="{{ data.img }}" />
+			</div>
+			<br />
+			<br />
+			<div>
+                <ul>
+				<b>Type:</b> {{ data.type }}
+            </ul>      
+				<br />
+				
+			</div>
+			
+			<div>
+				<b>Stats:</b>
+				<br />
+				<br />
+				HP: {{ data.stats.hp }}
+				<br />
+				Attack: {{ data.stats.attack }}
+				<br />
+				Defense: {{ data.stats.defense }}
+				<br />
+                <br />
+				
+
+                    <div>
+                        <button class="btn1">
+                <a href="/pokemon/{{ index }}/edit">EDIT</a>
+            </button>
+           
+                <br />
+                <br />
+                    <button>
+                        <a href="/pokemon/{{ index }}"></a>
+                        <form method="POST" action="/pokemon/{{ index }}?_method=DELETE" >
+                            <button type="submit">Delete</button>
+                        </form>
+
+                        
+                        
+                    </form>
+                
+            </div>
+                
+			</div>
+			<br />
 		</div>
 	</body>
 </html>
