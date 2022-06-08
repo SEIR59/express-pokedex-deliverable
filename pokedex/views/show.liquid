@@ -13,8 +13,9 @@
                 {{thePokemon.name}}
                 HP: {{thePokemon.stats.hp}}
                 {{thePokemon.type | join: ", "}}
-                <a href="/pokemon"><button>Back</button></a>
-                <a href="/pokemon/{{thePokemon.id}}/edit"><button>Edit</button></a>
+                <a href="/"><button>Back</button></a>
+                <a href="/{{thePokemon.id}}/edit"><button>Edit</button></a>
+                
             </div>
         </body>
     </html>

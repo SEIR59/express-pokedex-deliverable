@@ -10,14 +10,13 @@
         <body>
             <div>
                 <h1>Pokedex</h1>
-                <a href="/pokemon/new"><button>Create New</button></a>
-                <div>
-                    <ul class="container">
+                <a href="/new"><button>Create New</button></a>
+                <div class="container">
+                    <ul>
                     {%for pokemon in allPokemon%}
                         <li>
                             <img src="{{pokemon.img}}" alt="Pokemon" width="200" height="250">
-                            <h3>{{pokemon.name}}</h3>
-                            <a href="/pokemon/{{pokemon.id}}/edit"><button>Edit</button></a>
+                            <a href="/{{forloop.index0}}">{{pokemon.name}}</a>
                         </li>
                     {%endfor%}
                     </ul>
