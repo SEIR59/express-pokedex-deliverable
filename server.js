@@ -13,7 +13,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use(express.urlencoded( { extended: false }))
+app.use(express.urlencoded({ extended: false }))
 
 app.use(express.static('public'))
 
@@ -22,8 +22,8 @@ app.use(methodOverride('_method'))
 // ***** MAKE IT SO THAT X AMOUNT OF POKEMON DISPLAYED AT A TIME ******
 // INDEX
 app.get('/pokemon', (req, res) => {
-    res.render('index', { 
-        allPokemon: Pokemon 
+    res.render('index', {
+        allPokemon: Pokemon
     })
 })
 
@@ -34,9 +34,10 @@ app.get('/pokemon/new', (req, res) => {
 
 // UPDATE
 app.put('/pokemon/:id', (req, res) => {
-    name = req.body.name
-    type = req.body.type
-    
+    let thisPokemon = Pokemon[req.params.id]
+    Pokemon[req.params.id].name = req.body.name
+    Pokemon[req.params.id].type = req.body.type
+    Pokemon[req.params.id].img = Pokemon[req.params.id].img
     res.redirect('/pokemon')
 })
 
@@ -65,7 +66,7 @@ app.delete('/pokemon/:id', (req, res) => {
 
 // SHOW
 app.get('/pokemon/:id', (req, res) => {
-    res.render('show', { 
+    res.render('show', {
         Pokemon: Pokemon[req.params.id],
         index: req.params.id
     })
