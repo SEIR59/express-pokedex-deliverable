@@ -43,7 +43,7 @@ header div h1 {
     padding: 30px 0;
     border-radius: 20px;
     box-shadow: inset 0 0 3px 3px black;
-    background-color: rgb(189, 228, 170);;
+    background-color: rgb(189, 228, 170);
 }
 /*============================================================
         These are for for image and link to format them into the ball.
@@ -100,7 +100,7 @@ Before and after elements are used to create the top and bottom of the pokeball 
     border: 2px solid var(--color-darkGrey);
     border-radius: 5px;
     background-color: whitesmoke;
-    transition: ease-in-out 500ms;
+    transition: ease-in-out 250ms;
 }
 .form-btn:hover {
     background-color: var(--color-whiteGrey);    
@@ -117,10 +117,26 @@ Before and after elements are used to create the top and bottom of the pokeball 
     left: 12.5px;
 }
 .edit-btn,
-.save-btn {
+.save-btn,
+.add-btn {
     position: absolute;
     top: 10px;
     Left: 10px;
     height: 40px;
     width: 200px;
+}
+
+.input-wide {
+    width: 200px;
+    word-wrap: normal;
+}
+input {
+    border-radius: 10px;
+    border: 2px solid rgb(189, 228, 170);
+    transition: ease-in-out 250ms;
+}
+input:focus {
+    outline: none;
+    border: 2px solid rgb(56, 158, 6);
+    box-shadow: 0 0 1px 1px rgb(56, 158, 6);
 }

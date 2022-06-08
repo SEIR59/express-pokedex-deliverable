@@ -32,6 +32,11 @@ app.get("/pokemon", (req, res) => {
     })
 })
 
+// "/pokemon/new" GET - new TODO: Add required info to create pokemon and push to array
+app.get("/pokemon/new", (req, res) => {
+    res.render("pokemon/new")
+})
+
 // "/pokemon/:id" GET - show TODO: Will display all of the information about a pokemon
 app.get("/pokemon/:id", (req, res) => {
     let indPokemon = req.params.id
@@ -41,10 +46,6 @@ app.get("/pokemon/:id", (req, res) => {
     })
 })
 
-// "/pokemon/new" GET - new TODO: Add required info to create pokemon and push to array
-app.get("/pokemon/new", (req, res) => {
-    res.render("pokemon/new")
-})
 
 // "/pokemon/:id/edit" - GET TODO: Pull existing data form selected pokemon and display it in form, allowing to edit (all into/ some info "haven't decided yet") and then save changes. Adding bodyData to array[id] and render index via POST after.
 app.get("/pokemon/:id/edit", (req, res) => {
@@ -56,6 +57,37 @@ app.get("/pokemon/:id/edit", (req, res) => {
 })
 
 // "/pokemon" POST - index TODO: get index after adding pokemon from "/new" route
+app.post("/pokemon", (req,res) => {
+    let pageData = req.body
+    let indPokemon =  req.params.id
+    // seperate the multi dot notation keys and values into their own arrays
+    let arrKeys = Object.keys(pageData)
+    let arrValues = Object.values(pageData)
+    let newPokemon = {}
+    // loop through each key
+    for (let i = 0; i < arrKeys.length; i++){
+        // split the multi dot notaion arrays into their own array and use each value as a key to find the correct path.
+        console.log(`${arrKeys[i]}: ${arrValues[i]}`)
+        currentKey = arrKeys[i].split(".")
+        if (currentKey.length === 2) {
+            if (currentKey[0] in newPokemon) {
+                newPokemon[`${currentKey[0]}`][`${currentKey[1]}`] = arrValues[i]
+            } else {
+                newPokemon[`${currentKey[0]}`] = {}
+                newPokemon[`${currentKey[0]}`][`${currentKey[1]}`] = arrValues[i]
+            }
+        } else {
+            newPokemon[`${currentKey[0]}`] = arrValues[i]
+        }
+        console.log(newPokemon)
+    }
+    console.log(newPokemon)
+    arrPokemon.push(newPokemon)
+    
+    res.render("pokemon", {
+        allPokemon: arrPokemon
+    })
+})
 
 // /pokemon/:id UPDATE - redirect -> index after updating pokemon off of index TODO: get index but update array using index based off of "/edit"
 app.put("/pokemon/:id/", (req,res) => {

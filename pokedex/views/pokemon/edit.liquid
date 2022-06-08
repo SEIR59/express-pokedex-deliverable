@@ -1,6 +1,6 @@
 {% layout "layout.liquid" %}
 {% block headerTitle %}
-<form action="/pokemon" method="GET">
+<form action="/pokemon/{{index}}" method="GET">
     <input class="back-btn form-btn" type="submit" value="Back">
 </form>
 <h1>Edit {{pokemon.name}}</h1>
