@@ -20,7 +20,9 @@
             <p><strong>Name:</strong> {{pokemon.name}}</p>
             <img id="pokemon-entry-quicklook-img" src="{{pokemon.img}}" alt="Image of {{pokemon.name}}">
             <p><strong>Classification:</strong> 
-            <br />{{pokemon.misc.classification}}</p>
+            <br />
+            {{pokemon.misc.classification}}
+            </p>
             <p id="typeP"><strong>Type:</strong></p>
             <ul class="pokemon-Type">
                 {% for type in pokemon.type %}
