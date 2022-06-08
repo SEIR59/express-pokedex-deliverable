@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pokemonItem.name}}</title>
+</head>
+<body>
+    <h1>{{pokemonItem.name}}</h1>
+    <img src="{{pokemonItem.img}}">
+    <h1>{{pokemonItem.misc.classification}}</h1>
+    <h1>{{pokemonItem.type | join: ", " }}</h1>
+    <a href="/{{index}}/edit">Edit Pokemon</a>
+    <br>
+    <br>
+    <a href="/">Back</a>
+    <br>
+    <br>
+    <form action="/{{index}}?_method=DELETE" method="post">
+        <input type="submit" value="Delete">
+    </form>      
+</body>
+</html> 
