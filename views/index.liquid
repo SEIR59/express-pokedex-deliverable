@@ -7,27 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="../public/app.css">
     <link type="text/css" rel="stylesheet" href="{{'app.css' | asset_url}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <title>Document</title>
 </head>
 
 <body>
+    
     <div class="container">
-    <div class="line">
-    <h1>Pokemon</h1>
-    <button class="btn" type="submit">Add a Pokemon</button>
-    </div>
-        <ul>
-            {% for pokemon in data%}
-            <h2>{{pokemon.name}}</h2>
+        <nav>
+            <h1>Pokemon</h1>
+            <a href="/pokemon/new" type="submit">Add a new pokemon</a>
 
+       
+        
+            {% for pokemon in data%}
+            </nav>
+            <div>
             <a href="/pokemon/{{forloop.index0}}">
-                <li>
-                    <img src="{{pokemon.img}}" class="img-style" alt=""></li>
-                    <a href="/pokemon/" type="submit">Edit</a>
-                    <a href="/pokemon/" type="submit">Delete</a>
-                </li>
+              
+                    <p>{{pokemon.name}}</p></br>
+                    <img src="{{pokemon.img}}" class="img-style" alt=""></a><br>
+                
+                <a href="/pokemon/{{forloop.index0}}/edit" type="submit">Edit</a></br>
+                <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
+                    <input type="submit" value="delete">
+
+                </form>
+               
 
             </a>
+            </div>
             {% endfor %}
 
         </ul>
