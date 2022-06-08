@@ -11,60 +11,51 @@ app.use(express.urlencoded({extended:false}));
 app.use(methodOverride("_method"));
 
 
-// index 
-app.get('/', (req, res)=> {
-    res.send('index')
+// INDEX
+app.get('/pokemon', (req, res) => {
+  console.log('you hit the index route')
+  res.render('index', { data: Pokemon });
+  });
+
+  
+// New    
+app.get('/pokemon/new', (req, res) => {
+  console.log('you hit the new route')
+  res.render('new')
+  })
+
+
+// SHOW
+app.get('/pokemon/:id', (req, res) => {
+  console.log('you hit the show route')
+  res.render('show', { data: Pokemon[req.params.id] });
+  });
+
+
+// EDIT
+app.get('/pokemon/:id/edit', (req,res) => {
+  console.log('You hit the edit route ')
+  res.render('edit',
+  {
+
+  })
 })
 
-// //delete
-// app.delete("/pokemon/:id", (req, res) => {
-//     pokedex.splice(req.params.id, 1);
-//     res.redirect("/pokemon");
+//POST
+app.post('/pokemon', (req, res) => {
+  console.log('This is the post route')
+})
 
-//   });
+//PUT
+app.put('pokemon/:id',(req, res) => {
+  console.log('put route hit')
+})
 
+// DELETE
+app.delete('/pokemon/:id', (req, res) => {
+  console.log('delete route hit')
+})
 
-//   //new
-
-// app.get('/pokemon/new', (req,res) => {
-//     res.render('new')
-// })
-
-// app.post('/pokemon', (req, res)=>{
-//     pokedex.push(req.body);
-//     res.redirect('/pokemon');
-// })
-
-
-
-
-// //Edit route
-
-// app.get("/pokemon/:id/edit", (req, res) => {
-//     res.render(
-//       "edit", 
-//       {
-    
-//         pokemon: pokedex[req.params.id],
-//         index: req.params.id,
-//       }
-//     );
-//   });
-
-//   //Update index
-
-//   app.put("/pokemon/:id/", (req, res) => {
-
-//     pokedex[req.params.id] = req.body;
-//     res.redirect("/pokemon");
-//     console.log(pokedex[2])
-//   });
-
-// //show
-
-// app.get('/pokemon/:id', (req, res) => {
-//     res.render('show', {pokemon: pokedex[req.params.id]})
-// })
 
 app.listen(3000, () => {
   console.log('listening to port 3000')
