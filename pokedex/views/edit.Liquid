@@ -28,15 +28,15 @@
 
     <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
       Name: <br /><input type="text" name="name" value="{{ pokemon.name }}" />
-      <br /><br />
+      <br />
 
       Type:<br />
       <input type="text" name="type" value="{{ pokemon.type }}" />
-      <br /><br />
+      <br />
 
       Image URL:<br />
       <input type="text" name="img" value="{{ pokemon.img }}" />
-      <br /><br />
+      <br />
 
       HP:<br />
       <input type="text" name="hp" value="{{ pokemon.stats.hp }}" />
@@ -56,6 +56,6 @@
 
       <input type="submit" name="" value="Submit Changes" />
     </form>
-    <br /><a href="/pokemon">Back</a>
+    <a href="/pokemon"><button>Back</button></a>
   </body>
 </html>
