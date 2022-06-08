@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Pokedex</title>
 </head>
 
@@ -19,6 +20,9 @@
         <li><a href="/{{forloop.index0}}">{{pokemon.name}}</a></li>
         <form action="/{{forloop.index0}}?_method=DELETE" method="POST">
             <input type="submit" value="Remove {{pokemon.name}}">
+        </form>
+        <form action="/{{forloop.index0}}/edit">
+            <input type="submit" value="Edit {{pokemon.name}}">
         </form>
         {% endfor %}
     </ul>

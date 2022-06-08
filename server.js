@@ -8,13 +8,19 @@ let port = 3000
 app.listen(port, () => {
     console.log("Listining on port: ", port)
 }) 
+
+//Middleware
+app.use(express.urlencoded({extended:false}));
+app.use(methodOverride("_method"));
+app.use(express.static('public'));
+
+
 app.use((req, res, next) => {
     // console.log('I run for all routes');
     next();
 });
 
-app.use(express.urlencoded({extended:false}));
-app.use(methodOverride("_method"));
+
 
 app.post('/create', (req, res) => {
 
@@ -43,6 +49,24 @@ app.delete('/:id', (req, res) => {
     PokemonList.splice(req.params.id, 1)
     res.redirect('/')
 })
+
+// edit route
+
+app.get('/:id/edit', (req, res) => {
+    res.render('edit', 
+    {
+        index: request.params.id,
+        pokemon: PokemonList[request.params.id]
+    })
+})
+
+// update route
+
+app.put('/:id/update', (req, res) => {
+    PokemonList[req.params.id].name = req.body.name
+    res.redirect('/')
+})
+
 
 app.get('/', (req, res) => {
     res.render(
