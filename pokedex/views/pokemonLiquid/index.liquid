@@ -5,8 +5,14 @@
     <div class="container-grid3x">
         {%for pokemon in pokemonList%}
         <div class="container-flex pokemon-index">
+            
+            {% if pokemon.name == 'Venusaur'%}
+            <a class="img-wrap" href="/pokemon/{{ forloop.index0 }}"><h1 style="text-decoration:none">{{pokemon.name}}</h1></a>
+            <div class="tenor-gif-embed" data-postid="13922808" data-share-method="host" data-aspect-ratio="1.18421" data-width="100%"><a href="https://tenor.com/view/venusaur-seed-pokemon-turtle-creeping-sluggish-gif-13922808"></a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            {%else%}
             <h1>{{pokemon.name}}</h1>
             <a class="img-wrap" href="/pokemon/{{ forloop.index0 }}"><img src="{{pokemon.img}}" alt=""></a>
+            {%endif%}
             <h4>Types: {{pokemon.type | join: ", " }}</h4>
         </div>
 

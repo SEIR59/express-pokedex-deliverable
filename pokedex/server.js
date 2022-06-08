@@ -1,9 +1,11 @@
 const express = require('express');
 const app = require('liquid-express-views')(express())
 const PORT = 3000
-const pokemonList = require('./pokemon.js')
+let pokemonList = require('./pokemon.js')
+const methodOverride = require('method-override')
 
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"))
 app.use(express.static('public')); //tells express to try to match requests with files in the directory called 'public'
 
 app.get('/' , (req,res)=>{
@@ -27,8 +29,7 @@ app.get('/pokemon/:id',(req,res)=>{
 })
 
 app.get('/pokemon/:id/edit',(req,res)=>{
-    
-    res.render('pokemonLiquid/edit',{
+    res.render('pokemonLiquid/edit', {
         pokemon:pokemonList[req.params.id],
         id:req.params.id,
     })
@@ -63,16 +64,10 @@ app.post('/pokemon/:id' ,(req,res)=>{
     res.redirect(`/pokemon/${req.params.id}`)
 })
 
-app.delete('/pokemon/:id',(req,res)=>{
-    
+app.get('/pokemon/:id/delete',(req,res)=>{
+    pokemonList.splice(req.params.id , 1)
+    res.redirect('/pokemon')
 })
-
-
-
-
-
-
-
 
 app.listen(PORT , ()=>{
     console.log('Listening to port')
