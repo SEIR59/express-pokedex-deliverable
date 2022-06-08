@@ -6,6 +6,7 @@ h1 {
     margin-top: 5px;
     border: 6px solid #CC0000;
     border-radius: 5px;
+    font-family: 'VT323', monospace;
 }
 
 .pkshow {
@@ -14,6 +15,7 @@ h1 {
     color: #FFDE00;
     font-size: 50px;
     margin-top: 5px;
+    font-family: 'VT323', monospace;
 }
 li {
     background-color: #3B4CCA;
@@ -22,6 +24,7 @@ li {
     line-height: 20px;
     width: 50%;
     margin: 0 auto;
+    font-family: 'VT323', monospace;
     
 }
 .ty {
@@ -32,6 +35,7 @@ li {
     padding: 10px;
     list-style-type: none;
     border: 5px solid #FFDE00;
+    font-family: 'VT323', monospace;
 
 
 }
@@ -48,6 +52,7 @@ li {
     margin-top: -50px;
     text-align: center;
     border: 5px solid #FFDE00;
+    font-family: 'VT323', monospace;
     
 
 }
@@ -68,6 +73,7 @@ body {
     color: #FFDE00;
     font-size: 20px;
     font-weight: bold;
+    font-family: 'VT323', monospace;
     
 }
 
@@ -91,6 +97,7 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
     text-align: center;
+    font-family: 'VT323', monospace;
   }
 
   input[type=submit] {
@@ -102,6 +109,7 @@ input[type=text], select {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-family: 'VT323', monospace;
     
   }
 
@@ -118,6 +126,7 @@ input[type=text], select {
     border: 5px solid black;
     font-size: 20px;
     font-weight: bold;
+    font-family: 'VT323', monospace;
   }
 
   #dt {
@@ -132,6 +141,7 @@ input[type=text], select {
     border: 5px solid black;
     font-size: 20px;
     font-weight: bold;
+    font-family: 'VT323', monospace;
   }
 
   #addbtn {
@@ -144,6 +154,7 @@ input[type=text], select {
       margin-left: 45%;
       margin-bottom: 20px;
       padding: 0px;
+      font-family: 'VT323', monospace;
   }
 
   #sub1 {
@@ -161,6 +172,7 @@ input[type=text], select {
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    font-family: 'VT323', monospace;
   }
 
   #sub2 {
@@ -178,14 +190,5 @@ input[type=text], select {
     margin: 0 auto;
     display: flex;
     justify-content: center;
-  }
-
-  label {
-      padding-top: 50px;
-      margin-top: 600px;
-      text-align: right;
-      
-      
-      
-      
+    font-family: 'VT323', monospace;
   }
