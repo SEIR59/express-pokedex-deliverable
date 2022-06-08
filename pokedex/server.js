@@ -1,8 +1,10 @@
 const express = require('express');
 const Pokemon = require('./models/pokemon.js')
 const app = require("liquid-express-views")(express())
-const methodOverride = require('method-override');
-const pokemon = require('./models/pokemon.js');
+const rowdy = require('rowdy-logger')
+const routesReport = rowdy.begin(app)
+const methodOverride = require('method-override')
+const pokemon = require('./models/pokemon.js')
 
 app.use(express.urlencoded({
     extended: false
@@ -11,7 +13,7 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 // INDEX
 app.get('/', (req, res) => {
-    res.render('index', { data: Pokemon });
+    res.render('index', { data: Pokemon })
 });
 
 app.get('/pokemon/new', (req, res) => {
@@ -70,4 +72,5 @@ app.delete("/pokemon/:index", (req, res) => {
 
 app.listen(3000, () => {
     console.log("listening on port 3000!")
+    routesReport.print()
 })
