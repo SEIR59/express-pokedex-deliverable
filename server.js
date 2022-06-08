@@ -7,6 +7,11 @@ let port = 3000
 app.listen(port, () => {
     console.log("Listining on port: ", port)
 }) 
+app.use((req, res, next) => {
+    console.log('I run for all routes');
+    next();
+});
+app.use(express.urlencoded({extended:false}));
 
 app.post('/create', (req, res) => {
 
