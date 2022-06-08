@@ -11,7 +11,7 @@
             <h1>Pokedex</h1>
                 <a href="/new"><button>Create New</button></a>
             <div>
-                <div class="container" style="display:grid; grid-template-columns: 200px 200px 200px; align-content:center; justify-content: center">
+                <div class="container" style="display:grid; grid-template-columns: 200px 200px 200px 200px 200px; align-content:center; justify-content: center">
                     {%for pokemon in allPokemon%}
                             <a class="grid-item" href="/{{forloop.index0}}">
                             <img class="img-item"src="{{pokemon.img}}" alt="Picture of pokemon" width="200" height="225">
