@@ -2,15 +2,15 @@ const express = require('express')
 const app = require('liquid-express-views')(express())
 const Pokemon = require('./pokedex/models/pokemon.js')
 const port = 3000
-// const methodOverride = require("method-override");
+const methodOverride = require("method-override");
 
 // MIDDLEWARE
 app.use((req, res, next) => {
     console.log('I run for all routes')
     next()
 })
-app.use(express.urlencoded({ extended: false}))
-// app.use(methodOverride("_method"));
+app.use(express.urlencoded({ extended: false }))
+app.use(methodOverride("_method"));
 
 // Index
 app.get('/pokemon', (req, res) => {
@@ -24,16 +24,17 @@ app.get('/pokemon/new', (req, res) => {
 
 // Show
 app.get('/pokemon/:id', (req, res) => {
-    res.render('show', { 
+    res.render('show', {
         data: Pokemon[req.params.id],
-        index: req.params.id 
+        index: req.params.id
     })
 })
 
 // Edit
 app.get('/pokemon/:id/edit', (req, res) => {
-    res.render('edit', { 
+    res.render('edit', {
         data: Pokemon[req.params.id],
+        index: req.params.id
     })
 })
 
@@ -60,7 +61,13 @@ app.post('/pokemon', (req, res) => {
 
 // Update
 app.put('/pokemon/:id', (req, res) => {
-    res.render('show', { data: Pokemon[req.params.id] })
+    Pokemon[req.params.id].name = req.body.name
+    Pokemon[req.params.id].type[0] = req.body.type1
+    Pokemon[req.params.id].type[1] = req.body.type2
+    Pokemon[req.params.id].stats.hp = req.body.hp
+    Pokemon[req.params.id].stats.attack = req.body.attack
+    Pokemon[req.params.id].stats.defense = req.body.defense
+    res.redirect('/pokemon')
 })
 
 // Destroy

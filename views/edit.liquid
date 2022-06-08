@@ -10,14 +10,14 @@
 
 <body>
     <h1>Edit {{ data.name }}</h1>
-    <form action="/pokemon" method="post">
-        <input type="text" name="name" placeholder="Name"><br>
-        <input type="text" name="type1" placeholder="Type 1"><br>
-        <input type="text" name="type2" placeholder="Type 2 (optional)"><br>
-        <input type="text" name="hp" placeholder="HP Stat"><br>
-        <input type="text" name="attack" placeholder="Attack Stat"><br>
-        <input type="text" name="defense" placeholder="Defense Stat"><br>
-        <input type="submit" value="Add to Pokedex">
+    <form action="/pokemon/{{ index }}?_method=PUT" method="post">
+        <input type="text" name="name" value="{{ data.name }}"><br>
+        <input type="text" name="type1" value="{{ data.type[0] }}"><br>
+        <input type="text" name="type2" value="{{ data.type[1]}}"><br>
+        <input type="text" name="hp" value="{{ data.stats.hp }}"><br>
+        <input type="text" name="attack" value="{{ data.stats.attack }}"><br>
+        <input type="text" name="defense" value="{{ data.stats.defense }}"><br>
+        <input type="submit" value="Submit Changes">
     </form>
 </body>
 
