@@ -5,13 +5,13 @@
             <title></title>
         </head>
         <body>
-            <h1>New Fruit page</h1>
-            <!--  NOTE: action will be the route, method will be the HTTP verb-->
-            <form action="/pokemon" method="PUT">
-                New Name: <input type="text" name="name" /><br/>
-                New Image URL: <input type="text" name="img" /><br/>
-                New Type: <input type="text" name="type" /><br/>
-                <input type="submit" value="Create Pokemon"/>
+            <h1>Edit Pokemon page</h1>
+            <form action="/pokemon/{{thePokemon.id}}/update?_method=PUT" method="POST">
+                New Name: <input type="text" name="name" value="{{thePokemon.name}}"/><br/>
+                New Image URL: <input type="text" name="img" value="{{thePokemon.img}}"/><br/>
+                New Type: <input type="text" name="type" type="{{thePokemon.type}}"/><br/>
+                <input type="submit" value="Edit Done"/>
             </form>
+
         </body>
     </html>
