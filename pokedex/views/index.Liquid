@@ -7,19 +7,16 @@
             <link rel="stylesheet" href="stylesheet.css">
             <title>Index</title>
         </head>
-        <body>
-            <div>
-                <h1>Pokedex</h1>
+        <body style="text-align:center">
+            <h1>Pokedex</h1>
                 <a href="/new"><button>Create New</button></a>
-                <div class="container">
-                    <ul>
+            <div>
+                <div class="container" style="display:grid; grid-template-columns: 200px 200px 200px; align-content:center; justify-content: center">
                     {%for pokemon in allPokemon%}
-                        <li>
-                            <img src="{{pokemon.img}}" alt="Pokemon" width="200" height="250">
-                            <a href="/{{forloop.index0}}">{{pokemon.name}}</a>
-                        </li>
+                            <a class="grid-item" href="/{{forloop.index0}}">
+                            <img class="img-item"src="{{pokemon.img}}" alt="Picture of pokemon" width="200" height="225">
+                            </a>  
                     {%endfor%}
-                    </ul>
             </div>
         </body>
     </html>
