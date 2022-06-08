@@ -13,35 +13,30 @@
 </head>
 
 <body>
-
     <div class="container">
-        <nav>
+        <div class="nav">
             <h1>Pokemon</h1>
-            <div class="div"> <a href="/pokemon/new" type="submit">Add a new pokemon</a></div>
-            {% for pokemon in data%}
-        </nav>
-        <div>
-            <a href="/pokemon/{{forloop.index0}}">
-
-                <p>{{pokemon.name}}</p></br>
-                <img src="{{pokemon.img}}" class="img-style" alt="">
-            </a><br>
-
-            <a href="/pokemon/{{forloop.index0}}/edit" type="submit">Edit</a></br>
-            <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
-                <input type="submit" value="delete">
-
-            </form>
-            </a>
+            <a class="new-button" href="/pokemon/new" type="submit">Add a new pokemon</a>
         </div>
-        {% endfor %}
+        <div class="container-grid">
+            {% for pokemon in data%}
+            <div>
+                <a href="/pokemon/{{forloop.index0}}">
 
-        </ul>
+                    <p>{{pokemon.name}}</p>
+                    <img src="{{pokemon.img}}" class="img-style" alt="">
+                </a><br>
 
+                <a href="/pokemon/{{forloop.index0}}/edit" type="submit">Edit</a></br>
+                <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
+                    <input type="submit" value="delete">
 
-
+                </form>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-
 </body>
 
 </html>
