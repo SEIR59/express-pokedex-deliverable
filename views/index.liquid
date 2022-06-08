@@ -10,14 +10,14 @@
 <body>
     <div class="topnav">
         <a class="active" href="#home">Pokédex</a>
-        <a href="#news">Add A Pokémon</a>
+        <a href="/pokemon/new">Add A Pokémon</a>
         <a href="#contact">Edit Pokémon Data</a>
         <a href="#about">Remove Pokémon</a>
       </div>
     <div class="container">
         {% for pokemons in pokemon limit:15 %}
         {{ pokemons.name }}
-        <a href="pokemon/{{ forloop.index0 }}"><img src="{{ pokemons.img }}" /></a>
+        <a href="/pokemon/{{ forloop.index0 }}/"><img src="{{ pokemons.img }}" /></a>
         {% endfor %}
     </div>
 </body>

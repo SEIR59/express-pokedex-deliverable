@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit A Pokémon</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+    <h1>Edit One Pokémon</h1>
+    <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
+        Name: <input type="text" name="name" value="{{ pokemon.name }}"/>
+        Image: <input type="text" name="img" value="{{ pokemon.img }}" />
+        Type: <input type="text" name="type" value="{{ pokemon.type }}"/>
+        HP: <input type="text" name="hp" value="{{ pokemon.stats.hp }}"/>
+        ATTACK: <input type="text" name="attack" value="{{ pokemon.stats.attack }}"/>
+        DEFENSE: <input type="text" name="defense" value="{{ pokemon.stats.defense }}"/>
+        <br>
+        <input type="submit" name="" value="Submit Changes" />
+    </form>
+</body>
+</html>

@@ -9,7 +9,16 @@
 <body>
     <div class="container">
     <h1>{{pokemon.name}}</h1>
-    Hi There.
-    </div>
+    <img src="{{pokemon.img}}" /><br>
+    Stats:<br>
+    Type: {{pokemon.type}}<br>
+    HP: {{pokemon.stats.hp}}<br>
+    ATTACK: {{pokemon.stats.attack}}<br>
+    DEFENSE: {{pokemon.stats.defense}}<br>
+    <a href="/pokemon/{{ index }}/edit">Edit</a>
+    <form action="/pokemon/{{ index }}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete" />
+    </form>
+</div>
 </body>
 </html>
