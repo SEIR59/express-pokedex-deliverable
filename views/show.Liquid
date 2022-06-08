@@ -23,7 +23,9 @@
         Defense: {{ data.stats.defense }}<br>
     </ul><br>
     <a href="/pokemon/{{ index }}/edit"><button>Edit Pokemon</button></a><br><br>
-    <a href="/delete"><button>Delete Pokemon</button></a><br><br>
+    <form action="/pokemon/{{ index }}?_method=DELETE" method="POST">
+        <button>Delete Pokemon</button>
+    </form><br><br>
     <a href="/pokemon"><button>Pokedex Home</button></a><br><br>
 </body>
 

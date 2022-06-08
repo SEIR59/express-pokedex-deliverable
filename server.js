@@ -72,10 +72,9 @@ app.put('/pokemon/:id', (req, res) => {
 
 // Destroy
 app.delete('/pokemon/:id', (req, res) => {
-    res.render('show', { data: Pokemon[req.params.id] })
+    Pokemon.splice(req.params.id, 1)
+    res.redirect('/pokemon')
 })
-
-
 
 // LISTEN
 app.listen(port, () => {
