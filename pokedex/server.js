@@ -42,21 +42,22 @@ app.post('/:id', (req, res) =>{
     })
 });
 
-app.get('/:id/edit', (req, res) =>{
+app.get('/edit/:id', (req, res) =>{
     res.render('edit', {
         thePokemon: Pokemon[req.params.id],
         id: req.params.id
     })
 });
 
-app.put('/:id', (req, res) => {
+app.put('/edit/:id', (req, res) => {
     let thePokemon = Pokemon[req.params.id]
     thePokemon.name = req.body.name
-    thePokemon.name = req.body.type
-    thePokemon.name = req.body.id
-    thePokemon.name = req.body.hp
-    thePokemon.name = req.body.attack
-    thePokemon.name = req.body.defense
+    thePokemon.img = req.body.img
+    thePokemon.type = req.body.type
+    thePokemon.id = req.body.id
+    thePokemon.hp = req.body.hp
+    thePokemon.attack = req.body.attack
+    thePokemon.defense = req.body.defense
     res.redirect('/')
 })
 

@@ -7,14 +7,14 @@
         <body>
             <h1>Edit Pokemon page</h1>
             Current: {{thePokemon.name}}
-            <form action="/{{id}}?_method=PUT" method="POST">
+            <form action="/edit/{{id}}?_method=PUT" method="POST">
                 Name: <input type="text" name="name" value="{{thePokemon.name}}"/><br/>
                 Image URL: <input type="text" name="img" value="{{thePokemon.img}}"/><br/>
                 Type: <input type="text" name="type" value="{{thePokemon.type}}"/><br/>
-                Id: <input type="text" name="type" value="{{thePokemon.id}}"/><br/>
-                HP: <input type="text" name="type" value="{{thePokemon.hp}}"/><br/>
-                Attack: <input type="text" name="type" value="{{thePokemon.attack}}"/><br/>
-                Defense: <input type="text" name="type" value="{{thePokemon.defense}}"/><br/>
+                Id: <input type="text" name="id" value="{{thePokemon.id}}"/><br/>
+                HP: <input type="text" name="hp" value="{{thePokemon.hp}}"/><br/>
+                Attack: <input type="text" name="attack" value="{{thePokemon.attack}}"/><br/>
+                Defense: <input type="text" name="defense" value="{{thePokemon.defense}}"/><br/>
                 <input type="submit" value="Edit Pokemon"/>
             </form>
         </body>

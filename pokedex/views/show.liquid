@@ -14,10 +14,11 @@
                 HP: {{thePokemon.stats.hp}}
                 {{thePokemon.type | join: ", "}}
                 <a href="/"><button>Back</button></a>
-                <a href="/{{id}}/edit"><button>Edit</button></a>
+                <a href="/edit/{{id}}"><button>Edit</button></a>
                 </form>
                 <form action="delete/{{forloop.index0}}?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete"/>
+                <input type="submit" value="Delete"/>
+                </form>
             </div>
         </body>
     </html>
