@@ -30,6 +30,41 @@
    ></script>
 </head>
 <body>
-    
+    <h1>Edit {{allPokemon.name}}</h1>
+    <img src="{{allPokemon.img}}">
+
+    <form action="/pokemon/{{id}}?_method=PUT" method="POST">
+    <label>
+        ID Number:<input type="number" name="id" placeholder="Enter ID" value="{{allPokemon.id}}"/>
+      </label>
+      <label>
+        Name:<input type="text" name="name" placeholder="Enter Name" value="{{allPokemon.name}}"/>
+      </label>
+      <label>
+        Type:<input type="text" name="type" placeholder="Enter Type(s)" value="{{allPokemon.type}}"/>
+      </label>
+      <h4>Stats</h4>
+      <label>
+        HP:<input type="text" name="hp" placeholder="Enter HP" value="{{allPokemon.stats.hp}}"/>
+      </label>
+      <label>
+        Attack:<input type="text" name="Attack" placeholder="Enter Attack" value="{{allPokemon.stats.attack}}"/>
+      </label>
+      <label>
+        Defense:<input type="text" name="Defense" placeholder="Enter Defense" value="{{allPokemon.stats.defense}}"/>
+      </label>
+      <label>
+        Sp Attack:<input type="text" name="Sp Attack" placeholder="Enter Sp Attack" value="{{allPokemon.stats.spattack}}"/>
+      </label>
+      <label>
+        Sp Defense:<input type="text" name="Sp Defense" placeholder="Enter Sp Defense" value="{{allPokemon.stats.spdefense}}"/>
+      </label>
+      <label>
+        Speed:<input type="text" name="Speed" placeholder="Enter Speed" value="{{allPokemon.stats.speed}}"/>
+      </label>
+
+      <input type="submit" value="Submit Entry">
+      <a href="/pokemon/">Back to Pokedex</a>
+      </form>
 </body>
 </html>

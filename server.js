@@ -24,7 +24,8 @@ app.post('/pokemon', (req,res) => {
 
 // INDEX
 app.get('/pokemon', (req, res) => {
-    res.render('index.liquid', { allPokemon: Pokemon });
+    res.render('index.liquid', { 
+        allPokemon: Pokemon });
 });
 
 // NEW
@@ -32,9 +33,27 @@ app.get('/pokemon/new', (req, res) => {
     res.render('new')
 })
 
+// EDIT
+app.get('/pokemon/:id/edit', (req,res) => {
+    res.render('edit', { 
+        allPokemon: Pokemon[req.params.id], 
+        id: req.params.id})
+})
+
+// UPDATE
+app.put('/pokemon/:id', (req,res) => {
+    Pokemon[req.params.id] = {
+        id: req.body.id,
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type
+    }
+})
+
 // SHOW
 app.get('/pokemon/:id', (req, res) => {
-    res.render('show.liquid', { allPokemon: Pokemon[req.params.id] });
+    res.render('show.liquid', { 
+        allPokemon: Pokemon[req.params.id] });
 });
 
 // DELETE

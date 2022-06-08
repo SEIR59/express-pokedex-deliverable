@@ -30,6 +30,39 @@
    ></script>
 </head>
 <body>
-    
+    <h1>Create Pokemon</h1>
+    <form action="/pokemon" method="POST">
+    <label>
+        ID Number:<input type="number" name="id" placeholder="Enter ID" />
+      </label>
+      <label>
+        Name:<input type="text" name="name" placeholder="Enter Name" />
+      </label>      <label>
+        Picture:<input type="text" name="picture" placeholder="Enter IMG URL" />
+      </label>
+      <label>
+        Type:<input type="text" name="type" placeholder="Enter Type(s)" />
+      </label>
+      <h4>Stats:</h4>
+      <label>
+        HP:<input type="number" name="hp" placeholder="Enter HP">
+      </label>
+      <label>
+        Attack:<input type="number" name="attack" placeholder="Enter Attack">
+      </label>
+      <label>
+        Defense:<input type="number" name="defense" placeholder="Enter Defense">
+      </label>
+      <label>
+        Sp Attack:<input type="number" name="spattack" placeholder="Enter Sp Attack">
+      </label>
+      <label>
+        Sp Defense:<input type="number" name="spdefense" placeholder="Enter Sp Defense">
+      </label>
+      <label>
+        Speed:<input type="number" name="speed" placeholder="Enter Speed">
+      </label>
+      <input type="submit" value="Submit Entry">
+      </form>
 </body>
 </html>
