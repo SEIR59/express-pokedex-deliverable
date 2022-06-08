@@ -50961,3 +50961,5 @@ const pokemon = [
   ];
 
   module.exports = pokemon
+
+  console.log(pokemon[0])
