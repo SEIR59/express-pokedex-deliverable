@@ -11,18 +11,22 @@
         <link rel="stylesheet" href="/app.css">
 	</head>
 	<body>
-        <div>
+        <div class="top">
 		<h1>Pokedex</h1>
     </div>
     <div>
-        <a href="/pokemon/new">Add</a>
+        
+        <a href="/pokemon/new">
+            <input type="button" id="addbtn" name="new" value="Add">
+        </a>     
+        
     
     </div>
     
     
     
 		<div class="gallery">
-			{% for Pokemon in data limit: 20 %} 
+			{% for Pokemon in data limit: 21 %} 
             
 			<a href="/pokemon/{{ forloop.index0 }}"><img src="{{ Pokemon.img }}" />
     

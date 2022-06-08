@@ -37,7 +37,8 @@ app.use(express.static('public')); // serve files from public statically
 
 // INDEX **(const data = Pokemon)**
 app.get('/pokemon', (req, res) => {
-	res.render('index', { data: Pokemon });
+    res.render('index',
+        { data: Pokemon });
 });
 
 // Render new page when creating pokemon

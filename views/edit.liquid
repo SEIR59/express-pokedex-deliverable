@@ -12,34 +12,34 @@
 	</head>
 	<body>
 		<h1>Edit a Pokemon!</h1>
-
+        <div class="eform">
 		<form action="/pokemon/{{index}}?_method=PUT" method="POST">
-			 Name:
-				<input type="text" name="name" value="{{ data.name }}" />
+			 
+				<input type="text" name="name" placeholder="{{ data.name }}" />
 			
-
-			 Image:
-				<input type="text" name="img" value="{{ data.img }}" />
+                
+			 
+				<input type="text" name="img" placeholder="{{ data.img }}" />
 			
-
-			 Type:
-				<input type="text" name="type" value="{{ data.type }}" />
+               
+			 
+				<input type="text" name="type" placeholder="{{ data.type }}" />
 			
-
-			 HP:
-				<input type="text" name="hp" value="{{ data.stats.hp }}" />
+                
+			 
+				<input type="text" name="hp" placeholder="{{ data.stats.hp }}" />
 			
-
-			 Attack:
-				<input type="text" name="attack" value="{{ data.stats.attack }}" />
+                
+			 
+				<input type="text" name="attack" placeholder="{{ data.stats.attack }}" />
 			
-
-			 Defense:
-				<input type="text" name="defense" value="{{ data.stats.defense }}" />
-			
+                
+			 
+				<input type="text" name="defense" placeholder="{{ data.stats.defense }}" />
+			</div>
 			<br />
 			<br />
-			<input type="submit" value="Submit" />
+			<input type="submit" id="sub2" value="Submit" />
 		</form>
 	</body>
 </html>
