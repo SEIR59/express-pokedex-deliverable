@@ -22,7 +22,19 @@ app.get("/pokemon", (req, res) => {
 
 // CREATE
 app.post("/pokemon", (req, res) => {
-  Pokemon.push(req.body);
+  //   Pokemon.push(req.body);
+  Pokemon.push({
+    name: req.body.name,
+    img: req.body.img,
+    type: req.body.type,
+    id: req.body.id,
+    stats: {
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense,
+      speed: req.body.speed,
+    },
+  });
   res.redirect("/pokemon");
 });
 
@@ -51,7 +63,15 @@ app.get("/pokemon/:id/edit", (req, res) => {
 });
 
 app.put("/pokemon/:id", (req, res) => {
-  Pokemon[req.params.id] = req.body;
+  //   Pokemon[req.params.id] = req.body;
+  let pokemon = Pokemon[req.params.id];
+  pokemon.name = req.body.name;
+  pokemon.type = req.body.type;
+  pokemon.id = req.body.id;
+  pokemon.stats.hp = req.body.hp;
+  pokemon.stats.attack = req.body.attack;
+  pokemon.stats.defense = req.body.defense;
+  pokemon.stats.speed = req.body.speed;
   res.redirect("/pokemon");
 });
 
