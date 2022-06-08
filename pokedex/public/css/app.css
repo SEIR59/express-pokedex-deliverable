@@ -1,5 +1,9 @@
 body {
+    text-align: center;
     background-color:bisque;
     color:blue;
 }
-
+ button{
+     background-color:aquamarine;
+ }
+ 
