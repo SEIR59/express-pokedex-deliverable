@@ -7,13 +7,12 @@ const port = 3000;
 
 //Middleware
 app.use(methodOverride('_method'))
+app.use(express.urlencoded({extended:true}));
 
 app.use((req, res, next) => {
     console.log('I run for all routes');
     next();
 });
-
-app.use(express.urlencoded({extended:false}));
 
 app.get('/', (req, res) =>{
     res.render('index', {
@@ -23,7 +22,7 @@ app.get('/', (req, res) =>{
 
 app.post('/', (req, res) =>{
     Pokemon.push(req.body);
-    res.redirect("/pokemon")
+    res.redirect("/")
 });
 
 app.get('/new', (req, res) =>{
@@ -32,7 +31,8 @@ app.get('/new', (req, res) =>{
 
 app.get('/:id', (req, res) =>{
     res.render('show', {
-        thePokemon: Pokemon[req.params.id]
+        thePokemon: Pokemon[req.params.id],
+        id: req.params.id
     })
 });
 
@@ -44,19 +44,26 @@ app.post('/:id', (req, res) =>{
 
 app.get('/:id/edit', (req, res) =>{
     res.render('edit', {
-        thePokemon: Pokemon[req.params.id]
+        thePokemon: Pokemon[req.params.id],
+        id: req.params.id
     })
 });
 
-app.post('/:id/edit', (req, res) => {
-    thePokemon: Pokemon[req.params.id]
-    res.redirect('/pokemon')
+app.put('/:id', (req, res) => {
+    let thePokemon = Pokemon[req.params.id]
+    thePokemon.name = req.body.name
+    thePokemon.name = req.body.type
+    thePokemon.name = req.body.id
+    thePokemon.name = req.body.hp
+    thePokemon.name = req.body.attack
+    thePokemon.name = req.body.defense
+    res.redirect('/')
 })
 
-/*app.delete('/pokemon/:id', (req, res) =>{
-    Pokemon.splice(request.params.id, 1)
-    res.redirect('/pokemon')
-})*/
+app.delete('/:id', (req, res) =>{
+    Pokemon.splice(req.params.id, 1)
+    res.redirect('/')
+})
 
 app.listen(port, () => {
     console.log('listening');
