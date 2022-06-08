@@ -59,6 +59,7 @@ app.get("/pokemon/:id/edit", (req, res) => {
 // "/pokemon" POST - index TODO: get index after adding pokemon from "/new" route
 app.post("/pokemon", (req,res) => {
     let pageData = req.body
+    console.log(pageData)
     let indPokemon =  req.params.id
     // seperate the multi dot notation keys and values into their own arrays
     let arrKeys = Object.keys(pageData)
@@ -69,8 +70,27 @@ app.post("/pokemon", (req,res) => {
         // split the multi dot notaion arrays into their own array and use each value as a key to find the correct path.
         console.log(`${arrKeys[i]}: ${arrValues[i]}`)
         currentKey = arrKeys[i].split(".")
-        if (currentKey.length === 2) {
-            if (currentKey[0] in newPokemon) {
+
+        if (currentKey.length > 1) {
+            
+
+            
+            // if there are two do this
+            console.log(currentKey.length)
+            if (currentKey.length > 2) {
+                if (currentKey[0] in newPokemon){
+                    if (currentKey[1] in newPokemon[`${currentKey[0]}`]) {
+                        newPokemon[`${currentKey[0]}`][`${currentKey[1]}`][`${currentKey[2]}`] = arrValues[i]
+                    } else {
+                        newPokemon[`${currentKey[0]}`][`${currentKey[1]}`] = {}
+                        newPokemon[`${currentKey[0]}`][`${currentKey[1]}`][`${currentKey[2]}`] = arrValues[i]
+                    }
+                } else {
+                    newPokemon[`${currentKey[0]}`] = {}
+                    newPokemon[`${currentKey[0]}`][`${currentKey[1]}`] = {}
+                    newPokemon[`${currentKey[0]}`][`${currentKey[1]}`][`${currentKey[2]}`] = arrValues[i]
+                }
+                } else if (currentKey[0] in newPokemon) {
                 newPokemon[`${currentKey[0]}`][`${currentKey[1]}`] = arrValues[i]
             } else {
                 newPokemon[`${currentKey[0]}`] = {}

@@ -11,12 +11,12 @@
         <input class="add-btn form-btn" type="submit" value="Create Pokemon">
     <div class="pokemon-entry-grid-template">
             <div class="pokemon-entry-quicklook grid-item">
-                <input class="pokemon-entry-delete form-btn" type="submit" value="X" formaction="/pokemon/{{index}}?_method=DELETE">
                 <p><strong>ID:</strong> 
                     <input 
                     type="string"
                     name="id"
                     placeholder="Ex: 001"
+                    required
                     >
                 </p>
                 <hr>
@@ -25,6 +25,7 @@
                     type="string"
                     name="name"
                     placeholder="name"
+                    required
                     >
                 </p>
                 <p><strong>Img:</strong> 
@@ -32,6 +33,7 @@
                     type="string"
                     name="img"
                     placeholder="img_src.jpg"
+                    required
                     >
                 </p>
                 <p><strong>Classification:</strong> 
@@ -40,6 +42,7 @@
                     type="string"
                     name="classification"
                     placeholder="Pokemon classification"
+                    required
                     >
                 </p>
                 <p id="typeP"><strong>Type:</strong></p>
@@ -47,29 +50,30 @@
                     type="string"
                     name="type"
                     placeholder="enter types seperating with a ','"
+                    required
                 >
             </div>
             <div class="pokemon-entry-stats grid-item">
                 <h2>Stats</h2>
                 <hr>
-                <p><strong>HP:</strong> <input type="number" min="1" max="100" name="stats.hp" value="{{pokemon.stats.hp}}"></p>
-                <p><strong>Attack:</strong> <input type="number" min="1" max="100" name="stats.attack" value="{{pokemon.stats.attack}}"></p>
-                <p><strong>Defence:</strong> <input type="number" min="1" max="100" name="stats.defense" value="{{pokemon.stats.defense}}"></p>
-                <p><strong>spAttack:</strong> <input type="number" min="1" max="100" name="stats.spattack" value="{{pokemon.stats.spattack}}"></p>
-                <p><strong>spDefense:</strong> <input type="number" min="1" max="100" name="stats.spdefense" value="{{pokemon.stats.spdefense}}"></p>
-                <p><strong>speed:</strong> <input type="number" min="1" max="100" name="stats.speed" value="{{pokemon.stats.speed}}"></p>
+                <p><strong>HP:</strong> <input type="number" min="1" max="100" name="stats.hp" value="{{pokemon.stats.hp}}" required></p>
+                <p><strong>Attack:</strong> <input type="number" min="1" max="100" name="stats.attack" value="{{pokemon.stats.attack}}" required></p>
+                <p><strong>Defence:</strong> <input type="number" min="1" max="100" name="stats.defense" value="{{pokemon.stats.defense}}" required></p>
+                <p><strong>spAttack:</strong> <input type="number" min="1" max="100" name="stats.spattack" value="{{pokemon.stats.spattack}}" required></p>
+                <p><strong>spDefense:</strong> <input type="number" min="1" max="100" name="stats.spdefense" value="{{pokemon.stats.spdefense}}" required></p>
+                <p><strong>speed:</strong> <input type="number" min="1" max="100" name="stats.speed" value="{{pokemon.stats.speed}}" required></p>
             </div>
             <div class="pokemon-entry-misc grid-item">
                 <h2>Details</h2>
                 <hr>
                 <p><strong>Sex:</strong></p>
-                <P><strong>Male:</strong> {{pokemon.misc.sex.male}}%</P>
-                <P><strong>Female:</strong> {{pokemon.misc.sex.female}}%</P>
+                <P><strong>Male:</strong> <input type="number" min="0" max="100" step="0.01" name="misc.sex.male" placeholder="" required>%</P>
+                <P><strong>Female:</strong> <input type="number" min="0" max="100" step="0.01" name="misc.sex.female" placeholder="" required>%</P>
                 <p><strong>Abilities:</strong></p>
-                <P><strong>Normal:</strong> {{pokemon.misc.abilities.normal}}</P>
-                <P><strong>Hidden:</strong> {{pokemon.misc.abilities.hidden}}</P>
-                <P><strong>Height:</strong> {{pokemon.misc.height}}</P>
-                <P><strong>Weight:</strong> {{pokemon.misc.weight}}</P>
+                <P><strong>Hidden:</strong> <input type="text" name="misc.abilities.hidden" placeholder="" required></P>
+                <P><strong>Normal:</strong> <input type="text" name="misc.abilities.normal" placeholder="" required></P>
+                <P><strong>Height:</strong> <input type="number" min="0" max="100" step="0.01" name="misc.height" placeholder="" required></P>
+                <P><strong>Weight:</strong> <input type="number" min="0" max="100" step="0.01" name="misc.weight" placeholder="" required></P>
             </div>
             <div class="pokemon-entry-damages grid-item">
                 <h2>Damages</h2>
@@ -80,119 +84,170 @@
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.normal}}"></p>
+                    value="{{pokemon.damages.normal}}"
+                    required
+                    >
+                </p>
                 <p><strong>Fire:</strong> <input class="input-edit" 
                     name="damages.fire"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.fire}}"></p>
+                    value="{{pokemon.damages.fire}}"
+                    required
+                    >
+                </p>
                 <p><strong>Water:</strong> <input class="input-edit" 
                     name="damages.water"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.water}}"></p>
+                    value="{{pokemon.damages.water}}"
+                    required
+                    >
+                </p>
                 <p><strong>Electric:</strong> <input class="input-edit" 
                     name="damages.electric"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.electric}}"></p>
+                    value="{{pokemon.damages.electric}}"
+                    required
+                    >
+                </p>
                 <p><strong>Grass:</strong> <input class="input-edit" 
                     name="damages.grass"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.grass}}"></p>
+                    value="{{pokemon.damages.grass}}"
+                    required
+                    >
+                </p>
                 <p><strong>Ice:</strong> <input class="input-edit" 
                     name="damages.ice"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.ice}}"></p>
+                    value="{{pokemon.damages.ice}}"
+                    required
+                    >
+                </p>
                 <p><strong>Fight:</strong> <input class="input-edit" 
                     name="damages.fight"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.fight}}"></p>
+                    value="{{pokemon.damages.fight}}"
+                    required
+                    >
+                </p>
                 <p><strong>Poison:</strong> <input class="input-edit" 
                     name="damages.poison"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.poison}}"></p>
+                    value="{{pokemon.damages.poison}}"
+                    required
+                    >
+                </p>
                 <p><strong>Ground:</strong> <input class="input-edit" 
                     name="damages.ground"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.ground}}"></p>
+                    value="{{pokemon.damages.ground}}"
+                    required
+                    >
+                </p>
                 <p><strong>Flying:</strong> <input class="input-edit" 
                     name="damages.flying"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.flying}}"></p>
+                    value="{{pokemon.damages.flying}}"
+                    required
+                    >
+                </p>
                 <p><strong>Psychic:</strong> <input class="input-edit" 
                     name="damages.psychic"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.psychic}}"></p>
+                    value="{{pokemon.damages.psychic}}"
+                    required
+                    >
+                </p>
                 <p><strong>Bug:</strong> <input class="input-edit" 
                     name="damages.bug"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.bug}}"></p>
+                    value="{{pokemon.damages.bug}}"
+                    required
+                    >
+                </p>
                 <p><strong>Rock:</strong> <input class="input-edit" 
                     name="damages.rock"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.rock}}"></p>
+                    value="{{pokemon.damages.rock}}"
+                    required
+                    >
+                </p>
                 <p><strong>Ghost:</strong> <input class="input-edit" 
                     name="damages.ghost"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.ghost}}"></p>
+                    value="{{pokemon.damages.ghost}}"
+                    required
+                    >
+                </p>
                 <p><strong>Dragon:</strong> <input class="input-edit" 
                     name="damages.dragon"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.dragon}}"></p>
+                    value="{{pokemon.damages.dragon}}"
+                    required
+                    >
+                </p>
                 <p><strong>Dark:</strong> <input class="input-edit" 
                     name="damages.dark"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.dark}}"></p>
+                    value="{{pokemon.damages.dark}}"
+                    required
+                    >
+                </p>
                 <p><strong>Steel:</strong> <input class="input-edit" 
                     name="damages.steel"
                     type="number" 
                     step="0.01"
                     min="0" 
                     max="99"
-                    value="{{pokemon.damages.steel}}"></p>
+                    value="{{pokemon.damages.steel}}"
+                    required
+                    >
+                </p>
             </div>
         </div>
     </form>

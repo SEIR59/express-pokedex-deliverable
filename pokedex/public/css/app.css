@@ -105,10 +105,7 @@ Before and after elements are used to create the top and bottom of the pokeball 
 .form-btn:hover {
     background-color: var(--color-whiteGrey);    
 }
-.pokemon-entry-delete:hover {
-    color: var(--color-whiteGrey);
-    background-color: var(--color-pokemonRed);
-}
+
 .back-btn {
     position: absolute;
     height: 100px;

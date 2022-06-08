@@ -72,9 +72,12 @@ li {
     top: 10px;
     right: 10px;
     padding: 5px;
-    width: 50px;
+    width: 100px;
 }
-
+.pokemon-entry-delete:hover {
+    color: var(--color-whiteGrey);
+    background-color: var(--color-pokemonRed);
+}
 h2 {
     font-size: 2em;
     margin-bottom: 0;
