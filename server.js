@@ -73,6 +73,13 @@ app.delete('/pokemon/:id', (req, res) => {
 // EDIT
 app.get('/pokemon/:id/edit', (req, res) => {
     // res.send('i can edit')
+    // trim white spaces of array and join back 
+    console.log(Pokemon[req.params.id].type)
+    if (typeof Pokemon[req.params.id].type !== 'string') {
+        Pokemon[req.params.id].type = [...Pokemon[req.params.id].type]
+        Pokemon[req.params.id].type = Pokemon[req.params.id].type.map(item => item.trim())
+        Pokemon[req.params.id].type = Pokemon[req.params.id].type.join(', ')
+    }
     res.render(
         'edit',
         {
@@ -89,7 +96,7 @@ app.put('/pokemon/:id', (req, res) => {
         id: req.body.id,
         name: req.body.name,
         img: req.body.img,
-        type: req.body.type,
+        type: req.body.type.trim().split(', '),
         stats: {
             hp: req.body.hp,
             attack:req.body.attack,
