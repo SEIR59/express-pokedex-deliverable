@@ -8,14 +8,14 @@
 </head>
 <body>
     <h1>Create New Pokemon:</h1>
-    <form action="submit">
+    <form action="/pokemon" method="POST">
         <input type="text" placeholder="name" name="name">
         <input type="text" placeholder="img address" name="img">
         <input type="text" placeholder="type" name="type">
         <input type="text" placeholder="hp" name="hp">
         <input type="text" placeholder="attack" name="attack">
         <input type="text" placeholder="defense" name="defense">
-        <input type="button" value="create">
+        <a href="/pokemon"><input type="submit" value="create" ></a>
     </form>
 </body>
 </html>
