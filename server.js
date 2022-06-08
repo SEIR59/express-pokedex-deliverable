@@ -32,7 +32,9 @@ app.get('/pokemon', (req, res) => {
 app.get('/pokemon/new', (req, res) => {
     res.render('new')
 })
-
+/////////////////////////////
+// Can't figure out why after editing a Pokemon, it doesnt return to the index after clicking submit. Have to use the Back to Pokedex button, and it shows the updated entry there. Also can't get stat values to hold during entry, only names and types populate.
+/////////////////////////////
 // EDIT
 app.get('/pokemon/:id/edit', (req,res) => {
     res.render('edit', { 
