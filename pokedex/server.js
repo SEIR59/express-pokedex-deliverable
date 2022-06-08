@@ -61,14 +61,16 @@ app.get("/pokemon/:id/edit", (req, res) => {
 app.put("/pokemon/:id/", (req,res) => {
     let pageData = req.body
     let indPokemon =  req.params.id
-    for (let i = 0; i < Object.keys(pageData).length; i++){
-        console.log("test", i)
-        // arrPokemon[indPokemon][`${}`] = pageData
+    // seperate the multi dot notation keys and values into their own arrays
+    let arrKeys = Object.keys(pageData)
+    let arrValues = Object.values(pageData)
+    // loop through each key
+    for (let i = 0; i < arrKeys.length; i++){
+        // split the multi dot notaion arrays into their own array and use each value as a key to find the correct path.
+        currentKey = arrKeys[i].split(".")
+        arrPokemon[indPokemon][currentKey[0]][`${currentKey[1]}`] = arrValues[i]
     }
-
-    
-    console.log(req.body)
-    res.redirect("/pokemon")
+    res.redirect(`/pokemon/${indPokemon}`)
 })
 // /pokemon/:id DELETE - redirect -> index after splicing array off of index
 
