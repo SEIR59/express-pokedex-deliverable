@@ -32,4 +32,6 @@ h5 {
 
 img {
   border-radius: 20px;
+  height: 200px;
+  width: 200px;
 }
