@@ -73,7 +73,11 @@ app.put("/pokemon/:id/", (req,res) => {
     res.redirect(`/pokemon/${indPokemon}`)
 })
 // /pokemon/:id DELETE - redirect -> index after splicing array off of index
-
+app.delete("/pokemon/:id", (req, res) => {
+    let indPokemon = req.params.id
+    arrPokemon.splice(indPokemon, 1)
+    res.redirect("/pokemon")
+})
 /*============================================================
         Listener & Logger
 ============================================================*/
