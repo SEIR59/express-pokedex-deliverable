@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>All the Pokemon</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Pokedex</h1>
+            <nav>
+                <a href="/pokemon/new" class="btn btn-info" size="larger">Create a New Pokemon</a>
+            </nav>
+        </div>
+        <table>
+            {% for i in pokemon %}
+                <tr>
+                    <td><a style="font-size: 40px;" href="/pokemon/{{ forloop.index0 }}">{{i.name}}</a></td>
+                    <td><a href="/pokemon/{{ forloop.index0 }}"><img src="{{i.img}}"></a></td>
+
+                    <!-- option to delete (on every pokemon) -->
+                    <td><form method="POST" action="/pokemon/{{ forloop.index0 }}?_method=DELETE">
+                    <input type="submit" value="DELETE">    
+                    </form>
+
+                <!-- option to edit (on every pokemon) -->
+                    <form method="GET" action="/pokemon/{{forloop.index0}}/edit"> <input type="submit" value="EDIT"></form></td>
+
+            {% endfor %}
+        </table>
+        <a href="/">Go all the way home</a>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html> 
