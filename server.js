@@ -3,6 +3,7 @@ const app = require('liquid-express-views')(express())
 const PokemonList = require('./models/pokedex/pokemon.js')
 const pokemon = require('./models/pokedex/pokemon.js')
 const methodOverride = require("method-override");
+//const { request } = require('express');
 
 let port = 3000
 app.listen(port, () => {
@@ -13,6 +14,7 @@ app.listen(port, () => {
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride("_method"));
 app.use(express.static('public'));
+
 
 
 app.use((req, res, next) => {
@@ -55,8 +57,8 @@ app.delete('/:id', (req, res) => {
 app.get('/:id/edit', (req, res) => {
     res.render('edit', 
     {
-        index: request.params.id,
-        pokemon: PokemonList[request.params.id]
+        index: req.params.id,
+        pokemon: PokemonList[req.params.id]
     })
 })
 
@@ -64,8 +66,15 @@ app.get('/:id/edit', (req, res) => {
 
 app.put('/:id/update', (req, res) => {
     PokemonList[req.params.id].name = req.body.name
+    PokemonList[req.params.id].img = req.body.img
+    PokemonList[req.params.id].type = req.body.type
+    PokemonList[req.params.id].stats.hp = req.body.statshp
+    PokemonList[req.params.id].stats.attack = req.body.statsattack
+    PokemonList[req.params.id].stats.defense = req.body.statsdefense
+    PokemonList[req.params.id].stats.speed = req.body.statsspeed
     res.redirect('/')
 })
+
 
 
 app.get('/', (req, res) => {

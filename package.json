@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/emanzo14/express-pokedex-deliverable#readme",
   "dependencies": {
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "liquid": "^5.1.1",
     "liquid-express-views": "^1.0.8",
     "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.16"
   }
 }

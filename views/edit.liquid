@@ -7,11 +7,27 @@
     <title>Edit Pokemon</title>
 </head>
 <body>
-    <h1>Edit Pokemon</h1>
-    <form action="/{{index}}/update?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="{{pokemon.name}}"><br>
-        <input type="submit" value="Submit Changes">
-    </form>
+
+    <h1>Edit {{ data.name}}</h1>
+      
+        <form action="/pokemon/{{index}}?_method=PUT" method="POST">
+            <input type="text" name="name" placeholder="Name of Pokemon..">
+            <input type="text" name="type" placeholder="Type of Pokemon..">
+            <input type="url" name="img" placeholder="Insert URL to image..">
+            <br>
+            <br>
+            Enter Stats:
+            <br>
+            <input type="text" name="hp" placeholder="HP">
+            <input type="text" name="attack" placeholder="Attack">
+            <input type="text" name="defense" placeholder="Defense">
+            <input type="text" name="speed" placeholder="Speed">
+
+            <input type="submit" value="Edit {{ data.name}}">
+
+
+        </form>
+    
 
 </body>
 </html> 
