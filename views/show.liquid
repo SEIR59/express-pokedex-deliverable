@@ -9,14 +9,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="/styles.css">
     <title>Pokemon Show Page</title>
 
 </head>
 
 <body>
 
-    <h1>Pokemon Show Page</h1>
+    <h1>Pokedex Entry</h1>
+    <img src='{{Pokemon.img}}'>
+    <h2>{{Pokemon.name}}</h2><br>
+    <li>Type: {{Pokemon.type}}</li><br>
+    <li>Pokedex ID: {{Pokemon.id}}</li><br>
+    <li>HP: {{Pokemon.stats.hp}}</li><br>
+    <li>Attack: {{Pokemon.stats.attack}}</li><br>
+    <li>Defense: {{Pokemon.stats.defense}}</li>  
+    
+    
+</body>
+</html>
 
 </body>
 

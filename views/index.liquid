@@ -8,8 +8,20 @@
 </head>
 <body>
     <h1>Pokemon Index Page</h1>
+    <a href="/pokedex/new"><button>Enter New Pokemon</button></a>
     <ul>
-        <li></li>
+        {%for Pokemon in pokedex %}
+        <h2>
+            {{Pokemon.name}}
+        </h2><br>
+        <a href="/pokedex/{{forloop.index0}}"><button><img src='{{Pokemon.img}}'></button></a><br>
+        {{Pokemon.type}}<br>
+        <a href="/pokedex/{{forloop.index0}}/edit"><button>Edit {{Pokemon.name}}</button></a><br>
+        <form method="POST" action="/pokedex/{{forloop.index0}}?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
+        {%endfor%}
+        
     </ul>
 </body>
 </html>
