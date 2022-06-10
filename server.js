@@ -21,7 +21,9 @@ app.get('/pokemon', (req, res) => {
 
 //show route
 app.get('/pokemon/:id', (req,res) => {
-
+    res.render('show', {
+		singlePokemon: pokedex[req.params.id],
+	}) 
 })
 
 //new route

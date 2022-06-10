@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex - {{singlePokemon.id}} - {{singlePokemon.name}}</title>
+
+    <style type="text/css">
+        body {
+            background-color: red;
+            color: rgb(215, 247, 236);
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .canvas {
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            justify-items: center;
+        }
+
+        .dataDiv {
+            background-color: grey;
+            text-align: center;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+        <h1>PokeDex</h1>
+        <a href="/pokemon">Back to PokeDex</a>
+    </div>
+    <div class="canvas">
+        <div id="nameAndBasicInfo" class="dataDiv">
+            <h1>{{singlePokemon.name}}</h1>
+            <img src="{{singlePokemon.img}}" width="75" height="100">
+            <h2>ID: {{singlePokemon.id}}</h2>
+            <h2>Type(s):</h2>
+            <ul>
+                {%for type in singlePokemon.type%}
+                <li>{{type}}</li>
+                {%endfor%}
+                <ul>
+        </div>
+
+        <div id="statsInfo" class="dataDiv">
+            <h2>Stats:</h2>
+            <ul>
+                <li>HP: {{singlePokemon.stats.hp}}</li>
+                <li>Attack: {{singlePokemon.stats.attack}}</li>
+                <li>Defense: {{singlePokemon.stats.defense}}</li>
+                <li>SP Attack: {{singlePokemon.stats.spattack}}</li>
+                <li>SP Defense: {{singlePokemon.stats.spdefense}}</li>
+                <li>Speed: {{singlePokemon.stats.speed}}</li>
+                <ul>
+        </div>
+
+        <div id="damagesInfo" class="dataDiv">
+            <h2>Damages:</h2>
+            <ul>
+                <li>Normal: {{singlePokemon.damages.normal}}</li>
+                <li>Fire: {{singlePokemon.damages.fire}}</li>
+                <li>Water: {{singlePokemon.damages.water}}</li>
+                <li>Electric: {{singlePokemon.damages.electric}}</li>
+                <li>Grass: {{singlePokemon.damages.grass}}</li>
+                <li>Ice: {{singlePokemon.damages.ice}}</li>
+                <li>Fight: {{singlePokemon.damages.fight}}</li>
+                <li>Poison: {{singlePokemon.damages.poison}}</li>
+                <li>Ground: {{singlePokemon.damages.ground}}</li>
+                <li>Flying: {{singlePokemon.damages.flying}}</li>
+                <li>Psychic: {{singlePokemon.damages.psychic}}</li>
+                <li>Bug: {{singlePokemon.damages.bug}}</li>
+                <li>Rock: {{singlePokemon.damages.rock}}</li>
+                <li>Ghost: {{singlePokemon.damages.ghost}}</li>
+                <li>Dragon: {{singlePokemon.damages.dragon}}</li>
+                <li>Dark: {{singlePokemon.damages.dark}}</li>
+                <li>Steel: {{singlePokemon.damages.steel}}</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
