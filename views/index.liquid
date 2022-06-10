@@ -14,6 +14,7 @@
             text-align: left;
             font-size: 18;
         }
+
         .container {
             display: grid;
             grid-template-columns: repeat(9, auto);
@@ -23,7 +24,11 @@
 </head>
 
 <body>
-    <h1>PokeDex</h1>
+    <div id="bannerDiv">
+        <h1>PokeDex</h1>
+        <a href="/pokemon/new">Add a new Pokemon</a><br>
+    </div>
+
     <div class="container">
         {%for singlePokemon in allPokemon%}
         <div class="pokemonImg">

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+
+    <style type="text/css">
+        body {
+            background-color: gainsboro;
+            color: rgb(215, 247, 236);
+            text-align: left;
+            font-size: 18;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Add a new Pokemon</h1>
+    <div class="container">
+
+        <form action="/pokemon" method="POST">
+            ID: <input type="text" name="id" placeholder="Enter ID" /><br>
+            Name: <input type="text" name="name" placeholder="Enter Name" /><br>
+            Img: <input type="text" name="img" placeholder="Enter Img Link" /><br>
+            Type: <input type="text" name="type" placeholder="Enter Type(s)" /><br>
+            <br />
+            Stats:
+            <ul>
+                <li>Hp:<input type="number" name="hp" placeholder="Enter HP" /></li>
+                <li>Attack:<input type="number" name="attack" placeholder="Enter Attack Power" /></li>
+                <li>Defense:<input type="number" name="defense" placeholder="Enter Defense Power" /></li>
+                <li>Special Attack:<input type="number" name="spattack" placeholder="Enter Special Attack Power" /></li>
+                <li>Special Defense:<input type="number" name="spdefense" placeholder="Enter Special Defense Power" /></li>
+                <li>Speed:<input type="number" name="speed" placeholder="Enter Speed Power" /></li>
+            </ul>
+            <input type="submit" value="Create new Pokemon" />
+        </form>
+    </div>
+</body>
+
+</html>

@@ -19,16 +19,16 @@ app.get('/pokemon', (req, res) => {
 	})
 })
 
+//new route
+app.get('/pokemon/new', (req, res) => {
+    res.render('new.liquid')
+})
+
 //show route
 app.get('/pokemon/:id', (req,res) => {
     res.render('show', {
 		singlePokemon: pokedex[req.params.id],
 	}) 
-})
-
-//new route
-app.get('/pokemon/new', (req, res) => {
-
 })
 
 //edit route
@@ -38,7 +38,8 @@ app.get('/pokemon/:id/edit', (req, res) => {
 
 //create route
 app.post('/pokemon', (req, res) => {
-
+    pokedex.push(req.body)
+    res.redirect('/pokemon')
 })
 
 //update route
