@@ -35,6 +35,9 @@
             <a href="/pokemon/{{forloop.index0}}">
                 <img src="{{singlePokemon.img}}" width="75" height="100">
             </a>
+            <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
+                <input type="submit" value="Delete: {{singlePokemon.name}}">
+            </form>
         </div>
         {%endfor%}
     </div>

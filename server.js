@@ -3,9 +3,11 @@ const { redirect } = require('express/lib/response')
 const res = require('express/lib/response')
 const app = require('liquid-express-views')(express())
 const pokedex = require('./models/pokemon.js')
+const methodOverride = require('method-override');
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
+app.use(methodOverride('_method'))
 const port = 3000
 
 app.listen(port, () => {
@@ -49,5 +51,6 @@ app.put('/pokemon/:id', (req, res) => {
 
 //destroy route
 app.delete('/pokemon/:id', (req, res) => {
-
+    pokedex.splice(req.params.id, 1)
+	res.redirect('/pokemon')
 })
