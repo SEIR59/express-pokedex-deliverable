@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+
+    <style type="text/css">
+        body {
+            background-color: red;
+            color: rgb(215, 247, 236);
+            text-align: left;
+            font-size: 18;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PokeDex</h1>
+    <div class="container">
+        {%for singlePokemon in allPokemon%}
+        <div class="pokemonImg">
+            <a href="/pokemon/{{forloop.index0}}">
+                <img src="{{singlePokemon.img}}" width="75" height="100">
+            </a>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+
+</html>

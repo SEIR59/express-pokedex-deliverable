@@ -12,10 +12,39 @@ app.listen(port, () => {
 	console.log(`Listening on port ${port}!!`)
 })
 
+//index route
 app.get('/pokemon', (req, res) => {
+	res.render('index', {
+		allPokemon: pokedex,
+	})
+})
+
+//show route
+app.get('/pokemon/:id', (req,res) => {
 
 })
 
-app.get('/pokemon/:id', (req, res) => {
-    
+//new route
+app.get('/pokemon/new', (req, res) => {
+
+})
+
+//edit route
+app.get('/pokemon/:id/edit', (req, res) => {
+
+})
+
+//create route
+app.post('/pokemon', (req, res) => {
+
+})
+
+//update route
+app.put('/pokemon/:id', (req, res) => {
+
+})
+
+//destroy route
+app.delete('/pokemon/:id', (req, res) => {
+
 })
