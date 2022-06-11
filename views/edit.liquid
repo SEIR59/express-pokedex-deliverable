@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDex</title>
+
+    <style type="text/css">
+        body {
+            background-color: red;
+            color: rgb(215, 247, 236);
+            text-align: left;
+            font-size: 18;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(9, auto);
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit: {{singlePokemon.name}}</h1>
+    <a href="/pokemon/{{forloop.index0}}">
+        <img src="{{singlePokemon.img}}" width="125" height="150">
+    </a>
+    <div class="container">
+        <form action="/pokemon/{{ index }}?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value="{{ singlePokemon.name }}" /><br>
+            Image: <input type="text" name="img" value="{{ singlePokemon.img }}" /><br>
+            Type: <input type="text" name="type" value="{{ singlePokemon.type }}" /><br>
+            Stats:
+            <ul>
+                <li>Hp: <input type="text" name="hp" value="{{ singlePokemon.stats.hp }}" /></li>
+                <li>Attack: <input type="text" name="attack" value="{{ singlePokemon.stats.attack }}" /></li>
+                <li>Defense: <input type="text" name="defense" value="{{ singlePokemon.stats.defense }}" /></li>
+                <li>Special Attack: <input type="text" name="spattack" value="{{ singlePokemon.stats.spattack }}" />
+                </li>
+                <li>Special Defense: <input type="text" name="spdefense" value="{{ singlePokemon.stats.spdefense }}" />
+                </li>
+                <li>Speed: <input type="text" name="speed" value="{{ singlePokemon.stats.speed }}" /></li>
+            </ul>
+            Damages:
+            <ul>
+                <li>Normal: <input type="text" name="normal" value="{{ singlePokemon.damages.normal }}" /></li>
+                <li>Fire: <input type="text" name="fire" value="{{ singlePokemon.damages.fire }}" /></li>
+                <li>Water: <input type="text" name="water" value="{{ singlePokemon.damages.water }}" /></li>
+                <li>Electric: <input type="text" name="electric" value="{{ singlePokemon.damages.electric }}" /></li>
+                <li>Grass: <input type="text" name="grass" value="{{ singlePokemon.damages.grass }}" /></li>
+                <li>Ice: <input type="text" name="ice" value="{{ singlePokemon.damages.ice }}" /></li>
+                <li>Fight: <input type="text" name="fight" value="{{ singlePokemon.damages.fight }}" /></li>
+                <li>Poison: <input type="text" name="poison" value="{{ singlePokemon.damages.poison }}" /></li>
+                <li>Ground: <input type="text" name="ground" value="{{ singlePokemon.damages.ground }}" /></li>
+                <li>Flying: <input type="text" name="flying" value="{{ singlePokemon.damages.flying }}" /></li>
+                <li>Psychic: <input type="text" name="psychic" value="{{ singlePokemon.damages.psychic }}" /></li>
+                <li>Bug: <input type="text" name="bug" value="{{ singlePokemon.damages.bug }}" /></li>
+                <li>Rock: <input type="text" name="rock" value="{{ singlePokemon.damages.rock }}" /></li>
+                <li>Ghost: <input type="text" name="ghost" value="{{ singlePokemon.damages.ghost }}" /></li>
+                <li>Dragon: <input type="text" name="dragon" value="{{ singlePokemon.damages.dragon }}" /></li>
+                <li>Dark: <input type="text" name="dark" value="{{ singlePokemon.damages.dark }}" /></li>
+                <li>Steel: <input type="text" name="steel" value="{{ singlePokemon.damages.steel }}" /></li>
+                <ul>
+                    <br>
+                    <br>
+                <input type="submit" name="" value="Submit Changes" />
+        </form>
+    </div>
+</body>
+
+</html>

@@ -29,6 +29,8 @@
         <a href="/pokemon/new">Add a new Pokemon</a><br>
     </div>
 
+    <br>
+    <br>
     <div class="container">
         {%for singlePokemon in allPokemon%}
         <div class="pokemonImg">
@@ -38,6 +40,7 @@
             <form action="/pokemon/{{forloop.index0}}?_method=DELETE" method="POST">
                 <input type="submit" value="Delete: {{singlePokemon.name}}">
             </form>
+            <a href="/pokemon/{{forloop.index0}}/edit">Edit: {{singlePokemon.name}}</a>
         </div>
         {%endfor%}
     </div>
