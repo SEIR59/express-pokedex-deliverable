@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+  </head>
+  <body>
+    <h1>Edit Pokemon Page</h1>
+
+    <div id="top">
+
+    <form action="/pokemon/{{index}}?_method=PUT" method="POST">
+        ID: <input type="text" name="id" value="{{pokemon.id}}" /><br />
+        Name: <input type="text" name="name" value="{{pokemon.name}}" /><br />
+        Type: <input type="text" name="type" value="{{pokemon.type[0]}}" /><br />
+        Image: <input type="text" name="img" value="{{pokemon.img}}" />
+      <br />
+      <br />
+
+    </div>
+    <div id="stats">
+        Stats:
+        <li>HP:<input type="text" name="hp" value="{{pokemon.stats.hp}}" /></li>
+        <li>ATTACK: <input type="text" name="attack" value="{{pokemon.stats.attack}}" /></li>
+        <li>DEFENSE: <input type="text" name="defense" value="{{pokemon.stats.defense}}" /></li>
+        <li>SP ATTACK: <input type="text" name="spattack" value="{{pokemon.stats.spattack}}" /></li>
+        <li>SP DEFENSE: <input type="text" name="spdefense" value="{{pokemon.stats.spdefense}}" /></li>
+        <li>SPEED: <input type="text" name="speed" value="{{pokemon.stats.speed}}" /></li>
+   
+</div>
+<br>
+    <br>
+
+    
+
+    <input id="butt" type="submit" name="" value="Submit Changes" /> 
+    </form>
+  </body>
+</html>
