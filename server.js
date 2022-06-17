@@ -1,6 +1,6 @@
 const express    = require('express');
 const app        = require('liquid-express-views')(express())
-const port = 3000
+const port = 2000
 const Pokemon = require('./pokedex/pokemon');
 const methodOverride = require('method-override')
 const rowdy = require('rowdy-logger')
@@ -84,7 +84,7 @@ app.put('/pokemon/:id', (req, res) => {
 
 //Listener
 app.listen(port, (req, res) => {
-    console.log('We are live from 3000, the pokemon center')
+    console.log('We are live from 2000, the pokemon center')
     routesReport.print()
 })
 
